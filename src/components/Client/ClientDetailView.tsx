@@ -4,7 +4,8 @@ import { supabase } from '../../lib/supabase';
 import TrainerCalendarView from './TrainerCalendarView';
 import EditAssignedWorkoutModal from '../Workout/EditAssignedWorkoutModal';
 import ClientStreaksPanel from './ClientStreaksPanel';
-import { ArrowLeft, ChevronRight, ChevronLeft, User, Mail, Phone, Calendar, MapPin, CreditCard as Edit3, MessageCircle, BarChart3, Dumbbell, Video, Clock, CheckCircle, AlertCircle, TrendingUp, Target, Award, Users, BookOpen, Eye, Play, Upload, ClipboardList, Trash2, CreditCard as Edit, Flame } from 'lucide-react';
+import { ArrowLeft, ChevronRight, ChevronLeft, User, Mail, Phone, Calendar, MapPin, CreditCard as Edit3, MessageCircle, BarChart3, Dumbbell, Video, Clock, CheckCircle, AlertCircle, TrendingUp, Target, Award, Users, BookOpen, Eye, Play, Upload, ClipboardList, Trash2, CreditCard as Edit, Flame, ClipboardCheck } from 'lucide-react';
+import CoachClientLogView from '../Workout/CoachClientLogView';
 
 interface ClientDetailProps {
   clientId: string;
@@ -619,6 +620,15 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
           </div>
         );
 
+      case 'workout-logs':
+        return (
+          <CoachClientLogView
+            clientId={clientId}
+            clientName={`${clientData?.first_name ?? ''} ${clientData?.last_name ?? ''}`}
+            onBack={() => setActiveTab('overview')}
+          />
+        );
+
       case 'performance':
         return (
           <div className="space-y-6">
@@ -994,6 +1004,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
     { id: 'overview', label: 'Overview', icon: User },
     ...(userType === 'clients' ? [{ id: 'intake', label: 'Intake Form', icon: ClipboardList }] : []),
     { id: 'workouts', label: userType === 'trainers' ? 'Templates' : 'Workouts', icon: Dumbbell },
+    ...(userType === 'clients' ? [{ id: 'workout-logs', label: 'Workout Logs', icon: ClipboardCheck }] : []),
     ...(userType === 'clients' ? [{ id: 'streaks', label: 'Streaks', icon: Flame }] : []),
     { id: 'performance', label: 'Performance', icon: BarChart3 },
     { id: 'calendar', label: 'Calendar', icon: Calendar },
