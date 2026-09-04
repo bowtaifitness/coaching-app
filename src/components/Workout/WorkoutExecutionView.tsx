@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
 import { useFloatingVideo } from '../../contexts/FloatingVideoContext';
+import { useSyncWorkoutLog } from '../../hooks/useSyncWorkoutLog';
 import ExerciseHistoryModal from './ExerciseHistoryModal';
 import {
   ArrowLeft,
@@ -67,6 +68,8 @@ interface ExerciseProgress {
     completed: boolean;
     reps?: number;
     weight?: number;
+    duration?: number;
+    rpe?: number;
   }>;
   savedAt?: string;
   swing_fault_reason?: string;
@@ -133,6 +136,7 @@ interface WorkoutExecutionViewProps {
 const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, onBack, viewOnly = false }) => {
   const { user } = useAuth();
   const { openVideo } = useFloatingVideo();
+  const { syncToWorkoutLog } = useSyncWorkoutLog();
   const [workout, setWorkout] = useState<Workout | null>(null);
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [exerciseProgress, setExerciseProgress] = useState<ExerciseProgressMap>({});
@@ -531,7 +535,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
     }));
   };
 
-  const updateSetProgress = (workoutExerciseId: string, setIndex: number, field: 'completed' | 'reps' | 'weight', value: boolean | number | null) => {
+  const updateSetProgress = (workoutExerciseId: string, setIndex: number, field: 'completed' | 'reps' | 'weight' | 'duration' | 'rpe', value: boolean | number | null) => {
     const currentProgress = exerciseProgress[workoutExerciseId] || {};
     const setProgress = [...(currentProgress.setProgress || [])];
 
@@ -670,6 +674,25 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
       }
 
       console.log('Progress saved successfully');
+
+      // Sync to new workout_logs / exercise_logs tables (non-blocking)
+      if (user && workout) {
+        syncToWorkoutLog({
+          workoutId: workout.id,
+          clientId: user.id,
+          workoutExercises: workout.workout_exercises.map((we) => ({
+            id: we.id,
+            exercise_id: we.exercise_id,
+            sets: we.sets ?? null,
+            reps: we.reps ?? null,
+            weight: we.weight ?? null,
+            duration: we.duration ?? null,
+          })),
+          progressMap: exerciseProgress,
+          allCompleted: allExercisesCompleted,
+        }).catch((err) => console.error('Workout log sync error:', err));
+      }
+
       setSuccess('Progress saved successfully!');
       
       // Clear success message after 3 seconds
@@ -1182,7 +1205,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-2 gap-3">
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                             {isDurationBased ? (
                               <div>
                                 <label className="block text-xs font-medium text-gray-600 mb-1">Actual Duration (seconds)</label>
@@ -1249,6 +1272,22 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                                 />
                               </div>
                             )}
+                            <div>
+                              <label className="block text-xs font-medium text-gray-600 mb-1">RPE (1-10)</label>
+                              <select
+                                value={(setData as any).rpe ?? ''}
+                                onChange={(e) => {
+                                  const v = e.target.value === '' ? null : parseInt(e.target.value);
+                                  updateSetProgress(currentExercise.id, index, 'rpe' as any, v);
+                                }}
+                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500 bg-white min-h-[36px]"
+                              >
+                                <option value="">—</option>
+                                {[1,2,3,4,5,6,7,8,9,10].map(n => (
+                                  <option key={n} value={n}>{n}</option>
+                                ))}
+                              </select>
+                            </div>
                           </div>
                         </div>
                       );

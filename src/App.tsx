@@ -26,6 +26,7 @@ import ClientManagement from './components/Client/ClientManagement';
 import CalendarView from './components/Calendar/CalendarView';
 import PaymentInterface from './components/Payments/PaymentInterface';
 import ClientWorkoutView from './components/Workout/ClientWorkoutView';
+import WorkoutLogView from './components/Workout/WorkoutLogView';
 import PaymentSuccess from './components/Payments/PaymentSuccess';
 import ResetPasswordForm from './components/Auth/ResetPasswordForm';
 import EmailConfirmed from './components/Auth/EmailConfirmed';
@@ -133,7 +134,10 @@ const AppContent: React.FC = () => {
       setTimeout(() => setCurrentView('workouts'), 0);
     } else {
       setCurrentView(view);
-      if (view === 'workouts') {
+      if (view === 'workout-log') {
+        setSelectedWorkoutId(id);
+        setSelectedClientId(undefined);
+      } else if (view === 'workouts') {
         setSelectedWorkoutId(id);
         setSelectedClientId(undefined);
       } else if (view === 'clients') {
@@ -265,6 +269,11 @@ const AppContent: React.FC = () => {
         );
       case 'exercises':
         return <ExerciseLibrary />;
+      case 'workout-log':
+        if (selectedWorkoutId) {
+          return <WorkoutLogView workoutId={selectedWorkoutId} onBack={() => handleViewChange('workouts')} />;
+        }
+        return user.role === 'coach' || user.role === 'admin' ? <WorkoutBuilder /> : <ClientWorkoutView key="workout-log-fallback" />;
       case 'workouts':
       case 'workouts-reset':
         return user.role === 'coach' || user.role === 'admin' ? <WorkoutBuilder /> : <ClientWorkoutView key={`workout-${currentView}-${selectedWorkoutId || 'list'}`} initialWorkoutId={selectedWorkoutId} />;
