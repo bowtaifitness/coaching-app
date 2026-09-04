@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
 import TrainerCalendarView from './TrainerCalendarView';
+import WorkoutScheduleCalendar from '../Workout/WorkoutScheduleCalendar';
 import EditAssignedWorkoutModal from '../Workout/EditAssignedWorkoutModal';
 import ClientStreaksPanel from './ClientStreaksPanel';
 import { ArrowLeft, ChevronRight, ChevronLeft, User, Mail, Phone, Calendar, MapPin, CreditCard as Edit3, MessageCircle, BarChart3, Dumbbell, Video, Clock, CheckCircle, AlertCircle, TrendingUp, Target, Award, Users, BookOpen, Eye, Play, Upload, ClipboardList, Trash2, CreditCard as Edit, Flame, ClipboardCheck } from 'lucide-react';
@@ -930,6 +931,14 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
 
       case 'calendar':
         return (
+          <WorkoutScheduleCalendar
+            clientId={clientId}
+            clientName={`${clientData?.first_name ?? ''} ${clientData?.last_name ?? ''}`}
+          />
+        );
+
+      case 'trainer-calendar':
+        return (
           <TrainerCalendarView clientId={clientId} userType={userType} onNavigate={onNavigate} />
         );
 
@@ -1007,7 +1016,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
     ...(userType === 'clients' ? [{ id: 'workout-logs', label: 'Workout Logs', icon: ClipboardCheck }] : []),
     ...(userType === 'clients' ? [{ id: 'streaks', label: 'Streaks', icon: Flame }] : []),
     { id: 'performance', label: 'Performance', icon: BarChart3 },
-    { id: 'calendar', label: 'Calendar', icon: Calendar },
+    { id: 'calendar', label: 'Schedule', icon: Calendar },
     { id: 'videos', label: 'Videos', icon: Video },
     { id: 'messages', label: 'Messages', icon: MessageCircle }
   ];
