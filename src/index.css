@@ -1,0 +1,433 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  *, *::before, *::after {
+    min-width: 0;
+  }
+}
+
+/* iOS Safari specific optimizations */
+@supports (-webkit-touch-callout: none) {
+  .touch-manipulation {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+/* Android Chrome specific optimizations */
+.touch-manipulation {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Prevent zoom on input focus for iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    font-size: 16px;
+  }
+}
+
+/* Safe area utilities for iOS notch/home indicator */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-left {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+
+.safe-right {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* --- Capacitor / Native iOS Preparation --- */
+
+/* Disable text selection globally for native feel (inputs exempt) */
+html {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Smooth scrolling for better mobile experience */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Better touch targets - iOS 44px minimum */
+button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+a {
+  min-height: 44px;
+}
+
+/* Mobile-optimized input sizes - 16px prevents iOS Safari auto-zoom */
+input, select, textarea {
+  min-height: 44px;
+  font-size: 16px !important;
+}
+
+/* Checkboxes and radios: ensure touch target via padding/margin */
+input[type="checkbox"],
+input[type="radio"] {
+  min-height: 20px;
+  min-width: 20px;
+  cursor: pointer;
+}
+
+/* Wrap checkboxes/radios in labels that meet 44px touch target */
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  min-height: 100dvh;
+  background-color: #ffffff;
+}
+
+/* Mobile-optimized containers */
+@media (max-width: 640px) {
+  .space-x-8 > * + * {
+    margin-left: 1rem !important;
+  }
+
+  .gap-8 {
+    gap: 1rem !important;
+  }
+}
+
+/* Native touch-friendly active states (opacity over hover) */
+button:active,
+a:active,
+.touch-manipulation:active {
+  opacity: 0.7;
+  transition: opacity 0.05s ease-out;
+}
+
+button,
+a,
+.touch-manipulation {
+  transition: opacity 0.15s ease-out;
+}
+
+/* On touch devices, disable sticky hover states that linger after tap */
+@media (hover: none) and (pointer: coarse) {
+  button:hover,
+  a:hover,
+  [class*="hover\:"]:hover {
+    background-color: inherit;
+    color: inherit;
+    opacity: 1;
+  }
+}
+
+/* Better video display on mobile */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize modal/overlay for mobile */
+@media (max-width: 640px) {
+  .fixed.inset-0 {
+    position: fixed;
+  }
+}
+
+
+/* Better scrolling performance on mobile */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent pull-to-refresh and rubber-band bounce (Capacitor iOS) */
+html {
+  overscroll-behavior: none;
+}
+
+body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent overscroll on all scrollable containers */
+[class*="overflow-y-auto"],
+[class*="overflow-auto"] {
+  overscroll-behavior-y: contain;
+}
+
+/* Better focus states for mobile accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+/* Optimize touch ripple effect */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Notification slide-in animation */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+/* Install prompt slide-up animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+/* Trial notification slide-down animation */
+@keyframes slide-down {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.4s ease-out;
+}
+
+/* Safe area padding utilities */
+.pb-safe {
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
+/* Better mobile table display */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Optimize card layouts for mobile */
+@media (max-width: 640px) {
+  .mobile-single-col {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Better mobile form layouts */
+@media (max-width: 640px) {
+  form > div {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Optimize navigation for mobile */
+@media (max-width: 768px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+
+/* Better mobile modal sizing */
+@media (max-width: 640px) {
+  .modal-container .max-w-md,
+  .modal-container .max-w-lg,
+  .modal-container .max-w-xl,
+  .modal-container .max-w-2xl {
+    max-width: 95vw !important;
+    margin: 0.5rem !important;
+  }
+}
+
+/* Improve mobile button spacing */
+@media (max-width: 640px) {
+  .space-x-4 > * + * {
+    margin-left: 0.5rem !important;
+  }
+
+  .space-y-4 > * + * {
+    margin-top: 0.75rem !important;
+  }
+}
+
+/* Scroll margin for smooth scrolling with fixed headers */
+.scroll-mt-6 {
+  scroll-margin-top: 1.5rem;
+}
+
+/* ===== Keyboard-Aware Form Layout ===== */
+
+/* Hide scrollbars globally on all overflow containers while keeping scroll functional */
+[class*="overflow-y-auto"],
+[class*="overflow-auto"],
+[class*="overflow-y-scroll"] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+[class*="overflow-y-auto"]::-webkit-scrollbar,
+[class*="overflow-auto"]::-webkit-scrollbar,
+[class*="overflow-y-scroll"]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Keyboard-open state: add bottom padding so sticky buttons clear the keyboard */
+.keyboard-open .keyboard-aware-container {
+  padding-bottom: var(--keyboard-height, 300px);
+}
+
+/* Smooth transition for keyboard padding */
+.keyboard-aware-container {
+  transition: padding-bottom 0.25s ease-out;
+}
+
+/* ===== Modal System ===== */
+
+/* Modal backdrop fade-in */
+@keyframes modal-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal slide-up with spring-like deceleration (mobile) */
+@keyframes modal-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal scale-in for desktop */
+@keyframes modal-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Apply backdrop animation to modal overlays */
+.modal-overlay {
+  animation: modal-backdrop-in 0.2s ease-out;
+}
+
+/* Modal content panel - slide up on mobile, scale in on desktop */
+.modal-panel {
+  animation: modal-slide-up 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 640px) {
+  .modal-panel {
+    animation: modal-scale-in 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Sticky modal footer - stays pinned above keyboard */
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background: inherit;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* When keyboard is open, ensure modal footer clears it */
+.keyboard-open .modal-footer {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+}

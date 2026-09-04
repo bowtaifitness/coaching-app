@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Final Icons</title>
+    <style>
+        body {
+            font-family: system-ui;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 { color: #059669; margin-bottom: 15px; }
+        .status {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #059669;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            display: none;
+        }
+        .preview {
+            display: flex;
+            gap: 25px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .preview-item {
+            text-align: center;
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        canvas {
+            border: 2px solid #e5e7eb;
+            border-radius: 22.5%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: white;
+            display: block;
+            margin: 15px auto;
+        }
+        button {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        button:hover { background: #047857; }
+        .slider-group {
+            background: #f9fafb;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        input[type="range"] {
+            flex: 1;
+            height: 8px;
+        }
+        .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #059669;
+            min-width: 70px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏌️ Create Perfectly Centered Icons</h1>
+        <p><strong>Shrink the logo and add white space padding to prevent iOS cropping</strong></p>
+
+        <div class="slider-group">
+            <h3 style="margin-bottom: 15px;">Adjust Logo Scale</h3>
+            <div class="slider-container">
+                <label style="font-weight: 600; min-width: 100px;">Logo Scale:</label>
+                <input type="range" id="scale" min="50" max="75" value="60" step="1">
+                <span class="value" id="scaleValue">60%</span>
+            </div>
+            <p style="color: #6b7280; margin-top: 10px;">
+                60% = logo takes up 60% of icon, 40% is white padding
+            </p>
+        </div>
+
+        <div class="status" id="status">Ready to create icons...</div>
+
+        <div class="preview">
+            <div class="preview-item">
+                <p><strong>180×180</strong><br><small>iOS Home Screen</small></p>
+                <canvas id="canvas180" width="180" height="180"></canvas>
+            </div>
+            <div class="preview-item">
+                <p><strong>192×192</strong><br><small>Android</small></p>
+                <canvas id="canvas192" width="192" height="192"></canvas>
+            </div>
+            <div class="preview-item">
+                <p><strong>512×512</strong><br><small>High Resolution</small></p>
+                <canvas id="canvas512" width="512" height="512" style="max-width: 180px; height: auto;"></canvas>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button onclick="downloadAll()">⬇️ Download All 3 Icon Files</button>
+        </div>
+
+        <div class="success" id="success">
+            <h3>✅ Downloaded Successfully!</h3>
+            <p>Check your Downloads folder. Now:</p>
+            <ol style="margin-left: 20px; line-height: 1.8;">
+                <li>Copy the 3 files to your <code>/public</code> folder</li>
+                <li>Run <code>npm run build</code></li>
+                <li>Delete app from home screen</li>
+                <li>Reinstall from Safari</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        const statusEl = document.getElementById('status');
+        const successEl = document.getElementById('success');
+        const scaleInput = document.getElementById('scale');
+        const scaleValue = document.getElementById('scaleValue');
+
+        scaleInput.addEventListener('input', function(e) {
+            scaleValue.textContent = e.target.value + '%';
+            if (img.complete) drawAllIcons();
+        });
+
+        img.onload = function() {
+            statusEl.innerHTML = '✅ Logo loaded! Adjust scale and download.';
+            drawAllIcons();
+        };
+
+        img.onerror = function() {
+            statusEl.innerHTML = '<span style="color: red;">❌ Failed to load /BirdieOnluy_White.png - Is dev server running?</span>';
+        };
+
+        img.src = '/BirdieOnluy_White.png';
+
+        function drawAllIcons() {
+            [180, 192, 512].forEach(size => drawIcon(size));
+        }
+
+        function drawIcon(size) {
+            const canvas = document.getElementById('canvas' + size);
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const scale = parseInt(scaleInput.value) / 100;
+
+            // White background
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, size, size);
+
+            // Calculate logo size
+            const logoSize = size * scale;
+            const offset = (size - logoSize) / 2;
+
+            // High quality rendering
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+
+            // Draw centered logo
+            ctx.drawImage(img, offset, offset, logoSize, logoSize);
+        }
+
+        function downloadIcon(size, filename) {
+            const canvas = document.getElementById('canvas' + size);
+            if (!canvas) return;
+
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.download = filename;
+                link.href = url;
+                link.click();
+                URL.revokeObjectURL(url);
+            }, 'image/png', 1.0);
+        }
+
+        function downloadAll() {
+            const files = [
+                { size: 180, name: 'apple-touch-icon.png' },
+                { size: 192, name: 'icon-192.png' },
+                { size: 512, name: 'icon-512.png' }
+            ];
+
+            files.forEach((file, i) => {
+                setTimeout(() => downloadIcon(file.size, file.name), i * 300);
+            });
+
+            setTimeout(() => {
+                successEl.style.display = 'block';
+                successEl.scrollIntoView({ behavior: 'smooth' });
+            }, 1200);
+        }
+    </script>
+</body>
+</html>

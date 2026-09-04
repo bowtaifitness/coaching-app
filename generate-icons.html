@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Birdies Icons</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #059669;
+        }
+        .alert {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .instructions {
+            background: #f0fdf4;
+            border: 2px solid #059669;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .preview-box {
+            text-align: center;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            font-weight: 600;
+        }
+        button:hover {
+            background: #047857;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        .controls {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        input[type="range"] {
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px 0;
+            font-weight: 600;
+            color: #374151;
+        }
+        .value-display {
+            font-size: 24px;
+            color: #059669;
+            font-weight: bold;
+        }
+        .download-all {
+            background: #0284c7;
+            font-size: 18px;
+            padding: 15px 30px;
+        }
+        .download-all:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏌️ Birdies Icon Generator</h1>
+        <p>Create perfectly padded app icons that won't get cropped on iOS home screens</p>
+
+        <div class="alert">
+            <strong>⚠️ iOS Icon Cropping Issue:</strong><br>
+            iOS applies an automatic mask to all app icons, which can crop the edges.
+            Use <strong>35-40% padding</strong> to ensure nothing gets cut off.
+        </div>
+
+        <div class="controls">
+            <label>
+                Icon Padding: <span class="value-display" id="paddingValue">35</span>%
+            </label>
+            <input type="range" id="padding" min="20" max="45" value="35" step="5">
+            <p style="color: #6b7280; margin-top: 10px;">
+                📱 <strong>Recommended:</strong> 35% for iOS (prevents edge cropping)<br>
+                🔧 If edges still appear cropped, try 40%
+            </p>
+        </div>
+
+        <div class="instructions">
+            <strong>📋 Instructions:</strong>
+            <ol>
+                <li>Adjust padding slider until the preview looks good (default 35% works well)</li>
+                <li>Click individual download buttons OR "Download All Sizes" button</li>
+                <li>Save files to your <code>/public</code> folder</li>
+                <li>Update your manifest.json and index.html to use these new icons</li>
+                <li>Clear app cache and reinstall PWA to see changes</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <button class="download-all" onclick="downloadAll()">⬇️ Download All Sizes</button>
+        </div>
+
+        <div class="preview">
+            <div class="preview-box">
+                <h3>192 × 192</h3>
+                <canvas id="canvas192" width="192" height="192"></canvas>
+                <br>
+                <button onclick="downloadIcon(192, 'icon-192.png')">Download</button>
+            </div>
+            <div class="preview-box">
+                <h3>512 × 512</h3>
+                <canvas id="canvas512" width="512" height="512"></canvas>
+                <br>
+                <button onclick="downloadIcon(512, 'icon-512.png')">Download</button>
+            </div>
+        </div>
+
+        <div class="preview">
+            <div class="preview-box">
+                <h3>180 × 180 (Apple)</h3>
+                <canvas id="canvas180" width="180" height="180"></canvas>
+                <br>
+                <button onclick="downloadIcon(180, 'apple-touch-icon.png')">Download</button>
+            </div>
+            <div class="preview-box">
+                <h3>1024 × 1024 (Large)</h3>
+                <canvas id="canvas1024" width="1024" height="1024" style="max-width: 200px;"></canvas>
+                <br>
+                <button onclick="downloadIcon(1024, 'icon-1024.png')">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+
+        img.onload = function() {
+            console.log('Image loaded successfully');
+            drawIcons();
+        };
+
+        img.onerror = function() {
+            alert('Error loading image. Make sure BirdieOnluy_White.png exists in /public folder');
+        };
+
+        // Try to load the image
+        img.src = '/BirdieOnluy_White.png';
+
+        const paddingInput = document.getElementById('padding');
+        const paddingValue = document.getElementById('paddingValue');
+
+        paddingInput.addEventListener('input', function(e) {
+            paddingValue.textContent = e.target.value;
+            drawIcons();
+        });
+
+        function drawIcons() {
+            drawIcon(192);
+            drawIcon(512);
+            drawIcon(180);
+            drawIcon(1024);
+        }
+
+        function drawIcon(size) {
+            const canvas = document.getElementById(`canvas${size}`);
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const paddingPercent = parseInt(paddingInput.value) / 100;
+
+            // Fill white background
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, size, size);
+
+            // Calculate dimensions with padding
+            const paddedSize = size * (1 - paddingPercent * 2);
+            const offset = size * paddingPercent;
+
+            // Enable image smoothing for better quality
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+
+            // Draw the image centered with padding
+            ctx.drawImage(img, offset, offset, paddedSize, paddedSize);
+        }
+
+        function downloadIcon(size, filename) {
+            const canvas = document.getElementById(`canvas${size}`);
+            if (!canvas) {
+                alert(`Canvas for size ${size} not found`);
+                return;
+            }
+
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+
+            console.log(`Downloaded ${filename}`);
+        }
+
+        function downloadAll() {
+            setTimeout(() => downloadIcon(192, 'icon-192.png'), 100);
+            setTimeout(() => downloadIcon(512, 'icon-512.png'), 300);
+            setTimeout(() => downloadIcon(180, 'apple-touch-icon.png'), 500);
+            setTimeout(() => downloadIcon(1024, 'icon-1024.png'), 700);
+
+            alert('Downloading all icon sizes! Check your downloads folder.');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="icon" type="image/png" href="/icon-192.png" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Fallback for missing icons -->
+    <style>
+      /* Ensure app renders even if assets fail */
+      html, body {
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafb;
+      }
+      #root {
+        height: 100dvh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover, interactive-widget=resizes-content" />
+
+    <!-- PWA Configuration -->
+    <meta name="theme-color" content="#059669" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#059669" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#047857" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- iOS Specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Bowtai Fitness" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
+
+    <!-- Android Specific -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <!-- SEO & Description -->
+    <meta name="description" content="Get personalized fitness coaching with custom workout programs, performance tracking, and expert guidance from professional coaches." />
+    <meta name="application-name" content="Bowtai Fitness" />
+    <meta name="keywords" content="personal training, fitness coaching, workout programs, strength training, performance tracking, custom workouts, exercise library" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bowtai Fitness | Personal Training & Coaching Platform" />
+    <meta property="og:description" content="Get personalized fitness coaching with custom workout programs, performance tracking, and expert guidance from professional coaches." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bowtai Fitness" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Bowtai Fitness | Personal Training & Coaching Platform" />
+    <meta name="twitter:description" content="Get personalized fitness coaching with custom workout programs, performance tracking, and expert guidance from professional coaches." />
+
+    <!-- Performance -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>Bowtai Fitness | Personal Training & Coaching Platform</title>
+
+    <!-- JSON-LD: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bowtai Fitness",
+      "applicationCategory": "Health & Fitness",
+      "description": "Personalized fitness coaching platform with custom workout programs, exercise library, performance tracking, and expert guidance from professional coaches.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Custom workout programs",
+        "Professional coaching",
+        "Exercise library with video instruction",
+        "Performance tracking and progress charts",
+        "Client management for coaches"
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

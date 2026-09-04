@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bowtai Project Hub</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-hover: #222633;
+    --border: #2a2e3d;
+    --text: #e4e6ed;
+    --text-muted: #8b8fa3;
+    --accent: #4f8cff;
+    --accent-glow: rgba(79, 140, 255, 0.15);
+    --green: #34d399;
+    --green-glow: rgba(52, 211, 153, 0.15);
+    --orange: #fb923c;
+    --orange-glow: rgba(251, 146, 60, 0.15);
+    --purple: #a78bfa;
+    --purple-glow: rgba(167, 139, 250, 0.15);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .header {
+    padding: 48px 40px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .header p {
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color 0.2s, transform 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card:hover {
+    border-color: #3a3f52;
+    transform: translateY(-2px);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .card-icon.blue { background: var(--accent-glow); }
+  .card-icon.green { background: var(--green-glow); }
+  .card-icon.orange { background: var(--orange-glow); }
+  .card-icon.purple { background: var(--purple-glow); }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .link-btn:hover {
+    background: var(--surface-hover);
+    border-color: #3a3f52;
+  }
+
+  .link-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .link-btn.primary:hover {
+    background: #3d7aef;
+    border-color: #3d7aef;
+  }
+
+  .link-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-dot.live { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .status-dot.dev { background: var(--orange); box-shadow: 0 0 6px var(--orange); }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+  }
+
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .quick-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    transition: background 0.15s;
+  }
+
+  .quick-link:hover {
+    background: var(--surface-hover);
+  }
+
+  .quick-link .ql-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+  }
+
+  .quick-link .ql-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-left: auto;
+  }
+
+  /* Refresh timestamp */
+  .timestamp {
+    text-align: center;
+    padding: 0 40px 40px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 32px 20px 24px; }
+    .grid { padding: 0 20px 40px; grid-template-columns: 1fr; }
+    .header h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏌️ Bowtai Project Hub</h1>
+  <p>All projects in one place — tap a card to get started</p>
+</div>
+
+<div class="grid">
+
+  <!-- Birdies by Bowtai Mobile App -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon blue">📱</div>
+      <div>
+        <div class="card-title">Birdies by Bowtai</div>
+        <div class="card-desc">iOS mobile app — React + Capacitor<br>Golf performance & coaching platform</div>
+      </div>
+    </div>
+    <div class="status-row">
+      <span class="status-dot dev"></span>
+      Mobile build workflow active
+    </div>
+    <div class="divider"></div>
+    <div class="section-label">Quick Access</div>
+    <div class="card-links">
+      <a href="https://github.com/bowtaifitness/Birdies-by-Bowtai-App" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="https://bolt.new" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        bolt.new
+      </a>
+      <a href="https://appstoreconnect.apple.com" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10m0 0l-3 3m3-3l3 3M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        App Store Connect
+      </a>
+    </div>
+    <div class="card-links">
+      <a href="https://supabase.com/dashboard/project/fwsibymwzxxafphpokdf" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        Supabase (Prod)
+      </a>
+      <a href="https://supabase.com/dashboard/project/qzgduzlvaqbruekcttyi" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        Supabase (Dev)
+      </a>
+      <a href="https://dashboard.stripe.com" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Stripe
+      </a>
+    </div>
+  </div>
+
+  <!-- Birdies by Bowtai PWA -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon green">🌐</div>
+      <div>
+        <div class="card-title">Birdies by Bowtai (PWA)</div>
+        <div class="card-desc">Progressive web app<br>birdiesbybowtai.com</div>
+      </div>
+    </div>
+    <div class="status-row">
+      <span class="status-dot live"></span>
+      Live
+    </div>
+    <div class="divider"></div>
+    <div class="section-label">Quick Access</div>
+    <div class="card-links">
+      <a href="https://birdiesbybowtai.com" target="_blank" class="link-btn primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/></svg>
+        Open Site
+      </a>
+      <a href="https://github.com/bowtaifitness/Birdies-by-Bowtai-App" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="https://bolt.new" target="_blank" class="link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        bolt.new
+      </a>
+    </div>
+  </div>
+
+  <!-- Bowtai Fitness Website -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon orange">💪</div>
+      <div>
+        <div class="card-title">Bowtai Fitness</div>
+        <div class="card-desc">Personal training website<br>bowtaifitness.com</div>
+      </div>
+    </div>
+    <div class="status-row">
+      <span class="status-dot live"></span>
+      Live
+    </div>
+    <div class="divider"></div>
+    <div class="section-label">Quick Access</div>
+    <div class="card-links">
+      <a href="https://bowtaifitness.com" target="_blank" class="link-btn primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/></svg>
+        Open Site
+      </a>
+    </div>
+  </div>
+
+  <!-- Tools & Services -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon purple">🛠</div>
+      <div>
+        <div class="card-title">Tools & Services</div>
+        <div class="card-desc">Business platforms & integrations</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="quick-links">
+      <a href="https://www.mindbodyonline.com/business" target="_blank" class="quick-link">
+        <span class="ql-icon">📅</span>
+        Mindbody
+        <span class="ql-label">Business mgmt</span>
+      </a>
+      <a href="https://truecoach.co" target="_blank" class="quick-link">
+        <span class="ql-icon">🏋️</span>
+        TrueCoach
+        <span class="ql-label">Coaching</span>
+      </a>
+      <a href="https://dashboard.stripe.com" target="_blank" class="quick-link">
+        <span class="ql-icon">💳</span>
+        Stripe
+        <span class="ql-label">Payments</span>
+      </a>
+      <a href="https://supabase.com/dashboard" target="_blank" class="quick-link">
+        <span class="ql-icon">🗄️</span>
+        Supabase
+        <span class="ql-label">Database</span>
+      </a>
+      <a href="https://github.com/bowtaifitness" target="_blank" class="quick-link">
+        <span class="ql-icon">🐙</span>
+        GitHub
+        <span class="ql-label">All repos</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="timestamp" id="ts"></div>
+
+<script>
+  document.getElementById('ts').textContent = 'Last opened ' + new Date().toLocaleString();
+</script>
+
+</body>
+</html>
