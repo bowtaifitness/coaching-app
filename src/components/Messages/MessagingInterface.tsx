@@ -78,6 +78,13 @@ const MessagingInterface: React.FC = () => {
     '⭐', '🎉', '🎊', '❤️', '💙', '💚', '💛', '🧡', '💜', '🖤'
   ];
 
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
   useEffect(() => {
     fetchConversations();
   }, []);
@@ -87,6 +94,63 @@ const MessagingInterface: React.FC = () => {
       fetchMessages(selectedConversation);
     }
   }, [selectedConversation]);
+
+  // Realtime subscription for new messages
+  useEffect(() => {
+    if (!user) return;
+
+    const channel = supabase
+      .channel('messaging-realtime')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'messages',
+          filter: `receiver_id=eq.${user.id}`
+        },
+        async (payload) => {
+          const newMsg = payload.new as any;
+          // If viewing this conversation, add the message and mark as read
+          if (selectedConversation && newMsg.sender_id === selectedConversation) {
+            // Fetch sender info
+            const { data: senderData } = await supabase
+              .from('profiles')
+              .select('first_name, last_name, avatar_url')
+              .eq('id', newMsg.sender_id)
+              .maybeSingle();
+
+            setMessages(prev => [...prev, { ...newMsg, sender: senderData }]);
+
+            // Mark as read
+            await supabase
+              .from('messages')
+              .update({ read: true })
+              .eq('id', newMsg.id);
+          }
+          // Refresh conversations list
+          fetchConversations();
+        }
+      )
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'messages',
+          filter: `sender_id=eq.${user.id}`
+        },
+        () => {
+          // Refresh conversations when we send a message (catches other tabs)
+          fetchConversations();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [user, selectedConversation]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -753,6 +817,7 @@ const MessagingInterface: React.FC = () => {
                       </div>
                     </div>
                   )}
+                  <div ref={messagesEndRef} />
                 </div>
 
                 {/* Message Input */}

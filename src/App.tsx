@@ -36,6 +36,8 @@ import UserDashboard from './components/Dashboard/UserDashboard';
 import TrialManagement from './components/Admin/TrialManagement';
 import InvitationManagement from './components/Admin/InvitationManagement';
 import PrivacyPolicy from './components/Legal/PrivacyPolicy';
+import MessagingInterface from './components/Messages/MessagingInterface';
+import MessageNotification from './components/Messages/MessageNotification';
 import { useTrialStatus } from './hooks/useTrialStatus';
 
 // Helper function to check if current URL is a password reset
@@ -323,6 +325,8 @@ const AppContent: React.FC = () => {
           return <InvitationManagement />;
         }
         return <ClientDashboard onNavigate={handleViewChange} onIntakeComplete={refreshTrialStatus} />;
+      case 'messages':
+        return <MessagingInterface />;
       case 'my-program':
         return <UserDashboard onNavigate={handleViewChange} />;
       case 'profile':
@@ -374,6 +378,7 @@ const AppContent: React.FC = () => {
             </main>
           </div>
           <BottomTabBar currentView={currentView} onViewChange={handleViewChange} />
+          <MessageNotification onMessageClick={() => handleViewChange('messages')} />
         </>
       )}
     </div>

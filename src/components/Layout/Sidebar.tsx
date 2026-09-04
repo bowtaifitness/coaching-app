@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useUnreadMessages } from '../../hooks/useUnreadMessages';
 import {
   Home,
   Dumbbell,
@@ -13,7 +14,8 @@ import {
   Tag,
   Mail,
   Video,
-  History
+  History,
+  MessageCircle
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -24,6 +26,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange, isOpen }) => {
   const { user } = useAuth();
+  const unreadCount = useUnreadMessages();
 
   // Check if user is admin by email
   const isAdmin = user?.email === 'brian@bowtaifitness.com';
@@ -38,6 +41,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange, isOpen }) 
     { id: 'performance', label: 'Performance', icon: BarChart3 },
     { id: 'promotions', label: 'Trial & Promotions', icon: Tag },
     { id: 'payments', label: 'Business Analytics', icon: CreditCard },
+    { id: 'messages', label: 'Messages', icon: MessageCircle },
     { id: 'profile', label: 'Profile', icon: Settings },
   ];
 
@@ -47,6 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange, isOpen }) 
     { id: 'exercises', label: 'Exercise Library', icon: Dumbbell },
     { id: 'workouts', label: 'Workout Builder', icon: BookOpen },
     { id: 'performance', label: 'Performance', icon: BarChart3 },
+    { id: 'messages', label: 'Messages', icon: MessageCircle },
     { id: 'profile', label: 'Profile', icon: Settings },
   ];
 
@@ -54,6 +59,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange, isOpen }) 
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'workouts', label: 'My Workouts', icon: Dumbbell },
     { id: 'performance', label: 'Performance', icon: TrendingUp },
+    { id: 'messages', label: 'Messages', icon: MessageCircle },
     { id: 'profile', label: 'Profile', icon: Settings },
   ];
 
@@ -79,7 +85,16 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange, isOpen }) 
               <item.icon className={`h-[18px] w-[18px] mr-3 shrink-0 ${
                 currentView === item.id ? 'text-white' : 'text-gray-400'
               }`} />
-              <span className="font-medium text-sm">{item.label}</span>
+              <span className="font-medium text-sm flex-1">{item.label}</span>
+              {item.id === 'messages' && unreadCount > 0 && (
+                <span className={`ml-auto text-xs font-bold px-1.5 py-0.5 rounded-full ${
+                  currentView === item.id
+                    ? 'bg-white/20 text-white'
+                    : 'bg-red-500 text-white'
+                }`}>
+                  {unreadCount > 99 ? '99+' : unreadCount}
+                </span>
+              )}
             </button>
           ))}
         </nav>

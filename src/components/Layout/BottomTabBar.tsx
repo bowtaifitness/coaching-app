@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useUnreadMessages } from '../../hooks/useUnreadMessages';
 import {
   Home,
   Dumbbell,
@@ -18,6 +19,7 @@ import {
   Mail,
   LogOut,
   History,
+  MessageCircle,
 } from 'lucide-react';
 
 interface BottomTabBarProps {
@@ -27,6 +29,7 @@ interface BottomTabBarProps {
 
 const BottomTabBar: React.FC<BottomTabBarProps> = ({ currentView, onViewChange }) => {
   const { user, signOut } = useAuth();
+  const unreadCount = useUnreadMessages();
   const [moreOpen, setMoreOpen] = useState(false);
 
   const isAdmin = user?.email === 'brian@bowtaifitness.com';
@@ -34,28 +37,35 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({ currentView, onViewChange }
   const clientTabs = [
     { id: 'dashboard', label: 'Home', icon: Home },
     { id: 'workouts', label: 'Workouts', icon: Dumbbell },
-    { id: 'performance', label: 'Performance', icon: TrendingUp },
+    { id: 'messages', label: 'Messages', icon: MessageCircle },
   ];
 
   const coachTabs = [
     { id: 'dashboard', label: 'Home', icon: Home },
     { id: 'clients', label: 'Clients', icon: Users },
-    { id: 'workouts', label: 'Builder', icon: BookOpen },
+    { id: 'messages', label: 'Messages', icon: MessageCircle },
   ];
 
   const adminTabs = [
     { id: 'dashboard', label: 'Home', icon: Home },
     { id: 'clients', label: 'Clients', icon: Users },
-    { id: 'workouts', label: 'Workouts', icon: BookOpen },
+    { id: 'messages', label: 'Messages', icon: MessageCircle },
   ];
 
   const coachMoreItems = [
+    { id: 'workouts', label: 'Workout Builder', icon: BookOpen },
     { id: 'exercises', label: 'Exercise Library', icon: Dumbbell },
     { id: 'performance', label: 'Performance', icon: BarChart3 },
     { id: 'profile', label: 'Profile', icon: Settings },
   ];
 
+  const clientMoreItems = [
+    { id: 'performance', label: 'Performance', icon: TrendingUp },
+    { id: 'profile', label: 'Profile', icon: Settings },
+  ];
+
   const adminMoreItems = [
+    { id: 'workouts', label: 'Workouts', icon: BookOpen },
     { id: 'trainers', label: 'Trainers', icon: UserCheck },
     { id: 'exercises', label: 'Exercise Library', icon: Dumbbell },
     { id: 'invitations', label: 'Invitations', icon: Mail },
@@ -66,11 +76,11 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({ currentView, onViewChange }
   ];
 
   const tabs = isAdmin ? adminTabs : user?.role === 'coach' ? coachTabs : clientTabs;
-  const moreItems = isAdmin ? adminMoreItems : user?.role === 'coach' ? coachMoreItems : null;
+  const moreItems = isAdmin ? adminMoreItems : user?.role === 'coach' ? coachMoreItems : clientMoreItems;
 
   const moreViewIds = moreItems?.map(item => item.id) || [];
   const isMoreActive = moreOpen || moreViewIds.includes(currentView);
-  const showMore = moreItems !== null;
+  const showMore = true;
 
   const handleMoreItemClick = (id: string) => {
     setMoreOpen(false);
@@ -150,7 +160,14 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({ currentView, onViewChange }
                 className={`flex flex-col items-center justify-center flex-1 pt-2 pb-1 min-h-[56px] relative transition-colors
                   ${isActive ? 'text-green-600' : 'text-gray-500 active:text-gray-700'}`}
               >
-                <Icon className={`h-5 w-5 ${isActive ? 'text-green-600' : 'text-gray-400'}`} strokeWidth={isActive ? 2.5 : 2} />
+                <div className="relative">
+                  <Icon className={`h-5 w-5 ${isActive ? 'text-green-600' : 'text-gray-400'}`} strokeWidth={isActive ? 2.5 : 2} />
+                  {tab.id === 'messages' && unreadCount > 0 && (
+                    <span className="absolute -top-1.5 -right-2.5 min-w-[16px] h-4 flex items-center justify-center bg-red-500 text-white text-[9px] font-bold rounded-full px-1">
+                      {unreadCount > 99 ? '99+' : unreadCount}
+                    </span>
+                  )}
+                </div>
                 <span className={`text-[10px] mt-0.5 font-medium leading-tight ${isActive ? 'text-green-600' : 'text-gray-500'}`}>
                   {tab.label}
                 </span>
