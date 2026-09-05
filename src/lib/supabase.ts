@@ -60,7 +60,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     autoRefreshToken: true,
     persistSession: true,
     detectSessionInUrl: true,
-    storageKey: 'sb-qzgduzlvaqbruekcttyi-auth-token',
+    storageKey: 'sb-slhjhmfxjgvhhzwjyztq-auth-token',
     storage: getAuthStorage(),
   }
 });
