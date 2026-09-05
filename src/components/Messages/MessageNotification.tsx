@@ -67,8 +67,8 @@ const MessageNotification: React.FC<MessageNotificationProps> = ({ onMessageClic
       <div className="bg-white rounded-lg shadow-2xl border border-gray-200 p-4 max-w-sm">
         <div className="flex items-start space-x-3">
           <div className="flex-shrink-0">
-            <div className="h-10 w-10 bg-green-100 rounded-full flex items-center justify-center">
-              <MessageCircle className="h-5 w-5 text-green-600" />
+            <div className="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+              <MessageCircle className="h-5 w-5 text-blue-600" />
             </div>
           </div>
           <div className="flex-1 min-w-0">
@@ -84,7 +84,7 @@ const MessageNotification: React.FC<MessageNotificationProps> = ({ onMessageClic
                   onMessageClick();
                   setNotification(null);
                 }}
-                className="text-xs text-green-600 hover:text-green-700 font-medium mt-2"
+                className="text-xs text-blue-600 hover:text-blue-700 font-medium mt-2"
               >
                 View message
               </button>

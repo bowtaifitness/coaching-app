@@ -354,7 +354,7 @@ const ProfileManagement: React.FC = () => {
       <div className="p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading profile...</p>
           </div>
         </div>
@@ -385,10 +385,10 @@ const ProfileManagement: React.FC = () => {
 
       {/* Success/Error Messages */}
       {success && (
-        <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
+        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
           <div className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-            <p className="text-green-800">{success}</p>
+            <CheckCircle className="h-5 w-5 text-blue-600 mr-2" />
+            <p className="text-blue-800">{success}</p>
           </div>
         </div>
       )}
@@ -415,7 +415,7 @@ const ProfileManagement: React.FC = () => {
                 className="hidden"
               />
               <div className="relative inline-block">
-                <div className="h-24 w-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden relative">
+                <div className="h-24 w-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden relative">
                   {profile.avatar_url ? (
                     <img
                       src={profile.avatar_url}
@@ -467,7 +467,7 @@ const ProfileManagement: React.FC = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`w-full flex items-center px-4 py-3 rounded-lg text-left transition-colors ${
                     activeTab === tab.id
-                      ? 'bg-green-50 text-green-600 border border-green-200'
+                      ? 'bg-blue-50 text-blue-600 border border-blue-200'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
@@ -500,7 +500,7 @@ const ProfileManagement: React.FC = () => {
                         name="firstName"
                         type="text"
                         defaultValue={profile.first_name}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
                       />
                     </div>
@@ -513,7 +513,7 @@ const ProfileManagement: React.FC = () => {
                         name="lastName"
                         type="text"
                         defaultValue={profile.last_name}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
                       />
                     </div>
@@ -529,7 +529,7 @@ const ProfileManagement: React.FC = () => {
                         name="email"
                         type="email"
                         defaultValue={profile.email}
-                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         required
                       />
                     </div>
@@ -548,7 +548,7 @@ const ProfileManagement: React.FC = () => {
                         name="phone"
                         type="tel"
                         defaultValue={profile.phone || ''}
-                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="(555) 123-4567"
                       />
                     </div>
@@ -564,7 +564,7 @@ const ProfileManagement: React.FC = () => {
                         name="dateOfBirth"
                         type="date"
                         defaultValue={profile.date_of_birth || ''}
-                        className="w-full max-w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 appearance-none"
+                        className="w-full max-w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       />
                     </div>
                   </div>
@@ -573,7 +573,7 @@ const ProfileManagement: React.FC = () => {
                     <button
                       type="submit"
                       disabled={saving}
-                      className="flex items-center px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex items-center px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {saving ? (
                         <>
@@ -633,7 +633,7 @@ const ProfileManagement: React.FC = () => {
                               type={showPasswords.current ? 'text' : 'password'}
                               value={passwordForm.currentPassword}
                               onChange={(e) => setPasswordForm(prev => ({ ...prev, currentPassword: e.target.value }))}
-                              className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                              className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                               placeholder="Enter current password"
                               required
                             />
@@ -660,7 +660,7 @@ const ProfileManagement: React.FC = () => {
                               type={showPasswords.new ? 'text' : 'password'}
                               value={passwordForm.newPassword}
                               onChange={(e) => setPasswordForm(prev => ({ ...prev, newPassword: e.target.value }))}
-                              className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                              className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                               placeholder="Enter new password"
                               required
                             />
@@ -690,7 +690,7 @@ const ProfileManagement: React.FC = () => {
                               type={showPasswords.confirm ? 'text' : 'password'}
                               value={passwordForm.confirmPassword}
                               onChange={(e) => setPasswordForm(prev => ({ ...prev, confirmPassword: e.target.value }))}
-                              className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                              className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                               placeholder="Confirm new password"
                               required
                             />
@@ -712,7 +712,7 @@ const ProfileManagement: React.FC = () => {
                           <button
                             type="submit"
                             disabled={saving}
-                            className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             {saving ? (
                               <>
@@ -807,8 +807,8 @@ const ProfileManagement: React.FC = () => {
                             role="switch"
                             aria-checked={notificationPrefs[setting.key]}
                             onClick={() => handleNotificationToggle(setting.key)}
-                            className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
-                              notificationPrefs[setting.key] ? 'bg-green-500' : 'bg-gray-200'
+                            className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                              notificationPrefs[setting.key] ? 'bg-blue-500' : 'bg-gray-200'
                             }`}
                           >
                             <span
@@ -828,7 +828,7 @@ const ProfileManagement: React.FC = () => {
                       type="button"
                       onClick={handleSaveNotificationPrefs}
                       disabled={savingPrefs}
-                      className="flex items-center px-6 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex items-center px-6 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {savingPrefs ? (
                         <>
@@ -917,7 +917,7 @@ const ProfileManagement: React.FC = () => {
               </p>
               <a
                 href="mailto:brian@bowtaifitness.com"
-                className="w-full flex items-center justify-center px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors touch-manipulation"
+                className="w-full flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors touch-manipulation"
               >
                 <Mail className="h-4 w-4 mr-2" />
                 Email Us

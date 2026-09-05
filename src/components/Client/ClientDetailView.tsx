@@ -437,8 +437,8 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
                 </div>
                 
                 <div className="text-center">
-                  <div className="bg-green-100 rounded-full p-3 w-12 h-12 mx-auto mb-2">
-                    <CheckCircle className="h-6 w-6 text-green-600" />
+                  <div className="bg-blue-100 rounded-full p-3 w-12 h-12 mx-auto mb-2">
+                    <CheckCircle className="h-6 w-6 text-blue-600" />
                   </div>
                   <p className="text-2xl font-bold text-gray-900">
                     {userType === 'trainers' ? clientData?.assignedClientsCount || 0 : clientData?.completedWorkouts || 0}
@@ -469,7 +469,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
                   <h3 className="text-lg font-semibold text-gray-900">Client Intake Summary</h3>
                   <button
                     onClick={() => setActiveTab('intake')}
-                    className="text-sm text-green-600 hover:text-green-700 font-medium"
+                    className="text-sm text-blue-600 hover:text-blue-700 font-medium"
                   >
                     View Full Form
                   </button>
@@ -643,7 +643,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
                     {performanceData.map((metric) => (
                       <div key={metric.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                         <div className="flex items-center space-x-3">
-                          <div className="bg-green-500 rounded-lg p-2">
+                          <div className="bg-blue-500 rounded-lg p-2">
                             <BarChart3 className="h-5 w-5 text-white" />
                           </div>
                           <div>
@@ -767,7 +767,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
                         <div className="flex items-center space-x-3">
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                             video.feedback 
-                              ? 'bg-green-100 text-green-700' 
+                              ? 'bg-blue-100 text-blue-700' 
                               : 'bg-orange-100 text-orange-700'
                           }`}>
                             {video.feedback ? 'Analyzed' : 'Pending'}
@@ -999,7 +999,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
           </p>
           <button
             onClick={onBack}
-            className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back
@@ -1037,7 +1037,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center space-x-4 sm:space-x-6">
-            <div className="h-16 w-16 sm:h-20 sm:w-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="h-16 w-16 sm:h-20 sm:w-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-white font-bold text-xl sm:text-2xl">
                 {clientData.first_name?.[0]}{clientData.last_name?.[0]}
               </span>
@@ -1089,7 +1089,7 @@ const ClientDetailView: React.FC<ClientDetailProps> = ({
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-1.5 py-3 px-3 border-b-2 font-medium text-sm transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'border-green-500 text-green-600'
+                      ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >

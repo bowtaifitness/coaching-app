@@ -47,7 +47,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
   const { hasAccess, isTrialExpired, daysRemaining, trialEndsAt, loading: trialLoading } = useTrialStatus(user);
   const [coachError, setCoachError] = useState<string | null>(null);
   const [stats, setStats] = useState([
-    { title: 'Workouts This Week', value: '0/0', icon: CheckCircle, color: 'bg-green-500', description: 'Loading...', trend: null },
+    { title: 'Workouts This Week', value: '0/0', icon: CheckCircle, color: 'bg-blue-500', description: 'Loading...', trend: null },
     { title: 'Workouts Completed', value: '0', icon: TrendingUp, color: 'bg-blue-500', description: 'Loading...', trend: null },
     { title: 'Performance Trend', value: '0%', icon: Target, color: 'bg-purple-500', description: 'Loading...', trend: null },
     { title: 'Next Workout', value: 'None', icon: Clock, color: 'bg-orange-500', description: 'Loading...', trend: null }
@@ -208,7 +208,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
           title: 'Workouts This Week',
           value: `${completedWorkouts}/${totalWorkouts}`,
           icon: CheckCircle,
-          color: 'bg-green-500',
+          color: 'bg-blue-500',
           description: totalWorkouts > completedWorkouts ? `${totalWorkouts - completedWorkouts} remaining` : 'All completed!',
           trend: totalWorkouts > 0 ? Math.round((completedWorkouts / totalWorkouts) * 100) : 0
         },
@@ -535,7 +535,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
 
   const getTrendColor = (trend: string) => {
     switch (trend) {
-      case 'up': return 'text-green-600';
+      case 'up': return 'text-blue-600';
       case 'down': return 'text-red-600';
       default: return 'text-gray-600';
     }
@@ -578,7 +578,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">My Dashboard</h1>
           <button
             onClick={openTutorial}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 hover:text-green-800 hover:bg-green-50 rounded-lg px-3 py-2 transition-colors touch-manipulation"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-700 hover:text-blue-800 hover:bg-blue-50 rounded-lg px-3 py-2 transition-colors touch-manipulation"
           >
             <HelpCircle className="h-4 w-4" />
             How it Works
@@ -595,7 +595,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
               <h3 className="text-base sm:text-lg font-semibold text-gray-900">Current Week's Workouts</h3>
               <button
                 onClick={() => onNavigate?.('workouts')}
-                className="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center px-2"
+                className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center px-2"
               >
                 View All
               </button>
@@ -620,8 +620,8 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
                     onClick={() => onNavigate?.('workouts', workout.id)}
                     className={`p-3 sm:p-4 rounded-lg border-2 transition-all hover:shadow-md touch-manipulation cursor-pointer ${
                       workout.completed
-                        ? 'border-green-200 bg-green-50 hover:bg-green-100'
-                        : 'border-gray-200 bg-white hover:border-green-300 hover:bg-green-50'
+                        ? 'border-blue-200 bg-blue-50 hover:bg-blue-100'
+                        : 'border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50'
                     }`}
                   >
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
@@ -629,7 +629,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-xs font-medium text-gray-500">Day {dayNum}</span>
                           {workout.completed && (
-                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                            <CheckCircle className="h-4 w-4 text-blue-500 flex-shrink-0" />
                           )}
                         </div>
                         <h4 className="font-medium text-gray-900 text-sm sm:text-base mb-1">{workout.title}</h4>
@@ -645,7 +645,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
                         </div>
                       </div>
                       {!workout.completed && (
-                        <div className="w-full sm:w-auto px-4 py-2 bg-green-500 text-white rounded-lg flex items-center justify-center text-sm pointer-events-none">
+                        <div className="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-lg flex items-center justify-center text-sm pointer-events-none">
                           <Play className="h-4 w-4 mr-1" />
                           {workout.isStarted ? 'Resume' : 'Start'}
                         </div>
@@ -692,7 +692,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
               <h3 className="text-base sm:text-lg font-semibold text-gray-900">Recent Performance</h3>
               <button
                 onClick={() => onNavigate?.('performance')}
-                className="text-green-600 hover:text-green-700 text-xs sm:text-sm font-medium touch-manipulation"
+                className="text-blue-600 hover:text-blue-700 text-xs sm:text-sm font-medium touch-manipulation"
               >
                 View All
               </button>
@@ -710,7 +710,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
                     </p>
                   </div>
                   <div className={`flex items-center space-x-1 px-2 py-1 rounded text-xs font-medium ${
-                    metric.trend === 'up' ? 'bg-green-100 text-green-700' : 
+                    metric.trend === 'up' ? 'bg-blue-100 text-blue-700' : 
                     metric.trend === 'down' ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-700'
                   }`}>
                     <span>{getTrendIcon(metric.trend)}</span>
@@ -724,7 +724,7 @@ const ClientDashboard: React.FC<ClientDashboardProps> = ({ onNavigate, onIntakeC
                   <p className="text-sm text-gray-400">Start tracking your metrics to see progress</p>
                   <button 
                     onClick={() => onNavigate?.('performance')}
-                    className="mt-3 inline-flex items-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm touch-manipulation"
+                    className="mt-3 inline-flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm touch-manipulation"
                   >
                     <Plus className="h-4 w-4 mr-1" />
                     Add Data

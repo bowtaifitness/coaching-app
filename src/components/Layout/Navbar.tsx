@@ -28,9 +28,9 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle, onNavigate }) => {
               title="Go to Dashboard"
             >
               <img
-                src="/icon.png"
+                src="/logo.jpg"
                 alt="Bowtai Fitness"
-                className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+                className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
               />
               <span className="ml-2 text-base sm:text-xl font-bold text-gray-900">
                 Bowtai Fitness
@@ -44,8 +44,8 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle, onNavigate }) => {
               className="flex items-center space-x-2 hover:bg-gray-50 rounded-lg p-2 transition-colors touch-manipulation"
               title="Profile"
             >
-              <div className="h-8 w-8 bg-green-100 rounded-full flex items-center justify-center">
-                <User className="h-4 w-4 text-green-600" />
+              <div className="h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <User className="h-4 w-4 text-blue-600" />
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-medium text-gray-900">
@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle, onNavigate }) => {
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => onNavigate?.('profile')}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center text-gray-600 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors touch-manipulation"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors touch-manipulation"
               title="Profile"
             >
               <User className="h-5 w-5" />

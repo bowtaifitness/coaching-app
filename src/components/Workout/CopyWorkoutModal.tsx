@@ -235,7 +235,7 @@ const CopyWorkoutModal: React.FC<CopyWorkoutModalProps> = ({
               type="date"
               value={targetDate}
               onChange={(e) => setTargetDate(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -249,7 +249,7 @@ const CopyWorkoutModal: React.FC<CopyWorkoutModalProps> = ({
               {filteredClients.length > 0 && (
                 <button
                   onClick={handleSelectAll}
-                  className="text-xs text-green-600 hover:text-green-700 font-medium"
+                  className="text-xs text-blue-600 hover:text-blue-700 font-medium"
                 >
                   {selectedClients.length === filteredClients.length ? 'Deselect All' : 'Select All'}
                 </button>
@@ -264,13 +264,13 @@ const CopyWorkoutModal: React.FC<CopyWorkoutModalProps> = ({
                 placeholder="Search clients..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+                className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
               />
             </div>
 
             {loading ? (
               <div className="text-center py-8">
-                <Loader className="h-6 w-6 text-green-500 animate-spin mx-auto mb-2" />
+                <Loader className="h-6 w-6 text-blue-500 animate-spin mx-auto mb-2" />
                 <p className="text-sm text-gray-600">Loading clients...</p>
               </div>
             ) : filteredClients.length > 0 ? (
@@ -284,10 +284,10 @@ const CopyWorkoutModal: React.FC<CopyWorkoutModalProps> = ({
                       type="checkbox"
                       checked={selectedClients.includes(client.id)}
                       onChange={() => handleToggleClient(client.id)}
-                      className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                     />
                     <div className="ml-3 flex items-center space-x-3">
-                      <div className="h-8 w-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="h-8 w-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                         <span className="text-white font-semibold text-sm">
                           {client.first_name[0]}{client.last_name[0]}
                         </span>
@@ -315,7 +315,7 @@ const CopyWorkoutModal: React.FC<CopyWorkoutModalProps> = ({
             <button
               onClick={handleCopy}
               disabled={copying || selectedClients.length === 0}
-              className="flex-1 flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 rounded-lg hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {copying ? (
                 <>

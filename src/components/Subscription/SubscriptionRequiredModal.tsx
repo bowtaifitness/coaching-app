@@ -186,7 +186,7 @@ const SubscriptionRequiredModal: React.FC<SubscriptionRequiredModalProps> = ({
                       onClick={() => setSelectedProductId(product.identifier)}
                       className={`w-full text-left p-4 rounded-xl border-2 transition-all ${
                         isSelected
-                          ? 'border-green-500 bg-green-50 ring-1 ring-green-200'
+                          ? 'border-blue-500 bg-blue-50 ring-1 ring-blue-200'
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                     >
@@ -196,13 +196,13 @@ const SubscriptionRequiredModal: React.FC<SubscriptionRequiredModalProps> = ({
                           <span className="ml-2 text-gray-600">{priceDisplay}/{interval === 'year' ? 'yr' : 'mo'}</span>
                         </div>
                         <div className={`h-5 w-5 rounded-full border-2 flex items-center justify-center ${
-                          isSelected ? 'border-green-500 bg-green-500' : 'border-gray-300'
+                          isSelected ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
                         }`}>
                           {isSelected && <CheckCircle className="h-3.5 w-3.5 text-white" />}
                         </div>
                       </div>
                       {isAnnual && (
-                        <span className="inline-block mt-1 text-xs font-semibold text-green-700">Save over $39/year</span>
+                        <span className="inline-block mt-1 text-xs font-semibold text-blue-700">Save over $39/year</span>
                       )}
                     </button>
                   );
@@ -212,7 +212,7 @@ const SubscriptionRequiredModal: React.FC<SubscriptionRequiredModalProps> = ({
                   <p className="text-sm text-red-600 mb-2">{appleProductsError}</p>
                   <button
                     onClick={loadAppleProducts}
-                    className="inline-flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+                    className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
                   >
                     <RefreshCw className="h-4 w-4" />
                     <span>Retry</span>
@@ -236,7 +236,7 @@ const SubscriptionRequiredModal: React.FC<SubscriptionRequiredModalProps> = ({
               ) : (
                 <button
                   onClick={loadAppleProducts}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center space-x-2"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center space-x-2"
                 >
                   <RefreshCw className="h-4 w-4" />
                   <span>Load Subscription Options</span>
@@ -254,7 +254,7 @@ const SubscriptionRequiredModal: React.FC<SubscriptionRequiredModalProps> = ({
           ) : (
             <button
               onClick={onSubscribe}
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
             >
               <CreditCard className="h-5 w-5" />
               <span>View Membership Options</span>
@@ -275,7 +275,7 @@ const SubscriptionRequiredModal: React.FC<SubscriptionRequiredModalProps> = ({
             <button
               onClick={() => handleApplePurchase(selectedProductId)}
               disabled={purchasingProductId !== null}
-              className="w-full py-3.5 px-6 rounded-xl font-bold text-base bg-green-600 text-white hover:bg-green-700 active:bg-green-800 transition-colors flex items-center justify-center space-x-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3.5 px-6 rounded-xl font-bold text-base bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 transition-colors flex items-center justify-center space-x-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {purchasingProductId === selectedProductId ? (
                 <>

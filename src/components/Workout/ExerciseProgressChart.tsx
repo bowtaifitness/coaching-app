@@ -149,7 +149,7 @@ const ExerciseProgressChart: React.FC<ExerciseProgressChartProps> = ({
       {/* Weight Chart */}
       <div className="bg-white rounded-xl border border-gray-200 p-4">
         <div className="flex items-center gap-2 mb-3">
-          <TrendingUp className="h-4 w-4 text-green-600" />
+          <TrendingUp className="h-4 w-4 text-blue-600" />
           <h4 className="text-sm font-semibold text-gray-700">Weight Progress</h4>
         </div>
         <div className="h-56 sm:h-64">

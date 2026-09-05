@@ -274,7 +274,7 @@ const PromotionsManagement: React.FC = () => {
               <div
                 key={promotion.id}
                 className={`bg-white rounded-lg shadow-lg border-2 ${
-                  active ? 'border-green-500' : 'border-gray-200'
+                  active ? 'border-blue-500' : 'border-gray-200'
                 }`}
               >
                 <div className="p-6">
@@ -283,7 +283,7 @@ const PromotionsManagement: React.FC = () => {
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="text-xl font-bold text-gray-900">{promotion.name}</h3>
                         {active ? (
-                          <span className="flex items-center px-2 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded">
+                          <span className="flex items-center px-2 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded">
                             <CheckCircle className="h-3 w-3 mr-1" />
                             ACTIVE NOW
                           </span>
@@ -306,7 +306,7 @@ const PromotionsManagement: React.FC = () => {
                         onClick={() => toggleActive(promotion)}
                         className={`p-2 rounded-lg transition-colors ${
                           promotion.is_active
-                            ? 'bg-green-100 text-green-600 hover:bg-green-200'
+                            ? 'bg-blue-100 text-blue-600 hover:bg-blue-200'
                             : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                         }`}
                         title={promotion.is_active ? 'Disable' : 'Enable'}

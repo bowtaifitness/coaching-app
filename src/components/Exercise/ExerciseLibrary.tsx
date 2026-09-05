@@ -47,19 +47,19 @@ const EQUIPMENT_BADGE_COLORS: Record<string, string> = {
   dumbbell: 'bg-blue-50 text-blue-700 border-blue-200',
   kettlebell: 'bg-amber-50 text-amber-700 border-amber-200',
   cable: 'bg-cyan-50 text-cyan-700 border-cyan-200',
-  bands: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  bands: 'bg-blue-50 text-blue-700 border-blue-200',
   bodyweight: 'bg-gray-50 text-gray-700 border-gray-200',
   machine: 'bg-zinc-100 text-zinc-700 border-zinc-200',
   med_ball: 'bg-orange-50 text-orange-700 border-orange-200',
-  trx: 'bg-teal-50 text-teal-700 border-teal-200',
+  trx: 'bg-blue-50 text-blue-700 border-blue-200',
 };
 
 const TAG_COLORS: Record<string, string> = {
   upper_body: 'bg-blue-50 text-blue-700 border-blue-200',
-  lower_body: 'bg-green-50 text-green-700 border-green-200',
+  lower_body: 'bg-blue-50 text-blue-700 border-blue-200',
   full_body: 'bg-purple-50 text-purple-700 border-purple-200',
   core: 'bg-amber-50 text-amber-700 border-amber-200',
-  mobility: 'bg-teal-50 text-teal-700 border-teal-200',
+  mobility: 'bg-blue-50 text-blue-700 border-blue-200',
   power: 'bg-red-50 text-red-700 border-red-200',
   endurance: 'bg-orange-50 text-orange-700 border-orange-200',
   rehabilitation: 'bg-rose-50 text-rose-700 border-rose-200',
@@ -666,12 +666,12 @@ const ExerciseLibrary: React.FC = () => {
         <div className="p-6">
           {analyzingDuplicates ? (
             <div className="text-center py-8">
-              <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+              <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
               <p className="text-gray-600">Analyzing exercises for duplicates...</p>
             </div>
           ) : duplicateGroups.length === 0 ? (
             <div className="text-center py-12">
-              <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
+              <CheckCircle className="h-12 w-12 text-blue-500 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-2">No Duplicates Found</h3>
               <p className="text-gray-600">Your exercise library looks clean! No potential duplicates were detected.</p>
             </div>
@@ -714,7 +714,7 @@ const ExerciseLibrary: React.FC = () => {
                         key={exercise.id} 
                         className={`bg-white rounded-lg p-4 border-2 transition-all ${
                           exerciseIndex === 0 
-                            ? 'border-green-500 ring-2 ring-green-200' 
+                            ? 'border-blue-500 ring-2 ring-blue-200' 
                             : 'border-gray-200 hover:border-red-300'
                         }`}
                       >
@@ -723,14 +723,14 @@ const ExerciseLibrary: React.FC = () => {
                             <div className="flex items-center space-x-2 mb-2">
                               <h5 className="font-medium text-gray-900">{exercise.name}</h5>
                               {exerciseIndex === 0 && (
-                                <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                                <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
                                   Primary
                                 </span>
                               )}
                             </div>
                             <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium capitalize ${
                               exercise.category === 'strength' ? 'bg-blue-100 text-blue-700' :
-                              exercise.category === 'mobility' ? 'bg-green-100 text-green-700' :
+                              exercise.category === 'mobility' ? 'bg-blue-100 text-blue-700' :
                               exercise.category === 'power' ? 'bg-red-100 text-red-700' :
                               exercise.category === 'stability' ? 'bg-purple-100 text-purple-700' :
                               'bg-orange-100 text-orange-700'
@@ -782,8 +782,8 @@ const ExerciseLibrary: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="mt-4 bg-green-50 border border-green-200 rounded-lg p-3">
-                    <p className="text-green-800 text-sm">
+                  <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-3">
+                    <p className="text-blue-800 text-sm">
                       <strong>Primary Exercise:</strong> This exercise will be kept when merging duplicates. 
                       You can edit it before merging to combine the best aspects of all duplicates.
                     </p>
@@ -848,7 +848,7 @@ const ExerciseLibrary: React.FC = () => {
                 name="name"
                 type="text"
                 defaultValue={editingExercise?.name || ''}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="e.g., Push-ups"
                 required
               />
@@ -859,7 +859,7 @@ const ExerciseLibrary: React.FC = () => {
               <select
                 name="category"
                 defaultValue={editingExercise?.category || 'strength'}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               >
                 <option value="strength">Strength</option>
@@ -875,7 +875,7 @@ const ExerciseLibrary: React.FC = () => {
               <textarea
                 name="description"
                 defaultValue={editingExercise?.description || ''}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 rows={3}
                 placeholder="Describe the exercise and its benefits..."
                 required
@@ -887,7 +887,7 @@ const ExerciseLibrary: React.FC = () => {
               <textarea
                 name="instructions"
                 defaultValue={editingExercise?.instructions?.join('\n') || ''}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 rows={4}
                 placeholder="Step 1: Starting position&#10;Step 2: Movement execution&#10;Step 3: Return to start"
               />
@@ -900,7 +900,7 @@ const ExerciseLibrary: React.FC = () => {
                 name="video_url"
                 type="url"
                 defaultValue={editingExercise?.video_url || ''}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="https://youtube.com/watch?v=..."
               />
             </div>
@@ -920,7 +920,7 @@ const ExerciseLibrary: React.FC = () => {
                       )}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                         formPhysicalTraits.includes(opt)
-                          ? 'bg-emerald-600 text-white border-emerald-600'
+                          ? 'bg-blue-600 text-white border-blue-600'
                           : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
                       }`}
                     >
@@ -942,7 +942,7 @@ const ExerciseLibrary: React.FC = () => {
                       )}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                         formEquipment.includes(opt)
-                          ? 'bg-emerald-600 text-white border-emerald-600'
+                          ? 'bg-blue-600 text-white border-blue-600'
                           : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
                       }`}
                     >
@@ -965,7 +965,7 @@ const ExerciseLibrary: React.FC = () => {
                       )}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                         formBodyRegions.includes(opt)
-                          ? 'bg-emerald-600 text-white border-emerald-600'
+                          ? 'bg-blue-600 text-white border-blue-600'
                           : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
                       }`}
                     >
@@ -987,7 +987,7 @@ const ExerciseLibrary: React.FC = () => {
                       )}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                         formMovementPatterns.includes(opt)
-                          ? 'bg-emerald-600 text-white border-emerald-600'
+                          ? 'bg-blue-600 text-white border-blue-600'
                           : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
                       }`}
                     >
@@ -1009,7 +1009,7 @@ const ExerciseLibrary: React.FC = () => {
                       )}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                         formTags.includes(opt)
-                          ? 'bg-green-600 text-white border-green-600'
+                          ? 'bg-blue-600 text-white border-blue-600'
                           : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
                       }`}
                     >
@@ -1025,7 +1025,7 @@ const ExerciseLibrary: React.FC = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting ? (
                 <>
@@ -1069,7 +1069,7 @@ const ExerciseLibrary: React.FC = () => {
             <label className="block text-sm font-medium text-gray-700 mb-1">Change Category</label>
             <select
               id="bulk-category"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">Keep current category</option>
               <option value="strength">Strength</option>
@@ -1085,7 +1085,7 @@ const ExerciseLibrary: React.FC = () => {
             <textarea
               id="bulk-description"
               placeholder="Enter new description for all selected exercises (leave blank to keep current)"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               rows={3}
             />
           </div>
@@ -1095,7 +1095,7 @@ const ExerciseLibrary: React.FC = () => {
             <textarea
               id="bulk-instructions"
               placeholder="Enter new instructions (one per line) for all selected exercises (leave blank to keep current)"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               rows={4}
             />
             <p className="text-xs text-gray-500">Enter each instruction on a new line</p>
@@ -1107,7 +1107,7 @@ const ExerciseLibrary: React.FC = () => {
               id="bulk-video-url"
               type="url"
               placeholder="https://youtube.com/watch?v=... (leave blank to keep current)"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
 
@@ -1145,7 +1145,7 @@ const ExerciseLibrary: React.FC = () => {
                   alert('Please make at least one change before saving.');
                 }
               }}
-              className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
             >
               <Save className="h-4 w-4 mr-2 inline" />
               Save Changes
@@ -1195,7 +1195,7 @@ const ExerciseLibrary: React.FC = () => {
       </div>
 
       {ytResult && (
-        <div className={`mb-4 p-4 rounded-lg border ${ytResult.error ? 'bg-red-50 border-red-200 text-red-800' : 'bg-green-50 border-green-200 text-green-800'}`}>
+        <div className={`mb-4 p-4 rounded-lg border ${ytResult.error ? 'bg-red-50 border-red-200 text-red-800' : 'bg-blue-50 border-blue-200 text-blue-800'}`}>
           {ytResult.error ? (
             <div className="text-sm font-medium">YouTube sync failed: {ytResult.error}</div>
           ) : (
@@ -1249,7 +1249,7 @@ const ExerciseLibrary: React.FC = () => {
           )}
           <button
             onClick={() => setShowAddModal(true)}
-            className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors shadow-sm"
+            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors shadow-sm"
           >
             <Plus className="h-5 w-5 mr-2" />
             Add Exercise
@@ -1267,7 +1267,7 @@ const ExerciseLibrary: React.FC = () => {
               placeholder="Search exercises..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           
@@ -1288,7 +1288,7 @@ const ExerciseLibrary: React.FC = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 {categoryStats.map((category) => (
                   <option key={category.id} value={category.id}>
@@ -1302,7 +1302,7 @@ const ExerciseLibrary: React.FC = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="name-asc">Name (A-Z)</option>
                 <option value="name-desc">Name (Z-A)</option>
@@ -1319,7 +1319,7 @@ const ExerciseLibrary: React.FC = () => {
                 onClick={() => setViewMode('grid')}
                 className={`flex items-center px-3 py-2 rounded-md transition-colors ${
                   viewMode === 'grid'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -1330,7 +1330,7 @@ const ExerciseLibrary: React.FC = () => {
                 onClick={() => setViewMode('list')}
                 className={`flex items-center px-3 py-2 rounded-md transition-colors ${
                   viewMode === 'list'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -1349,7 +1349,7 @@ const ExerciseLibrary: React.FC = () => {
                 type="checkbox"
                 checked={selectedExercises.size === filteredExercises.length && filteredExercises.length > 0}
                 onChange={handleSelectAll}
-                className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded mr-2"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-2"
               />
               <span className="text-sm text-gray-700">
                 Select All ({filteredExercises.length} exercises)
@@ -1371,7 +1371,7 @@ const ExerciseLibrary: React.FC = () => {
               key={exercise.id}
               className={`bg-white rounded-xl shadow-sm border transition-all hover:shadow-md ${
                 selectedExercises.has(exercise.id)
-                  ? 'border-green-500 ring-2 ring-green-200 bg-green-50'
+                  ? 'border-blue-500 ring-2 ring-blue-200 bg-blue-50'
                   : 'border-gray-100'
               }`}
             >
@@ -1382,13 +1382,13 @@ const ExerciseLibrary: React.FC = () => {
                       type="checkbox"
                       checked={selectedExercises.has(exercise.id)}
                       onChange={() => handleExerciseSelect(exercise.id)}
-                      className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded mt-1"
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
                     />
                     <div className="flex-1">
                       <h3 className="font-semibold text-gray-900 mb-2">{exercise.name}</h3>
                       <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium capitalize ${
                         exercise.category === 'strength' ? 'bg-blue-100 text-blue-700' :
-                        exercise.category === 'mobility' ? 'bg-green-100 text-green-700' :
+                        exercise.category === 'mobility' ? 'bg-blue-100 text-blue-700' :
                         exercise.category === 'power' ? 'bg-red-100 text-red-700' :
                         exercise.category === 'stability' ? 'bg-purple-100 text-purple-700' :
                         'bg-orange-100 text-orange-700'
@@ -1504,7 +1504,7 @@ const ExerciseLibrary: React.FC = () => {
               key={exercise.id}
               className={`bg-white rounded-lg shadow-sm border transition-all hover:shadow-md ${
                 selectedExercises.has(exercise.id)
-                  ? 'border-green-500 ring-2 ring-green-200 bg-green-50'
+                  ? 'border-blue-500 ring-2 ring-blue-200 bg-blue-50'
                   : 'border-gray-100'
               }`}
             >
@@ -1514,7 +1514,7 @@ const ExerciseLibrary: React.FC = () => {
                     type="checkbox"
                     checked={selectedExercises.has(exercise.id)}
                     onChange={() => handleExerciseSelect(exercise.id)}
-                    className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                   />
 
                   {/* Video Thumbnail - Small */}
@@ -1535,7 +1535,7 @@ const ExerciseLibrary: React.FC = () => {
                       <h3 className="font-semibold text-gray-900 truncate">{exercise.name}</h3>
                       <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium capitalize flex-shrink-0 ${
                         exercise.category === 'strength' ? 'bg-blue-100 text-blue-700' :
-                        exercise.category === 'mobility' ? 'bg-green-100 text-green-700' :
+                        exercise.category === 'mobility' ? 'bg-blue-100 text-blue-700' :
                         exercise.category === 'power' ? 'bg-red-100 text-red-700' :
                         exercise.category === 'stability' ? 'bg-purple-100 text-purple-700' :
                         'bg-orange-100 text-orange-700'
@@ -1641,7 +1641,7 @@ const ExerciseLibrary: React.FC = () => {
           {(!searchTerm && selectedCategory === 'all') && (
             <button
               onClick={() => setShowAddModal(true)}
-              className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+              className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
             >
               <Plus className="h-5 w-5 mr-2" />
               Add Your First Exercise

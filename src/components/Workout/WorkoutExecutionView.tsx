@@ -783,7 +783,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
       <div className="p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading workout...</p>
           </div>
         </div>
@@ -826,7 +826,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
               void autoSaveOnExit();
               onBack();
             }}
-            className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Workouts
@@ -874,7 +874,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
             </p>
           </div>
           <div className="flex items-center sm:flex-col sm:text-right gap-2 sm:gap-0">
-            <div className="text-xl sm:text-2xl font-bold text-green-600">{getCompletionPercentage()}%</div>
+            <div className="text-xl sm:text-2xl font-bold text-blue-600">{getCompletionPercentage()}%</div>
             <div className="text-sm text-gray-600">Complete</div>
           </div>
         </div>
@@ -882,7 +882,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
         {/* Progress Bar */}
         <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
           <div
-            className="bg-green-500 h-3 rounded-full transition-all duration-300"
+            className="bg-blue-500 h-3 rounded-full transition-all duration-300"
             style={{ width: `${getCompletionPercentage()}%` }}
           ></div>
         </div>
@@ -911,7 +911,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                       {meta && (
                         <div className="flex items-baseline justify-between mb-2 pb-1.5 border-b border-gray-100">
                           <div className="flex items-baseline gap-2 min-w-0">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-teal-600 shrink-0">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 shrink-0">
                               {meta.label}
                             </span>
                             <span className="text-sm font-semibold text-gray-900 truncate">
@@ -933,24 +933,24 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                               onClick={() => setCurrentExerciseIndex(index)}
                               className={`flex items-center justify-between p-2 rounded-lg transition-all cursor-pointer ${
                                 isCurrent
-                                  ? 'bg-green-50 border-2 border-green-500'
+                                  ? 'bg-blue-50 border-2 border-blue-500'
                                   : isCompleted
                                   ? 'bg-gray-50 border border-gray-200 hover:bg-gray-100'
-                                  : 'border border-gray-200 hover:border-green-300 hover:bg-green-50'
+                                  : 'border border-gray-200 hover:border-blue-300 hover:bg-blue-50'
                               }`}
                             >
                               <div className="flex items-center space-x-2 min-w-0">
                                 <div className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold shrink-0 ${
                                   isCompleted
-                                    ? 'bg-green-500 text-white'
+                                    ? 'bg-blue-500 text-white'
                                     : isCurrent
-                                    ? 'bg-green-500 text-white'
+                                    ? 'bg-blue-500 text-white'
                                     : 'bg-gray-200 text-gray-600'
                                 }`}>
                                   {isCompleted ? <CheckCircle className="h-3 w-3" /> : index + 1}
                                 </div>
                                 <div className="min-w-0">
-                                  <p className={`text-sm font-medium ${isCurrent ? 'text-green-900' : 'text-gray-900'} truncate`}>
+                                  <p className={`text-sm font-medium ${isCurrent ? 'text-blue-900' : 'text-gray-900'} truncate`}>
                                     {ex.exercise.name}
                                   </p>
                                   {swingFaultTips[ex.id] && (
@@ -961,7 +961,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                                 </div>
                               </div>
                               {isCurrent && (
-                                <div className="text-xs font-medium text-green-600 shrink-0">Current</div>
+                                <div className="text-xs font-medium text-blue-600 shrink-0">Current</div>
                               )}
                             </div>
                           );
@@ -977,10 +977,10 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
 
         {/* Success/Error Messages */}
         {success && (
-          <div className="mb-4 bg-green-50 border border-green-200 rounded-lg p-4">
+          <div className="mb-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
             <div className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-              <p className="text-green-800">{success}</p>
+              <CheckCircle className="h-5 w-5 text-blue-600 mr-2" />
+              <p className="text-blue-800">{success}</p>
             </div>
           </div>
         )}
@@ -1006,7 +1006,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{currentExercise.exercise.name}</h2>
                     <button
                       onClick={() => setShowLastSession(!showLastSession)}
-                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg transition-colors text-xs font-semibold ${showLastSession ? 'bg-green-100 text-green-800 border-green-300' : 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'}`}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg transition-colors text-xs font-semibold ${showLastSession ? 'bg-blue-100 text-blue-800 border-blue-300' : 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100'}`}
                       title="View exercise history and progress"
                     >
                       <History className="h-4 w-4" />
@@ -1020,7 +1020,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                     Exercise {currentExerciseIndex + 1} of {workout.workout_exercises.length}
                   </div>
                   {currentProgress.completed && (
-                    <div className="flex items-center text-green-600">
+                    <div className="flex items-center text-blue-600">
                       <CheckCircle className="h-4 w-4 mr-1" />
                       <span className="text-xs sm:text-sm font-medium">Completed</span>
                     </div>
@@ -1036,10 +1036,10 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                     Loading previous session...
                   </div>
                 ) : lastSession ? (
-                  <div className="mb-4 sm:mb-6 px-4 py-3 bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg">
+                  <div className="mb-4 sm:mb-6 px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-200 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4 text-green-700" />
+                        <TrendingUp className="h-4 w-4 text-blue-700" />
                         <p className="text-xs sm:text-sm font-semibold text-gray-900">Last Session</p>
                       </div>
                       <div className="flex items-center gap-2">
@@ -1052,22 +1052,22 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                         </p>
                         <button
                           onClick={() => setShowHistoryModal(true)}
-                          className="text-[11px] text-green-700 font-medium hover:underline"
+                          className="text-[11px] text-blue-700 font-medium hover:underline"
                         >
                           View All
                         </button>
                       </div>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
-                      <div className="bg-white rounded p-2 text-center border border-green-100">
+                      <div className="bg-white rounded p-2 text-center border border-blue-100">
                         <p className="text-[10px] text-gray-500 uppercase tracking-wide">Sets</p>
                         <p className="text-base font-bold text-gray-900">{lastSession.sets || '—'}</p>
                       </div>
-                      <div className="bg-white rounded p-2 text-center border border-green-100">
+                      <div className="bg-white rounded p-2 text-center border border-blue-100">
                         <p className="text-[10px] text-gray-500 uppercase tracking-wide">Reps</p>
                         <p className="text-base font-bold text-gray-900">{lastSession.reps || '—'}</p>
                       </div>
-                      <div className="bg-white rounded p-2 text-center border border-green-100">
+                      <div className="bg-white rounded p-2 text-center border border-blue-100">
                         <p className="text-[10px] text-gray-500 uppercase tracking-wide">Weight</p>
                         <p className="text-base font-bold text-gray-900">{lastSession.weight ? `${lastSession.weight} lb` : '—'}</p>
                       </div>
@@ -1222,7 +1222,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                                       updateSetProgress(currentExercise.id, index, 'reps', isNaN(value) ? null : value);
                                     }
                                   }}
-                                  className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+                                  className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                                   min="0"
                                   placeholder={`${currentExercise.duration || 0}`}
                                 />
@@ -1243,7 +1243,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                                       updateSetProgress(currentExercise.id, index, 'reps', isNaN(value) ? null : value);
                                     }
                                   }}
-                                  className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+                                  className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                                   min="0"
                                   placeholder={`${currentExercise.reps || 0}`}
                                 />
@@ -1265,7 +1265,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                                       updateSetProgress(currentExercise.id, index, 'weight', isNaN(value) ? null : value);
                                     }
                                   }}
-                                  className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+                                  className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                                   min="0"
                                   step="0.5"
                                   placeholder={currentExercise.weight ? `${currentExercise.weight}` : "Weight"}
@@ -1280,7 +1280,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                                   const v = e.target.value === '' ? null : parseInt(e.target.value);
                                   updateSetProgress(currentExercise.id, index, 'rpe' as any, v);
                                 }}
-                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500 bg-white min-h-[36px]"
+                                className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 bg-white min-h-[36px]"
                               >
                                 <option value="">—</option>
                                 {[1,2,3,4,5,6,7,8,9,10].map(n => (
@@ -1309,7 +1309,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                       className={`p-3 rounded-lg transition-colors ${
                         isPlaying 
                           ? 'bg-orange-500 text-white hover:bg-orange-600' 
-                          : 'bg-green-500 text-white hover:bg-green-600'
+                          : 'bg-blue-500 text-white hover:bg-blue-600'
                       }`}
                     >
                       {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
@@ -1374,7 +1374,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                       nextExercise();
                     }
                   }}
-                  className="px-5 py-3 min-h-[44px] bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium"
+                  className="px-5 py-3 min-h-[44px] bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium"
                 >
                   {currentExerciseIndex === workout.workout_exercises.length - 1 ? 'Finish Exercise' : 'Complete & Next'}
                 </button>
@@ -1422,7 +1422,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                 onBack();
               }}
               disabled={saving}
-              className="w-full mt-6 flex items-center justify-center px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full mt-6 flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {saving ? (
                 <>
@@ -1450,7 +1450,7 @@ const WorkoutExecutionView: React.FC<WorkoutExecutionViewProps> = ({ workoutId, 
                   }, 500);
                 }}
                 disabled={saving}
-                className="w-full mt-4 flex items-center justify-center px-6 py-3 min-h-[48px] bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
+                className="w-full mt-4 flex items-center justify-center px-6 py-3 min-h-[48px] bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
               >
                 {saving ? (
                   <>

@@ -20,7 +20,7 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
 
   const [stats, setStats] = useState([
     { title: user?.role === 'admin' ? 'Total Users' : 'Active Clients', value: '0', icon: Users, color: 'bg-blue-500', change: 'Loading...' },
-    { title: 'Workouts This Week', value: '0', icon: Dumbbell, color: 'bg-green-500', change: 'Loading...' },
+    { title: 'Workouts This Week', value: '0', icon: Dumbbell, color: 'bg-blue-500', change: 'Loading...' },
     { title: 'Avg. Performance Gain', value: '0%', icon: TrendingUp, color: 'bg-purple-500', change: 'Loading...' }
   ]);
   const [recentActivities, setRecentActivities] = useState<any[]>([]);
@@ -96,7 +96,7 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
           title: 'Workouts This Week',
           value: workouts?.length.toString() || '0',
           icon: Dumbbell,
-          color: 'bg-green-500',
+          color: 'bg-blue-500',
           change: 'Assigned this week'
         },
         {
@@ -386,13 +386,13 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
           <button
             key={index}
             onClick={() => handleStatClick(stat.title)}
-            className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 hover:shadow-lg hover:border-green-200 transition-all duration-200 text-left group cursor-pointer active:scale-95 touch-manipulation"
+            className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 hover:shadow-lg hover:border-blue-200 transition-all duration-200 text-left group cursor-pointer active:scale-95 touch-manipulation"
           >
             <div className="flex items-center justify-between">
               <div className="flex-1 min-w-0 pr-3">
                 <p className="text-xs sm:text-sm font-medium text-gray-600 mb-1 truncate">{stat.title}</p>
                 <p className="text-xl sm:text-2xl font-bold text-gray-900">{stat.value}</p>
-                <p className="text-xs text-green-600 mt-1 group-hover:text-green-700 truncate">{stat.change}</p>
+                <p className="text-xs text-blue-600 mt-1 group-hover:text-blue-700 truncate">{stat.change}</p>
               </div>
               <div className={`${stat.color} rounded-lg p-2 sm:p-3 flex-shrink-0`}>
                 <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
@@ -414,7 +414,7 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
               {recentActivities.length > 0 ? recentActivities.map((activity, index) => (
                 <div key={index} className="flex items-start space-x-3">
                   <div className={`w-2 h-2 rounded-full mt-2 ${
-                    activity.type === 'workout' ? 'bg-green-500' :
+                    activity.type === 'workout' ? 'bg-blue-500' :
                     activity.type === 'video' ? 'bg-blue-500' :
                     activity.type === 'performance' ? 'bg-purple-500' :
                     activity.type === 'intake' ? 'bg-yellow-500' : 'bg-orange-500'
@@ -445,14 +445,14 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
           <div className="p-4 sm:p-6">
             <div className="space-y-4">
               {upcomingSessions.length > 0 ? upcomingSessions.map((session, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                <div key={index} className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
                   <div>
                     <p className="font-medium text-gray-900">{session.client}</p>
                     <p className="text-sm text-gray-600">{session.type}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-medium text-green-600">{session.time}</p>
-                    <Calendar className="h-4 w-4 text-green-500 ml-auto mt-1" />
+                    <p className="text-sm font-medium text-blue-600">{session.time}</p>
+                    <Calendar className="h-4 w-4 text-blue-500 ml-auto mt-1" />
                   </div>
                 </div>
               )) : (
@@ -476,7 +476,7 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
               <div className="bg-white rounded-xl shadow-sm border border-gray-100">
                 <div className="p-4 sm:p-6 border-b border-gray-100">
                   <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600" />
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                     <h3 className="text-lg font-semibold text-gray-900">Recently Completed</h3>
                   </div>
                   <p className="text-sm text-gray-500 mt-1">Clients who have filled out their intake forms</p>
@@ -484,9 +484,9 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
                 <div className="p-4 sm:p-6">
                   <div className="space-y-3">
                     {clientsWithIntake.map((client) => (
-                      <div key={client.id} className="flex items-center justify-between p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+                      <div key={client.id} className="flex items-center justify-between p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
                         <div className="flex items-center space-x-3">
-                          <ClipboardList className="h-5 w-5 text-green-600" />
+                          <ClipboardList className="h-5 w-5 text-blue-600" />
                           <div>
                             <p className="font-medium text-gray-900">{client.name}</p>
                             <p className="text-xs text-gray-500">
@@ -496,7 +496,7 @@ const CoachDashboard: React.FC<CoachDashboardProps> = ({ onNavigate }) => {
                         </div>
                         <button
                           onClick={() => onNavigate?.('clients', client.id)}
-                          className="text-sm text-green-600 hover:text-green-700 font-medium"
+                          className="text-sm text-blue-600 hover:text-blue-700 font-medium"
                         >
                           View
                         </button>

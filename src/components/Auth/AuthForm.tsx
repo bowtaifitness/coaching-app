@@ -172,14 +172,16 @@ const AuthForm: React.FC = () => {
     return (
       <div className="h-full w-full flex flex-col lg:flex-row">
         {/* Desktop brand panel */}
-        <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 25% 25%, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-slate-900 via-blue-900 to-blue-800 items-center justify-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 25% 25%, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="relative z-10 flex flex-col items-center text-center px-12">
-            <div className="w-28 h-28 rounded-2xl overflow-hidden shadow-2xl mb-8 ring-4 ring-white/20">
-              <img src="/logo.png" alt="Bowtai Fitness" className="h-full w-full object-cover" />
+            <div className="w-28 h-28 rounded-full overflow-hidden shadow-2xl mb-8 ring-4 ring-white/20 bg-white">
+              <img src="/logo.jpg" alt="Bowtai Fitness" className="h-full w-full object-cover" />
             </div>
-            <h1 className="text-4xl font-bold text-white mb-3">Bowtai Fitness</h1>
-            <p className="text-lg text-emerald-200/80 max-w-sm">Professional fitness coaching and training to elevate your performance.</p>
+            <h1 className="text-4xl font-bold text-white mb-2">Bowtai Fitness</h1>
+            <p className="text-sm font-medium tracking-widest text-blue-300/80 uppercase">Coaching Platform</p>
+            <p className="text-lg text-blue-200/60 max-w-sm mt-4">Professional fitness coaching and training to elevate your performance.</p>
           </div>
         </div>
         {/* Form panel */}
@@ -189,15 +191,15 @@ const AuthForm: React.FC = () => {
         >
           <div className="max-w-md w-full space-y-6">
             <div className="text-center">
-              <div className="mx-auto h-24 w-24 sm:h-28 sm:w-28 flex items-center justify-center mb-4 rounded-full overflow-hidden lg:hidden">
-                <img src="/logo.png" alt="Bowtai Fitness" className="h-full w-full object-cover" />
+              <div className="mx-auto h-24 w-24 sm:h-28 sm:w-28 flex items-center justify-center mb-4 rounded-full overflow-hidden bg-white shadow-lg lg:hidden">
+                <img src="/logo.jpg" alt="Bowtai Fitness" className="h-full w-full object-cover" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Account Created!</h2>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-              <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto">
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -207,11 +209,11 @@ const AuthForm: React.FC = () => {
                 <p className="text-sm text-gray-600">
                   Your account has been created successfully.
                 </p>
-                <p className="text-sm font-medium text-green-600">{signupEmail}</p>
+                <p className="text-sm font-medium text-blue-600">{signupEmail}</p>
               </div>
 
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <p className="text-sm text-green-800">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <p className="text-sm text-blue-800">
                   You can now sign in with your email and password to get started.
                 </p>
               </div>
@@ -222,7 +224,7 @@ const AuthForm: React.FC = () => {
                   setSignupEmail('');
                   setIsLogin(true);
                 }}
-                className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors touch-manipulation"
+                className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors touch-manipulation"
               >
                 Continue to Sign In
               </button>
@@ -236,27 +238,28 @@ const AuthForm: React.FC = () => {
   return (
     <div className="h-full w-full flex flex-col lg:flex-row">
       {/* Desktop brand panel */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 25% 25%, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-400/15 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-slate-900 via-blue-900 to-blue-800 items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 25% 25%, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
         <div className="relative z-10 flex flex-col items-center text-center px-12">
-          <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-2xl mb-8 ring-4 ring-white/20">
-            <img src="/logo.png" alt="Bowtai Fitness" className="h-full w-full object-cover" />
+          <div className="w-32 h-32 rounded-full overflow-hidden shadow-2xl mb-8 ring-4 ring-white/20 bg-white">
+            <img src="/logo.jpg" alt="Bowtai Fitness" className="h-full w-full object-cover" />
           </div>
-          <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">Bowtai Fitness</h1>
-          <p className="text-lg text-emerald-200/80 max-w-sm leading-relaxed">Professional fitness coaching and training to elevate your performance.</p>
-          <div className="mt-10 flex items-center gap-6 text-emerald-300/60 text-sm">
+          <h1 className="text-4xl font-bold text-white mb-2 tracking-tight">Bowtai Fitness</h1>
+          <p className="text-sm font-medium tracking-widest text-blue-300/80 uppercase mb-4">Coaching Platform</p>
+          <p className="text-base text-blue-200/60 max-w-sm leading-relaxed">Professional fitness coaching and training to elevate your performance.</p>
+          <div className="mt-10 flex items-center gap-6 text-blue-300/50 text-sm">
             <span className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
               Custom Programs
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
               Expert Coaching
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
               Progress Tracking
             </span>
           </div>
@@ -269,14 +272,15 @@ const AuthForm: React.FC = () => {
       >
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
-          <div className="mx-auto h-20 w-20 sm:h-24 sm:w-24 flex items-center justify-center mb-4 rounded-full overflow-hidden lg:hidden">
+          <div className="mx-auto h-20 w-20 sm:h-24 sm:w-24 flex items-center justify-center mb-4 rounded-full overflow-hidden bg-white shadow-lg lg:hidden">
             <img
-              src="/logo.png"
+              src="/logo.jpg"
               alt="Bowtai Fitness"
               className="h-full w-full object-cover"
             />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Bowtai Fitness{import.meta.env.DEV ? ' (DEV MODE)' : ''}</h2>
+          <p className="text-xs font-medium tracking-widest text-blue-500 uppercase mt-1">Coaching Platform</p>
           <p className="mt-2 text-sm sm:text-base text-gray-600">
             {isLogin ? 'Sign in to your account' : 'Create your coaching account'}
           </p>
@@ -310,7 +314,7 @@ const AuthForm: React.FC = () => {
                       onClick={() => setSelectedRole('client')}
                       className={`flex items-center justify-center px-4 sm:px-6 py-3 rounded-lg border-2 transition-all touch-manipulation ${
                         selectedRole === 'client'
-                          ? 'border-green-500 bg-green-50 text-green-700'
+                          ? 'border-blue-500 bg-blue-50 text-blue-700'
                           : 'border-gray-300 bg-white text-gray-600 hover:border-gray-400'
                       }`}
                     >
@@ -329,7 +333,7 @@ const AuthForm: React.FC = () => {
                     name="firstName"
                     type="text"
                     required
-                    className="relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
+                    className="relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     placeholder="First Name"
                   />
                 </div>
@@ -340,7 +344,7 @@ const AuthForm: React.FC = () => {
                     name="lastName"
                     type="text"
                     required
-                    className="relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
+                    className="relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Last Name"
                   />
                 </div>
@@ -357,7 +361,7 @@ const AuthForm: React.FC = () => {
               required
               defaultValue={invitationEmail || ''}
               disabled={!!invitationToken}
-              className="relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+              className="relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
               placeholder="Email address"
             />
           </div>
@@ -369,7 +373,7 @@ const AuthForm: React.FC = () => {
               name="password"
               type={showPassword ? 'text' : 'password'}
               required
-              className="relative block w-full px-3 py-3 pr-12 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
+              className="relative block w-full px-3 py-3 pr-12 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               placeholder="Password"
             />
             <button
@@ -392,7 +396,7 @@ const AuthForm: React.FC = () => {
           )}
 
           {resetEmailSent && (
-            <div className="bg-green-50 border border-green-300 text-green-700 px-4 py-3 rounded-lg">
+            <div className="bg-blue-50 border border-blue-300 text-blue-700 px-4 py-3 rounded-lg">
               Password reset email sent! Check your inbox for instructions.
             </div>
           )}
@@ -414,7 +418,7 @@ const AuthForm: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all touch-manipulation"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all touch-manipulation"
             >
               {loading ? 'Processing...' : (isLogin ? 'Sign In' : 'Create Account')}
             </button>
@@ -426,7 +430,7 @@ const AuthForm: React.FC = () => {
                 type="button"
                 onClick={() => setShowForgotPassword(true)}
                 disabled={loading}
-                className="text-sm text-gray-600 hover:text-green-600 transition-colors disabled:opacity-50 touch-manipulation"
+                className="text-sm text-gray-600 hover:text-blue-600 transition-colors disabled:opacity-50 touch-manipulation"
               >
                 Forgot your password?
               </button>
@@ -503,7 +507,7 @@ const AuthForm: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsLogin(!isLogin)}
-              className="font-medium text-green-600 hover:text-green-500 transition-colors touch-manipulation"
+              className="font-medium text-blue-600 hover:text-blue-500 transition-colors touch-manipulation"
             >
               {isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
             </button>

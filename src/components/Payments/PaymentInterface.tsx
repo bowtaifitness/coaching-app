@@ -422,7 +422,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
       <div className="p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading billing information...</p>
           </div>
         </div>
@@ -516,12 +516,12 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                   ${revenueData?.thisMonth?.toFixed(2) || '0.00'}
                 </p>
                 <p className={`text-xs mt-1 ${
-                  (revenueData?.growth || 0) >= 0 ? 'text-green-600' : 'text-red-600'
+                  (revenueData?.growth || 0) >= 0 ? 'text-blue-600' : 'text-red-600'
                 }`}>
                   {(revenueData?.growth || 0) >= 0 ? '+' : ''}{(revenueData?.growth || 0).toFixed(1)}% vs last month
                 </p>
               </div>
-              <div className="bg-green-500 rounded-lg p-3">
+              <div className="bg-blue-500 rounded-lg p-3">
                 <DollarSign className="h-6 w-6 text-white" />
               </div>
             </div>
@@ -592,7 +592,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                   return (
                     <div key={sub.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
-                      <div className="h-10 w-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                      <div className="h-10 w-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                         <span className="text-white font-semibold text-sm">
                           {customer?.email ? customer.email.substring(0, 2).toUpperCase() : 'CU'}
                         </span>
@@ -608,7 +608,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                         {sub.items?.data?.[0]?.price?.recurring?.interval || 'mo'}
                       </p>
                       <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                        sub.status === 'active' ? 'bg-green-100 text-green-700' :
+                        sub.status === 'active' ? 'bg-blue-100 text-blue-700' :
                         sub.status === 'trialing' ? 'bg-blue-100 text-blue-700' :
                         sub.status === 'past_due' ? 'bg-red-100 text-red-700' :
                         'bg-gray-100 text-gray-700'
@@ -653,7 +653,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
-                          className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                          className="bg-blue-500 h-2 rounded-full transition-all duration-300"
                           style={{ width: `${percentage}%` }}
                         ></div>
                       </div>
@@ -709,7 +709,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                     <tr key={payment.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
-                        <div className="h-8 w-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                        <div className="h-8 w-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                           <span className="text-white font-semibold text-xs">
                             {customer?.email ? customer.email.substring(0, 2).toUpperCase() : 'CU'}
                           </span>
@@ -727,7 +727,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                        payment.status === 'succeeded' ? 'bg-green-100 text-green-800' :
+                        payment.status === 'succeeded' ? 'bg-blue-100 text-blue-800' :
                         payment.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
                         'bg-red-100 text-red-800'
                       }`}>
@@ -785,11 +785,11 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
             const isInTrial = trialDaysLeft > 0 && trialDaysLeft <= 7;
 
             return (
-              <div className="bg-white rounded-xl shadow-sm border-2 border-green-200 p-6 mb-8">
+              <div className="bg-white rounded-xl shadow-sm border-2 border-blue-200 p-6 mb-8">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-4">
                     <div className={`h-14 w-14 rounded-xl flex items-center justify-center ${
-                      isAnnual ? 'bg-gradient-to-br from-green-500 to-green-700' : 'bg-gradient-to-br from-blue-500 to-blue-700'
+                      isAnnual ? 'bg-gradient-to-br from-blue-500 to-blue-700' : 'bg-gradient-to-br from-blue-500 to-blue-700'
                     }`}>
                       {isAnnual ? <Star className="h-7 w-7 text-white" /> : <Zap className="h-7 w-7 text-white" />}
                     </div>
@@ -799,12 +799,12 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                     </div>
                   </div>
                   {isInTrial ? (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800 border border-green-200">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200">
                       <Clock className="h-3 w-3 mr-1" />
                       Active Free Trial
                     </span>
                   ) : (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800 border border-green-200">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200">
                       <CheckCircle className="h-3 w-3 mr-1" />
                       Active
                     </span>
@@ -812,23 +812,23 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                 </div>
 
                 {isInTrial && (
-                  <div className="bg-green-50 border border-green-100 rounded-lg p-4 mb-4">
+                  <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 mb-4">
                     <div className="flex items-center space-x-2 mb-2">
-                      <Clock className="h-4 w-4 text-green-600" />
-                      <span className="text-sm font-semibold text-green-800">Free Trial Status</span>
+                      <Clock className="h-4 w-4 text-blue-600" />
+                      <span className="text-sm font-semibold text-blue-800">Free Trial Status</span>
                     </div>
-                    <p className="text-sm text-green-700 leading-relaxed">
+                    <p className="text-sm text-blue-700 leading-relaxed">
                       You have <span className="font-bold">{trialDaysLeft} day{trialDaysLeft !== 1 ? 's' : ''}</span> remaining in your 7-day free trial before paid billing begins.
                     </p>
-                    <div className="mt-3 w-full bg-green-200 rounded-full h-2">
+                    <div className="mt-3 w-full bg-blue-200 rounded-full h-2">
                       <div
-                        className="bg-green-600 rounded-full h-2 transition-all"
+                        className="bg-blue-600 rounded-full h-2 transition-all"
                         style={{ width: `${((7 - trialDaysLeft) / 7) * 100}%` }}
                       />
                     </div>
                     <div className="flex justify-between mt-1">
-                      <span className="text-xs text-green-600">Started</span>
-                      <span className="text-xs text-green-600">Day 7</span>
+                      <span className="text-xs text-blue-600">Started</span>
+                      <span className="text-xs text-blue-600">Day 7</span>
                     </div>
                   </div>
                 )}
@@ -844,7 +844,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="bg-green-500 rounded-lg p-3">
+              <div className="bg-blue-500 rounded-lg p-3">
                 <CheckCircle className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -885,14 +885,14 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
           </div>
         </div>
       ) : (
-        <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
           <div className="flex items-center space-x-4">
-            <div className="bg-green-500 rounded-lg p-3">
+            <div className="bg-blue-500 rounded-lg p-3">
               <Clock className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-green-900">Free Trial Active</h3>
-              <p className="text-green-700">You have {daysRemaining} day{daysRemaining !== 1 ? 's' : ''} remaining on your free trial. Subscribe anytime to keep your access.</p>
+              <h3 className="text-lg font-semibold text-blue-900">Free Trial Active</h3>
+              <p className="text-blue-700">You have {daysRemaining} day{daysRemaining !== 1 ? 's' : ''} remaining on your free trial. Subscribe anytime to keep your access.</p>
             </div>
           </div>
         </div>
@@ -923,13 +923,13 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                       onClick={() => setSelectedAppleProductId(product.identifier)}
                       className={`relative bg-white rounded-xl shadow-sm border-2 transition-all text-left w-full ${
                         isSelected
-                          ? 'border-green-500 ring-2 ring-green-200 shadow-lg'
+                          ? 'border-blue-500 ring-2 ring-blue-200 shadow-lg'
                           : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
                       }`}
                     >
                       {isAnnual && (
                         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                          <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                          <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                             Best Value
                           </span>
                         </div>
@@ -938,7 +938,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center space-x-3">
                             <div className={`h-12 w-12 rounded-full flex items-center justify-center ${
-                              isAnnual ? 'bg-gradient-to-br from-green-500 to-green-700' :
+                              isAnnual ? 'bg-gradient-to-br from-blue-500 to-blue-700' :
                               'bg-gradient-to-br from-blue-500 to-blue-700'
                             }`}>
                               {isAnnual ? <Star className="h-6 w-6 text-white" /> :
@@ -951,14 +951,14 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                                 <span className="text-gray-600 ml-1">/{interval}</span>
                               </div>
                               {showTrial && (
-                                <p className="text-sm font-semibold text-green-700 mt-1">
+                                <p className="text-sm font-semibold text-blue-700 mt-1">
                                   {trialDays} Days Free, then {priceDisplay}/{interval === 'year' ? 'yr' : 'mo'}
                                 </p>
                               )}
                             </div>
                           </div>
                           <div className={`h-6 w-6 rounded-full border-2 flex items-center justify-center transition-colors ${
-                            isSelected ? 'border-green-500 bg-green-500' : 'border-gray-300'
+                            isSelected ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
                           }`}>
                             {isSelected && <CheckCircle className="h-4 w-4 text-white" />}
                           </div>
@@ -974,14 +974,14 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                             'Coach messaging'
                           ].map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-start space-x-2">
-                              <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                              <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
                               <span className="text-gray-700 text-sm">{feature}</span>
                             </li>
                           ))}
                         </ul>
                         {isAnnual && (
-                          <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2 text-center">
-                            <span className="text-green-700 text-sm font-semibold">Save over $39/year vs monthly</span>
+                          <div className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 text-center">
+                            <span className="text-blue-700 text-sm font-semibold">Save over $39/year vs monthly</span>
                           </div>
                         )}
                       </div>
@@ -999,7 +999,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                   <p className="text-gray-600 mb-4">{appleProductsError}</p>
                   <button
                     onClick={fetchAppleProducts}
-                    className="inline-flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                    className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     <RefreshCw className="h-4 w-4" />
                     <span>Retry</span>
@@ -1035,7 +1035,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                   <p className="text-gray-600 mb-4">Subscription plans could not be loaded. Please check your connection and try again.</p>
                   <button
                     onClick={fetchAppleProducts}
-                    className="inline-flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                    className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     <RefreshCw className="h-4 w-4" />
                     <span>Retry</span>
@@ -1082,7 +1082,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                   <button
                     onClick={() => handleApplePurchase(selectedAppleProductId)}
                     disabled={purchasingProductId !== null}
-                    className="w-full py-4 px-6 rounded-xl font-bold text-base bg-green-600 text-white hover:bg-green-700 active:bg-green-800 transition-colors flex items-center justify-center space-x-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 px-6 rounded-xl font-bold text-base bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 transition-colors flex items-center justify-center space-x-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {purchasingProductId === selectedAppleProductId ? (
                       <>
@@ -1145,12 +1145,12 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
               <div
                 key={product.id}
                 className={`relative bg-white rounded-xl shadow-sm border-2 transition-all hover:shadow-lg ${
-                  isAnnual ? 'border-green-500 ring-2 ring-green-200' : 'border-gray-200'
+                  isAnnual ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-200'
                 }`}
               >
                 {isPopular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                       Best Value
                     </span>
                   </div>
@@ -1159,7 +1159,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                 <div className="p-6">
                   <div className="text-center mb-6">
                     <div className={`mx-auto h-16 w-16 rounded-full flex items-center justify-center mb-4 ${
-                      isAnnual ? 'bg-gradient-to-br from-green-500 to-green-700' :
+                      isAnnual ? 'bg-gradient-to-br from-blue-500 to-blue-700' :
                       'bg-gradient-to-br from-blue-500 to-blue-700'
                     }`}>
                       {isAnnual ? <Star className="h-8 w-8 text-white" /> :
@@ -1183,7 +1183,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                       <ul className="space-y-3">
                         {product.metadata.features.split(',').map((feature: string, featureIndex: number) => (
                           <li key={featureIndex} className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 text-sm">{feature.trim()}</span>
                           </li>
                         ))}
@@ -1200,14 +1200,14 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                             'Coach messaging'
                           ].map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-start space-x-3">
-                              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                              <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
                               <span className="text-gray-700 text-sm">{feature}</span>
                             </li>
                           ))}
                         </ul>
                         {isAnnual && (
-                          <div className="mt-4 bg-green-50 border border-green-200 rounded-lg px-4 py-3 text-center">
-                            <span className="text-green-700 text-sm font-semibold">Save over $39/year vs monthly</span>
+                          <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 text-center">
+                            <span className="text-blue-700 text-sm font-semibold">Save over $39/year vs monthly</span>
                           </div>
                         )}
                       </>
@@ -1221,7 +1221,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                       clientSubscription?.items?.data?.[0]?.price?.id === price.id
                         ? 'bg-gray-100 text-gray-500 cursor-not-allowed'
                         : isAnnual
-                        ? 'bg-green-500 text-white hover:bg-green-600'
+                        ? 'bg-blue-500 text-white hover:bg-blue-600'
                         : 'bg-blue-500 text-white hover:bg-blue-600'
                     }`}
                   >
@@ -1268,7 +1268,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
               <div className="flex items-center justify-between">
                 <span className="text-gray-600">Status</span>
                 <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                  clientSubscription.status === 'active' ? 'bg-green-100 text-green-800' :
+                  clientSubscription.status === 'active' ? 'bg-blue-100 text-blue-800' :
                   clientSubscription.status === 'trialing' ? 'bg-blue-100 text-blue-800' :
                   clientSubscription.status === 'past_due' ? 'bg-red-100 text-red-800' :
                   'bg-gray-100 text-gray-800'
@@ -1306,7 +1306,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
               <div className="flex items-center justify-between">
                 <span className="text-gray-600">Auto-renewal</span>
                 <span className={`font-medium ${
-                  clientSubscription.cancel_at_period_end ? 'text-red-600' : 'text-green-600'
+                  clientSubscription.cancel_at_period_end ? 'text-red-600' : 'text-blue-600'
                 }`}>
                   {clientSubscription.cancel_at_period_end ? 'Disabled' : 'Enabled'}
                 </span>
@@ -1356,7 +1356,7 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                        payment.status === 'succeeded' ? 'bg-green-100 text-green-800' :
+                        payment.status === 'succeeded' ? 'bg-blue-100 text-blue-800' :
                         payment.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
                         'bg-red-100 text-red-800'
                       }`}>
@@ -1378,12 +1378,12 @@ const PaymentInterface: React.FC<PaymentInterfaceProps> = ({ onPurchaseComplete 
 
       {/* Business Insights for Coaches */}
       {(user?.role === 'coach' || user?.role === 'admin') && revenueData && revenueData.thisMonth > 0 && (
-        <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6">
+        <div className="mt-8 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Business Insights</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <TrendingUp className="h-5 w-5 text-green-600" />
+                <TrendingUp className="h-5 w-5 text-blue-600" />
                 <span className="font-medium text-gray-900">Revenue Growth</span>
               </div>
               <p className="text-sm text-gray-700">

@@ -120,10 +120,10 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({ currentView, onViewChange }
                     key={item.id}
                     onClick={() => handleMoreItemClick(item.id)}
                     className={`flex flex-col items-center justify-center py-3 px-2 rounded-xl transition-colors min-h-[76px]
-                      ${isActive ? 'bg-green-50 text-green-600' : 'text-gray-600 hover:bg-gray-50'}`}
+                      ${isActive ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}`}
                   >
-                    <Icon className={`h-6 w-6 mb-1 ${isActive ? 'text-green-600' : 'text-gray-500'}`} />
-                    <span className={`text-xs font-medium text-center leading-tight ${isActive ? 'text-green-600' : 'text-gray-600'}`}>
+                    <Icon className={`h-6 w-6 mb-1 ${isActive ? 'text-blue-600' : 'text-gray-500'}`} />
+                    <span className={`text-xs font-medium text-center leading-tight ${isActive ? 'text-blue-600' : 'text-gray-600'}`}>
                       {item.label}
                     </span>
                   </button>
@@ -158,21 +158,21 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({ currentView, onViewChange }
                 key={tab.id}
                 onClick={() => { setMoreOpen(false); onViewChange(tab.id); }}
                 className={`flex flex-col items-center justify-center flex-1 pt-2 pb-1 min-h-[56px] relative transition-colors
-                  ${isActive ? 'text-green-600' : 'text-gray-500 active:text-gray-700'}`}
+                  ${isActive ? 'text-blue-600' : 'text-gray-500 active:text-gray-700'}`}
               >
                 <div className="relative">
-                  <Icon className={`h-5 w-5 ${isActive ? 'text-green-600' : 'text-gray-400'}`} strokeWidth={isActive ? 2.5 : 2} />
+                  <Icon className={`h-5 w-5 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} strokeWidth={isActive ? 2.5 : 2} />
                   {tab.id === 'messages' && unreadCount > 0 && (
                     <span className="absolute -top-1.5 -right-2.5 min-w-[16px] h-4 flex items-center justify-center bg-red-500 text-white text-[9px] font-bold rounded-full px-1">
                       {unreadCount > 99 ? '99+' : unreadCount}
                     </span>
                   )}
                 </div>
-                <span className={`text-[10px] mt-0.5 font-medium leading-tight ${isActive ? 'text-green-600' : 'text-gray-500'}`}>
+                <span className={`text-[10px] mt-0.5 font-medium leading-tight ${isActive ? 'text-blue-600' : 'text-gray-500'}`}>
                   {tab.label}
                 </span>
                 {isActive && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-green-600 rounded-full" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-blue-600 rounded-full" />
                 )}
               </button>
             );
@@ -182,14 +182,14 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({ currentView, onViewChange }
             <button
               onClick={() => setMoreOpen(!moreOpen)}
               className={`flex flex-col items-center justify-center flex-1 pt-2 pb-1 min-h-[56px] relative transition-colors
-                ${isMoreActive ? 'text-green-600' : 'text-gray-500 active:text-gray-700'}`}
+                ${isMoreActive ? 'text-blue-600' : 'text-gray-500 active:text-gray-700'}`}
             >
-              <MoreHorizontal className={`h-5 w-5 ${isMoreActive ? 'text-green-600' : 'text-gray-400'}`} strokeWidth={isMoreActive ? 2.5 : 2} />
-              <span className={`text-[10px] mt-0.5 font-medium leading-tight ${isMoreActive ? 'text-green-600' : 'text-gray-500'}`}>
+              <MoreHorizontal className={`h-5 w-5 ${isMoreActive ? 'text-blue-600' : 'text-gray-400'}`} strokeWidth={isMoreActive ? 2.5 : 2} />
+              <span className={`text-[10px] mt-0.5 font-medium leading-tight ${isMoreActive ? 'text-blue-600' : 'text-gray-500'}`}>
                 More
               </span>
               {isMoreActive && !moreOpen && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-green-600 rounded-full" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-blue-600 rounded-full" />
               )}
             </button>
           )}

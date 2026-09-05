@@ -89,8 +89,8 @@ const PrivacyPolicy: React.FC = () => {
 
             <section className="mb-10">
               <h2 className="text-xl font-bold text-gray-900 mb-3">5. Data Sharing &amp; Selling</h2>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
-                <p className="text-green-900 font-semibold">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                <p className="text-blue-900 font-semibold">
                   We do not sell, rent, trade, or otherwise transfer your personal information to third parties for marketing or commercial purposes.
                 </p>
               </div>

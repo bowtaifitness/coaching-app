@@ -54,10 +54,10 @@ const EmailConfirmed: React.FC = () => {
 
   if (confirming) {
     return (
-      <div className="h-full w-full bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+      <div className="h-full w-full bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
         <div className="max-w-md w-full space-y-6">
           <div className="text-center">
-            <div className="mx-auto h-16 w-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-4">
+            <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4">
               <span className="text-white font-bold text-2xl">B</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-900">Confirming Email...</h2>
@@ -65,7 +65,7 @@ const EmailConfirmed: React.FC = () => {
 
           <div className="bg-white rounded-lg shadow-md p-8 space-y-6">
             <div className="flex items-center justify-center">
-              <div className="animate-spin h-12 w-12 border-4 border-green-600 border-t-transparent rounded-full"></div>
+              <div className="animate-spin h-12 w-12 border-4 border-blue-600 border-t-transparent rounded-full"></div>
             </div>
 
             <div className="text-center space-y-3">
@@ -81,10 +81,10 @@ const EmailConfirmed: React.FC = () => {
 
   if (error) {
     return (
-      <div className="h-full w-full bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+      <div className="h-full w-full bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
         <div className="max-w-md w-full space-y-6">
           <div className="text-center">
-            <div className="mx-auto h-16 w-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-4">
+            <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4">
               <span className="text-white font-bold text-2xl">B</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-900">Email Confirmed!</h2>
@@ -92,8 +92,8 @@ const EmailConfirmed: React.FC = () => {
 
           <div className="bg-white rounded-lg shadow-md p-8 space-y-6">
             <div className="flex items-center justify-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-12 h-12 text-green-600" />
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-12 h-12 text-blue-600" />
               </div>
             </div>
 
@@ -108,7 +108,7 @@ const EmailConfirmed: React.FC = () => {
 
             <button
               onClick={() => window.location.href = '/'}
-              className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+              className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
             >
               Go to Sign In
             </button>
@@ -119,10 +119,10 @@ const EmailConfirmed: React.FC = () => {
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
       <div className="max-w-md w-full space-y-6">
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-4">
+          <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4">
             <span className="text-white font-bold text-2xl">B</span>
           </div>
           <h2 className="text-3xl font-bold text-gray-900">Email Confirmed!</h2>
@@ -130,8 +130,8 @@ const EmailConfirmed: React.FC = () => {
 
         <div className="bg-white rounded-lg shadow-md p-8 space-y-6">
           <div className="flex items-center justify-center">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-12 h-12 text-green-600" />
+            <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-12 h-12 text-blue-600" />
             </div>
           </div>
 
@@ -152,15 +152,15 @@ const EmailConfirmed: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <p className="text-sm text-green-800 text-center">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <p className="text-sm text-blue-800 text-center">
               Your account is now active and ready to use!
             </p>
           </div>
 
           <button
             onClick={() => window.location.href = '/'}
-            className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+            className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
           >
             {user ? 'Go to Dashboard' : 'Sign In Now'}
           </button>

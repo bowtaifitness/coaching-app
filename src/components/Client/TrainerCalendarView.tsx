@@ -343,7 +343,7 @@ const TrainerCalendarView: React.FC<TrainerCalendarViewProps> = ({ clientId, use
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <div className="flex items-center justify-center h-64">
             <div className="text-center">
-              <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+              <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
               <p className="text-gray-600">Loading calendar events...</p>
             </div>
           </div>
@@ -366,7 +366,7 @@ const TrainerCalendarView: React.FC<TrainerCalendarViewProps> = ({ clientId, use
                 onClick={() => setViewMode('month')}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   viewMode === 'month'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -376,7 +376,7 @@ const TrainerCalendarView: React.FC<TrainerCalendarViewProps> = ({ clientId, use
                 onClick={() => setViewMode('agenda')}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   viewMode === 'agenda'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -481,14 +481,14 @@ const TrainerCalendarView: React.FC<TrainerCalendarViewProps> = ({ clientId, use
                     onClick={() => day && setSelectedDate(day)}
                     className={`min-h-[120px] p-2 border border-gray-100 rounded-lg transition-colors cursor-pointer ${
                       day ? 'hover:bg-gray-50' : ''
-                    } ${isToday ? 'bg-green-50 border-green-200 ring-2 ring-green-100' : ''} ${
+                    } ${isToday ? 'bg-blue-50 border-blue-200 ring-2 ring-blue-100' : ''} ${
                       isSelected ? 'bg-blue-50 border-blue-200 ring-2 ring-blue-100' : ''
                     }`}
                   >
                     {day && (
                       <>
                         <div className={`text-sm font-medium mb-2 ${
-                          isToday ? 'text-green-600' : 'text-gray-900'
+                          isToday ? 'text-blue-600' : 'text-gray-900'
                         }`}>
                           {day.getDate()}
                         </div>
@@ -543,7 +543,7 @@ const TrainerCalendarView: React.FC<TrainerCalendarViewProps> = ({ clientId, use
                 <span className="text-gray-600">Low Priority</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-green-50 border-2 border-green-200 rounded"></div>
+                <div className="w-4 h-4 bg-blue-50 border-2 border-blue-200 rounded"></div>
                 <span className="text-gray-600">Today</span>
               </div>
             </div>
@@ -604,7 +604,7 @@ const TrainerCalendarView: React.FC<TrainerCalendarViewProps> = ({ clientId, use
               </div>
             ) : (
               <div className="text-center py-8">
-                <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                <CheckCircle className="h-8 w-8 text-blue-500 mx-auto mb-2" />
                 <p className="text-gray-500">All caught up!</p>
                 <p className="text-sm text-gray-400">No urgent actions required</p>
               </div>

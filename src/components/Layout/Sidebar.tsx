@@ -78,8 +78,8 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange, isOpen }) 
               onClick={() => onViewChange(item.id)}
               className={`w-full flex items-center px-3 py-3 min-h-[44px] rounded-lg text-left transition-all duration-200 touch-manipulation ${
                 currentView === item.id
-                  ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-md shadow-green-500/20'
-                  : 'text-gray-700 hover:bg-gray-100 hover:text-green-700'
+                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/20'
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-blue-700'
               }`}
             >
               <item.icon className={`h-[18px] w-[18px] mr-3 shrink-0 ${

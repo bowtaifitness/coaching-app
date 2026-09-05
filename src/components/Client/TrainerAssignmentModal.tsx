@@ -161,7 +161,7 @@ const TrainerAssignmentModal: React.FC<TrainerAssignmentModalProps> = ({
 
         {loading ? (
           <div className="text-center py-8">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading trainers...</p>
           </div>
         ) : (
@@ -182,7 +182,7 @@ const TrainerAssignmentModal: React.FC<TrainerAssignmentModalProps> = ({
               <select
                 value={selectedTrainerId}
                 onChange={(e) => setSelectedTrainerId(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 disabled={assigning}
               >
                 <option value="">-- Select a trainer --</option>
@@ -209,7 +209,7 @@ const TrainerAssignmentModal: React.FC<TrainerAssignmentModalProps> = ({
               <button
                 onClick={handleAssignment}
                 disabled={assigning || !selectedTrainerId}
-                className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {assigning ? (
                   <>

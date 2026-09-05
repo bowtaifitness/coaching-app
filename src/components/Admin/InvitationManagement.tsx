@@ -124,7 +124,7 @@ export default function InvitationManagement() {
   const getStatusBadge = (invitation: Invitation) => {
     if (invitation.used_at) {
       return (
-        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
           <CheckCircle className="w-3 h-3 mr-1" />
           Used
         </span>
@@ -177,7 +177,7 @@ export default function InvitationManagement() {
 
       {message && (
         <div className={`mb-4 p-4 rounded-lg ${
-          message.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'
+          message.type === 'success' ? 'bg-blue-50 text-blue-800 border border-blue-200' : 'bg-red-50 text-red-800 border border-red-200'
         }`}>
           {message.text}
         </div>

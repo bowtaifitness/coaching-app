@@ -370,7 +370,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
       <div className="p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading exercises...</p>
           </div>
         </div>
@@ -402,7 +402,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
           </div>
           <button
             onClick={handleSave}
-            className="flex items-center px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            className="flex items-center px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           >
             <Save className="h-4 w-4 mr-2" />
             Save & Return
@@ -411,10 +411,10 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
       </div>
 
       {success && (
-        <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
+        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
           <div className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-            <p className="text-green-800">{success}</p>
+            <CheckCircle className="h-5 w-5 text-blue-600 mr-2" />
+            <p className="text-blue-800">{success}</p>
           </div>
         </div>
       )}
@@ -435,7 +435,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
           </h2>
           <button
             onClick={() => setShowAddExercise(true)}
-            className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           >
             <Plus className="h-4 w-4 mr-2" />
             Add Exercise
@@ -449,7 +449,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
             <p className="text-gray-600 mb-4">Add exercises to customize this workout for Week {weekNumber}</p>
             <button
               onClick={() => setShowAddExercise(true)}
-              className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+              className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
             >
               <Plus className="h-4 w-4 mr-2" />
               Add First Exercise
@@ -488,7 +488,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                           pattern="[0-9]*"
                           value={exercise.sets || ''}
                           onChange={(e) => handleUpdateExercise(exercise.id, 'sets', parseInt(e.target.value) || null)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           placeholder="3"
                         />
                       </div>
@@ -501,7 +501,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                           pattern="[0-9]*"
                           value={exercise.reps || ''}
                           onChange={(e) => handleUpdateExercise(exercise.id, 'reps', parseInt(e.target.value) || null)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           placeholder="10"
                         />
                       </div>
@@ -514,7 +514,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                           step="0.5"
                           value={exercise.weight || ''}
                           onChange={(e) => handleUpdateExercise(exercise.id, 'weight', parseFloat(e.target.value) || null)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           placeholder="135"
                         />
                       </div>
@@ -527,7 +527,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                           pattern="[0-9]*"
                           value={exercise.duration || ''}
                           onChange={(e) => handleUpdateExercise(exercise.id, 'duration', parseInt(e.target.value) || null)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           placeholder="60"
                         />
                       </div>
@@ -540,7 +540,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                           pattern="[0-9]*"
                           value={exercise.rest_seconds || ''}
                           onChange={(e) => handleUpdateExercise(exercise.id, 'rest_seconds', parseInt(e.target.value) || null)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           placeholder="60"
                         />
                       </div>
@@ -551,7 +551,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                       <textarea
                         value={exercise.notes || ''}
                         onChange={(e) => handleUpdateExercise(exercise.id, 'notes', e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         rows={2}
                         placeholder="Add notes or instructions..."
                       />
@@ -589,7 +589,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Search exercises..."
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -600,7 +600,7 @@ const WeekExerciseEditor: React.FC<WeekExerciseEditorProps> = ({
                     key={exercise.id}
                     onClick={() => handleAddExercise(exercise.id)}
                     disabled={exercises.some(e => e.exercise_id === exercise.id)}
-                    className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-200 disabled:hover:bg-white"
+                    className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-200 disabled:hover:bg-white"
                   >
                     <div className="flex items-center justify-between">
                       <div>

@@ -169,10 +169,10 @@ const ResetPasswordForm: React.FC = () => {
 
   if (!validSession && !error) {
     return (
-      <div className="h-full w-full bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+      <div className="h-full w-full bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
-            <Loader className="h-12 w-12 text-green-500 animate-spin mx-auto mb-4" />
+            <Loader className="h-12 w-12 text-blue-500 animate-spin mx-auto mb-4" />
             <p className="text-gray-600">Verifying reset link...</p>
           </div>
         </div>
@@ -181,10 +181,10 @@ const ResetPasswordForm: React.FC = () => {
   }
 
   return (
-    <div className="h-full bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+    <div className="h-full bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 bg-gradient-to-br from-green-600 to-green-800 rounded-full flex items-center justify-center mb-4">
+          <div className="mx-auto h-16 w-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4">
             <span className="text-white font-bold text-2xl">B</span>
           </div>
           <h2 className="text-3xl font-bold text-gray-900">Reset Your Password</h2>
@@ -196,15 +196,15 @@ const ResetPasswordForm: React.FC = () => {
         {success ? (
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div className="text-center">
-              <div className="mx-auto h-12 w-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="h-6 w-6 text-green-600" />
+              <div className="mx-auto h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <CheckCircle className="h-6 w-6 text-blue-600" />
               </div>
               <h3 className="text-lg font-medium text-gray-900 mb-2">Password Updated!</h3>
               <p className="text-gray-600 mb-4">
                 Your password has been successfully updated. You'll be redirected to the app shortly.
               </p>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                <p className="text-sm text-green-800">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                <p className="text-sm text-blue-800">
                   Redirecting in 3 seconds...
                 </p>
               </div>
@@ -239,7 +239,7 @@ const ResetPasswordForm: React.FC = () => {
                       type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Enter new password"
                       required
                       disabled={loading}
@@ -271,7 +271,7 @@ const ResetPasswordForm: React.FC = () => {
                       type={showConfirmPassword ? 'text' : 'password'}
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Confirm new password"
                       required
                       disabled={loading}
@@ -302,7 +302,7 @@ const ResetPasswordForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading || !password || !confirmPassword}
-                  className="w-full flex justify-center items-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="w-full flex justify-center items-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   {loading ? (
                     <>
@@ -324,7 +324,7 @@ const ResetPasswordForm: React.FC = () => {
         <div className="text-center">
           <a
             href="/"
-            className="font-medium text-green-600 hover:text-green-500 transition-colors"
+            className="font-medium text-blue-600 hover:text-blue-500 transition-colors"
           >
             Back to Sign In
           </a>

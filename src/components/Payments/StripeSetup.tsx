@@ -89,7 +89,7 @@ ${window.location.origin}/functions/v1/stripe-webhooks`;
             <div key={stepItem.id} className="flex items-center">
               <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 ${
                 step >= stepItem.id 
-                  ? 'bg-green-500 border-green-500 text-white' 
+                  ? 'bg-blue-500 border-blue-500 text-white' 
                   : 'border-gray-300 text-gray-500'
               }`}>
                 {step > stepItem.id ? (
@@ -100,7 +100,7 @@ ${window.location.origin}/functions/v1/stripe-webhooks`;
               </div>
               {index < steps.length - 1 && (
                 <div className={`w-16 h-1 mx-2 ${
-                  step > stepItem.id ? 'bg-green-500' : 'bg-gray-300'
+                  step > stepItem.id ? 'bg-blue-500' : 'bg-gray-300'
                 }`} />
               )}
             </div>
@@ -250,7 +250,7 @@ ${window.location.origin}/functions/v1/stripe-webhooks`;
               <button
                 onClick={handleKeySubmit}
                 disabled={!keys.publishableKey || !keys.secretKey || !keys.webhookSecret}
-                className="w-full px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
               >
                 Copy Environment Variables
               </button>
@@ -331,27 +331,27 @@ ${window.location.origin}/functions/v1/stripe-webhooks`;
       </div>
       
       {/* Quick Setup Guide */}
-      <div className="mt-6 bg-green-50 border border-green-200 rounded-lg p-6">
-        <h4 className="font-semibold text-green-900 mb-3">Quick Setup Checklist:</h4>
-        <div className="space-y-2 text-sm text-green-800">
+      <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <h4 className="font-semibold text-blue-900 mb-3">Quick Setup Checklist:</h4>
+        <div className="space-y-2 text-sm text-blue-800">
           <div className="flex items-center space-x-2">
-            <CheckCircle className="h-4 w-4 text-green-600" />
+            <CheckCircle className="h-4 w-4 text-blue-600" />
             <span>Create Stripe account and get API keys</span>
           </div>
           <div className="flex items-center space-x-2">
-            <CheckCircle className="h-4 w-4 text-green-600" />
+            <CheckCircle className="h-4 w-4 text-blue-600" />
             <span>Create products and prices in Stripe Dashboard</span>
           </div>
           <div className="flex items-center space-x-2">
-            <CheckCircle className="h-4 w-4 text-green-600" />
+            <CheckCircle className="h-4 w-4 text-blue-600" />
             <span>Set up webhook endpoint for real-time updates</span>
           </div>
           <div className="flex items-center space-x-2">
-            <CheckCircle className="h-4 w-4 text-green-600" />
+            <CheckCircle className="h-4 w-4 text-blue-600" />
             <span>Add environment variables to your app</span>
           </div>
           <div className="flex items-center space-x-2">
-            <CheckCircle className="h-4 w-4 text-green-600" />
+            <CheckCircle className="h-4 w-4 text-blue-600" />
             <span>Test payments in development mode</span>
           </div>
         </div>

@@ -61,7 +61,7 @@ export default function FloatingVideoPlayer() {
         </span>
         <button
           onClick={(e) => { e.stopPropagation(); toggleMinimize(); }}
-          className="text-white hover:text-green-400 transition-colors ml-1"
+          className="text-white hover:text-blue-400 transition-colors ml-1"
         >
           <Maximize2 className="h-4 w-4" />
         </button>

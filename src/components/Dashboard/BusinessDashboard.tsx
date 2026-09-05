@@ -247,7 +247,7 @@ const BusinessDashboard: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white rounded-lg shadow-md p-6">
           <div className="flex items-center mb-4">
-            <DollarSign className="w-6 h-6 text-green-600 mr-2" />
+            <DollarSign className="w-6 h-6 text-blue-600 mr-2" />
             <h2 className="text-xl font-semibold text-gray-900">Recent Conversions</h2>
           </div>
           {recentConversions.length === 0 ? (
@@ -264,7 +264,7 @@ const BusinessDashboard: React.FC = () => {
                   </div>
                   <div className={`px-3 py-1 rounded-full text-xs font-medium ${
                     user.subscription_tier === 'annual'
-                      ? 'bg-emerald-100 text-emerald-700'
+                      ? 'bg-blue-100 text-blue-700'
                       : 'bg-blue-100 text-blue-700'
                   }`}>
                     {getSubscriptionLabel(user.subscription_tier)}
@@ -319,7 +319,7 @@ const BusinessDashboard: React.FC = () => {
             <p className="text-sm text-gray-600 mt-1">Total Users</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-green-600">{metrics.trialUsers}</p>
+            <p className="text-3xl font-bold text-blue-600">{metrics.trialUsers}</p>
             <p className="text-sm text-gray-600 mt-1">On Trial</p>
           </div>
           <div className="text-center">
@@ -327,7 +327,7 @@ const BusinessDashboard: React.FC = () => {
             <p className="text-sm text-gray-600 mt-1">Monthly</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-emerald-600">{metrics.annualUsers}</p>
+            <p className="text-3xl font-bold text-blue-600">{metrics.annualUsers}</p>
             <p className="text-sm text-gray-600 mt-1">Annual</p>
           </div>
           <div className="text-center">
@@ -346,7 +346,7 @@ const BusinessDashboard: React.FC = () => {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden flex">
             <div
-              className="bg-green-500 h-full transition-all duration-500"
+              className="bg-blue-500 h-full transition-all duration-500"
               style={{ width: `${metrics.totalUsers > 0 ? (metrics.trialUsers / metrics.totalUsers) * 100 : 0}%` }}
             />
             <div
@@ -354,7 +354,7 @@ const BusinessDashboard: React.FC = () => {
               style={{ width: `${metrics.totalUsers > 0 ? (metrics.monthlyUsers / metrics.totalUsers) * 100 : 0}%` }}
             />
             <div
-              className="bg-emerald-500 h-full transition-all duration-500"
+              className="bg-blue-500 h-full transition-all duration-500"
               style={{ width: `${metrics.totalUsers > 0 ? (metrics.annualUsers / metrics.totalUsers) * 100 : 0}%` }}
             />
             <div
@@ -364,7 +364,7 @@ const BusinessDashboard: React.FC = () => {
           </div>
           <div className="flex flex-wrap gap-4 mt-3 text-xs">
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-green-500 rounded mr-1" />
+              <div className="w-3 h-3 bg-blue-500 rounded mr-1" />
               <span className="text-gray-600">Trial ({metrics.trialUsers})</span>
             </div>
             <div className="flex items-center">
@@ -372,7 +372,7 @@ const BusinessDashboard: React.FC = () => {
               <span className="text-gray-600">Monthly ({metrics.monthlyUsers})</span>
             </div>
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-emerald-500 rounded mr-1" />
+              <div className="w-3 h-3 bg-blue-500 rounded mr-1" />
               <span className="text-gray-600">Annual ({metrics.annualUsers})</span>
             </div>
             <div className="flex items-center">

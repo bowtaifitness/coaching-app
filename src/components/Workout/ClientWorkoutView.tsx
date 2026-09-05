@@ -884,7 +884,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
       <div className="p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading your workouts...</p>
           </div>
         </div>
@@ -916,7 +916,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
 
         <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-3 sm:p-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="bg-green-500 rounded-full p-1.5 sm:p-3 mb-1.5 sm:mb-3">
+            <div className="bg-blue-500 rounded-full p-1.5 sm:p-3 mb-1.5 sm:mb-3">
               <CheckCircle className="h-3.5 w-3.5 sm:h-6 sm:w-6 text-white" />
             </div>
             <p className="text-[10px] sm:text-sm font-medium text-gray-600 mb-0.5 sm:mb-1">Done</p>
@@ -958,7 +958,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                     onClick={() => setViewMode('weekly')}
                     className={`flex items-center px-3 py-2.5 min-h-[44px] rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap touch-manipulation ${
                       viewMode === 'weekly'
-                        ? 'bg-white text-green-600 shadow-sm'
+                        ? 'bg-white text-blue-600 shadow-sm'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
@@ -969,7 +969,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                     onClick={() => setViewMode('calendar')}
                     className={`flex items-center px-3 py-2.5 min-h-[44px] rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap touch-manipulation ${
                       viewMode === 'calendar'
-                        ? 'bg-white text-green-600 shadow-sm'
+                        ? 'bg-white text-blue-600 shadow-sm'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
@@ -980,7 +980,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                     onClick={() => setViewMode('list')}
                     className={`flex items-center px-3 py-2.5 min-h-[44px] rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap touch-manipulation ${
                       viewMode === 'list'
-                        ? 'bg-white text-green-600 shadow-sm'
+                        ? 'bg-white text-blue-600 shadow-sm'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
@@ -993,7 +993,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                 onClick={() => setViewMode('programs')}
                 className={`flex items-center px-3 py-2.5 min-h-[44px] rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap touch-manipulation ${
                   viewMode === 'programs'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -1016,7 +1016,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                     onClick={() => setFilter(tab.id as any)}
                     className={`px-2 sm:px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
                       filter === tab.id
-                        ? 'bg-white text-green-600 shadow-sm'
+                        ? 'bg-white text-blue-600 shadow-sm'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
@@ -1040,7 +1040,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                 setViewingBlockNumber(activeBlockNumber);
                 setSwingPlanExpanded(true);
               }}
-              className="text-left bg-white rounded-xl shadow-sm border border-gray-100 p-6 cursor-pointer transition-all hover:shadow-md hover:border-teal-500"
+              className="text-left bg-white rounded-xl shadow-sm border border-gray-100 p-6 cursor-pointer transition-all hover:shadow-md hover:border-blue-500"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="min-w-0">
@@ -1051,7 +1051,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                       : 'Personalized training program'}
                   </p>
                 </div>
-                <div className="p-2 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-600">
+                <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
                   <Sparkles className="h-4 w-4 text-white" />
                 </div>
               </div>
@@ -1105,7 +1105,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                   <ChevronLeft className="h-5 w-5" />
                 </button>
               )}
-              <div className="p-1.5 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-600">
+              <div className="p-1.5 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
                 <Sparkles className="h-4 w-4 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">
@@ -1114,7 +1114,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                   ? ` - Block ${displayedBlockNumber} (Wks ${swingPlanWeeks[0]}-${swingPlanWeeks[2]})`
                   : ''}
               </h3>
-              <span className="text-xs font-medium text-teal-700 bg-teal-50 border border-teal-200 px-2 py-0.5 rounded-full">
+              <span className="text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
                 {swingPlanWorkouts.length} day{swingPlanWorkouts.length === 1 ? '' : 's'}
               </span>
             </div>
@@ -1156,9 +1156,9 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                     disabled={!hasWorkouts}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
                       isSelected
-                        ? 'bg-teal-600 text-white border-teal-600'
+                        ? 'bg-blue-600 text-white border-blue-600'
                         : hasWorkouts
-                        ? 'bg-white text-gray-700 border-gray-200 hover:bg-teal-50 hover:border-teal-300'
+                        ? 'bg-white text-gray-700 border-gray-200 hover:bg-blue-50 hover:border-blue-300'
                         : 'bg-gray-50 text-gray-400 border-gray-100 cursor-not-allowed'
                     }`}
                     title={!hasWorkouts ? 'No workouts generated for this block yet' : undefined}
@@ -1168,7 +1168,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                       (Wks {weeks[0]}-{weeks[2]})
                     </span>
                     {isActive && !isSelected && (
-                      <span className="ml-1 text-teal-600">•</span>
+                      <span className="ml-1 text-blue-600">•</span>
                     )}
                   </button>
                 );
@@ -1183,14 +1183,14 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                 key={workout.id}
                 className={`rounded-xl border-2 transition-all hover:shadow-md ${
                   workout.completed
-                    ? 'border-emerald-200 bg-emerald-50'
-                    : 'border-teal-200 bg-white hover:border-teal-300'
+                    ? 'border-blue-200 bg-blue-50'
+                    : 'border-blue-200 bg-white hover:border-blue-300'
                 }`}
               >
                 <div className="p-4">
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div className="min-w-0">
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-teal-700">
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-blue-700">
                         Training Program
                       </p>
                       <h4 className="text-sm font-semibold text-gray-900 mt-0.5 truncate">
@@ -1205,7 +1205,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                       </p>
                     </div>
                     {workout.completed && (
-                      <CheckCircle className="h-4 w-4 text-emerald-500 flex-shrink-0 mt-1" />
+                      <CheckCircle className="h-4 w-4 text-blue-500 flex-shrink-0 mt-1" />
                     )}
                   </div>
                   <div className="flex items-center text-xs text-gray-600 mb-3">
@@ -1233,7 +1233,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                     ) : (
                       <button
                         onClick={() => handleWorkoutClick(workout)}
-                        className="flex-1 flex items-center justify-center px-3 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors text-xs font-medium"
+                        className="flex-1 flex items-center justify-center px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs font-medium"
                       >
                         <Play className="h-3.5 w-3.5 mr-1" />
                         {workout.completed ? 'Review' : 'Start'}
@@ -1269,7 +1269,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
             type="checkbox"
             checked={showArchived}
             onChange={(e) => setShowArchived(e.target.checked)}
-            className="rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
           />
           <Archive className="h-3.5 w-3.5" />
           Show archived workouts
@@ -1285,14 +1285,14 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
               <div
                 key={assignment.id}
                 onClick={() => setSelectedProgramId(assignment.program.id)}
-                className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 cursor-pointer transition-all hover:shadow-md hover:border-green-500"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 cursor-pointer transition-all hover:shadow-md hover:border-blue-500"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{assignment.program.title}</h4>
                     <p className="text-sm text-gray-600">{assignment.program.duration_weeks} weeks</p>
                   </div>
-                  <div className="p-2 rounded-lg bg-green-500">
+                  <div className="p-2 rounded-lg bg-blue-500">
                     <Award className="h-4 w-4 text-white" />
                   </div>
                 </div>
@@ -1392,7 +1392,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                   <div className="flex items-center space-x-2">
                     <div className="w-24 bg-gray-200 rounded-full h-2">
                       <div 
-                        className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                        className="bg-blue-500 h-2 rounded-full transition-all duration-300"
                         style={{ 
                           width: `${getCurrentWeekWorkouts()?.totalCount > 0 
                             ? (getCurrentWeekWorkouts().completedCount / getCurrentWeekWorkouts().totalCount) * 100 
@@ -1430,10 +1430,10 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                   return (
                   <div key={workout.id} className={`rounded-xl border-2 transition-all hover:shadow-md touch-manipulation ${
                     workout.completed
-                      ? 'border-green-200 bg-green-50'
+                      ? 'border-blue-200 bg-blue-50'
                       : progress.isStarted
-                        ? 'border-green-300 bg-white hover:border-green-400'
-                        : 'border-gray-200 bg-white hover:border-green-200'
+                        ? 'border-blue-300 bg-white hover:border-blue-400'
+                        : 'border-gray-200 bg-white hover:border-blue-200'
                   }`}>
                     <div className="p-4">
                       <div className="flex items-center justify-between mb-2">
@@ -1442,10 +1442,10 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                             {dayLabel}
                           </span>
                           {workout.completed && (
-                            <CheckCircle className="h-4 w-4 text-green-500" />
+                            <CheckCircle className="h-4 w-4 text-blue-500" />
                           )}
                           {!workout.completed && progress.isStarted && (
-                            <span className="text-xs font-medium text-green-600 bg-green-100 px-1.5 py-0.5 rounded">
+                            <span className="text-xs font-medium text-blue-600 bg-blue-100 px-1.5 py-0.5 rounded">
                               In Progress
                             </span>
                           )}
@@ -1469,14 +1469,14 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                       {!workout.completed && progress.isStarted && (
                         <div className="mb-3">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-xs font-medium text-green-700">
+                            <span className="text-xs font-medium text-blue-700">
                               {progress.completedCount}/{progress.totalCount} exercises done
                             </span>
-                            <span className="text-xs font-semibold text-green-700">{progress.percentage}%</span>
+                            <span className="text-xs font-semibold text-blue-700">{progress.percentage}%</span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <div
-                              className="bg-green-500 h-2 rounded-full transition-all"
+                              className="bg-blue-500 h-2 rounded-full transition-all"
                               style={{ width: `${progress.percentage}%` }}
                             />
                           </div>
@@ -1497,8 +1497,8 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                             onClick={() => handleWorkoutClick(workout)}
                             className={`flex-1 flex items-center justify-center px-4 py-2.5 rounded-lg transition-colors text-sm font-medium touch-manipulation ${
                               progress.isStarted
-                                ? 'bg-green-600 text-white hover:bg-green-700'
-                                : 'bg-green-500 text-white hover:bg-green-600'
+                                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                : 'bg-blue-500 text-white hover:bg-blue-600'
                             }`}
                           >
                             <Play className="h-4 w-4 mr-1.5" />
@@ -1543,7 +1543,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-2">
-                    <Award className="h-5 w-5 text-green-600" />
+                    <Award className="h-5 w-5 text-blue-600" />
                     <span className="font-medium text-gray-900">
                       Week {getCurrentWeekWorkouts().weekNumber} Progress
                     </span>
@@ -1554,7 +1554,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                 </div>
                 
                 {getCurrentWeekWorkouts().completedCount === getCurrentWeekWorkouts().totalCount && (
-                  <div className="flex items-center space-x-2 text-green-600">
+                  <div className="flex items-center space-x-2 text-blue-600">
                     <CheckCircle className="h-5 w-5" />
                     <span className="font-medium">Week Complete!</span>
                   </div>
@@ -1613,14 +1613,14 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                   key={index}
                   className={`min-h-[64px] sm:min-h-[80px] p-1 sm:p-2 border border-gray-100 rounded-lg transition-colors ${
                     day ? 'hover:bg-gray-50 cursor-pointer' : ''
-                  } ${isToday ? 'bg-green-50 border-green-200 ring-2 ring-green-100' : ''} ${
+                  } ${isToday ? 'bg-blue-50 border-blue-200 ring-2 ring-blue-100' : ''} ${
                     isPastDate ? 'bg-gray-25' : ''
                   }`}
                 >
                   {day && (
                     <>
                       <div className={`text-xs sm:text-sm font-medium mb-1 sm:mb-2 ${
-                        isToday ? 'text-green-600' : isPastDate ? 'text-gray-400' : 'text-gray-900'
+                        isToday ? 'text-blue-600' : isPastDate ? 'text-gray-400' : 'text-gray-900'
                       }`}>
                         {day.getDate()}
                       </div>
@@ -1632,7 +1632,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                             onClick={() => handleWorkoutClick(workout)}
                             className={`text-xs p-1 sm:p-2 rounded cursor-pointer transition-all hover:scale-105 touch-manipulation ${
                               workout.completed 
-                                ? 'bg-green-500 text-white shadow-sm' 
+                                ? 'bg-blue-500 text-white shadow-sm' 
                                 : isToday
                                 ? 'bg-blue-600 text-white shadow-sm'
                                 : isPastDate
@@ -1674,7 +1674,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
           {/* Calendar Legend */}
           <div className="mt-6 flex items-center justify-center space-x-6 text-sm">
             <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-green-500 rounded"></div>
+              <div className="w-4 h-4 bg-blue-500 rounded"></div>
               <span className="text-gray-600">Completed</span>
             </div>
             <div className="flex items-center space-x-2">
@@ -1686,7 +1686,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
               <span className="text-gray-600">Overdue</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-green-50 border-2 border-green-200 rounded"></div>
+              <div className="w-4 h-4 bg-blue-50 border-2 border-blue-200 rounded"></div>
               <span className="text-gray-600">Today</span>
             </div>
           </div>
@@ -1703,8 +1703,8 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
               </p>
               <p className="text-xs sm:text-sm text-gray-600">This Month</p>
             </div>
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <p className="text-xl sm:text-2xl font-bold text-green-600">
+            <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <p className="text-xl sm:text-2xl font-bold text-blue-600">
                 {workouts.filter(w => {
                   const workoutDate = new Date(w.scheduled_date);
                   return workoutDate.getMonth() === currentCalendarDate.getMonth() && 
@@ -1757,13 +1757,13 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                       <div className="flex items-center space-x-3 mb-2">
                         <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{workout.title}</h3>
                         {workout.completed && (
-                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
                             <CheckCircle className="h-3 w-3 mr-1" />
                             Completed
                           </span>
                         )}
                         {!workout.completed && progress.isStarted && (
-                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
                             In Progress
                           </span>
                         )}
@@ -1789,14 +1789,14 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                       {!workout.completed && progress.isStarted && (
                         <div className="max-w-xs mb-2">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-xs font-medium text-green-700">
+                            <span className="text-xs font-medium text-blue-700">
                               {progress.completedCount}/{progress.totalCount} exercises done
                             </span>
-                            <span className="text-xs font-semibold text-green-700">{progress.percentage}%</span>
+                            <span className="text-xs font-semibold text-blue-700">{progress.percentage}%</span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <div
-                              className="bg-green-500 h-2 rounded-full transition-all"
+                              className="bg-blue-500 h-2 rounded-full transition-all"
                               style={{ width: `${progress.percentage}%` }}
                             />
                           </div>
@@ -1808,7 +1808,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                       {!workout.completed && (
                         <button
                           onClick={() => handleWorkoutClick(workout)}
-                          className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm font-medium touch-manipulation whitespace-nowrap"
+                          className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium touch-manipulation whitespace-nowrap"
                         >
                           <Play className="h-4 w-4 mr-1" />
                           {workout.id.startsWith('placeholder-') ? 'View Program' : progress.isStarted ? 'Resume Workout' : 'Start Workout'}
@@ -1863,7 +1863,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                                       <span>
                                         {savedProgress?.actualSets || workoutEx.sets} sets
                                         {savedProgress?.actualSets && savedProgress.actualSets !== workoutEx.sets && (
-                                          <span className="text-green-600 ml-1">(modified)</span>
+                                          <span className="text-blue-600 ml-1">(modified)</span>
                                         )}
                                       </span>
                                     )}
@@ -1871,7 +1871,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                                       <span>
                                         {savedProgress?.actualReps || workoutEx.reps} reps
                                         {savedProgress?.actualReps && savedProgress.actualReps !== workoutEx.reps && (
-                                          <span className="text-green-600 ml-1">(modified)</span>
+                                          <span className="text-blue-600 ml-1">(modified)</span>
                                         )}
                                       </span>
                                     )}
@@ -1879,7 +1879,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                                       <span>
                                         {savedProgress?.actualWeight || workoutEx.weight} lbs
                                         {savedProgress?.actualWeight && savedProgress.actualWeight !== workoutEx.weight && (
-                                          <span className="text-green-600 ml-1">(modified)</span>
+                                          <span className="text-blue-600 ml-1">(modified)</span>
                                         )}
                                       </span>
                                     )}
@@ -1892,7 +1892,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                                     {savedProgress?.difficulty && (
                                       <div className="mt-2">
                                         <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                                          savedProgress.difficulty === 'easy' ? 'bg-green-100 text-green-700' :
+                                          savedProgress.difficulty === 'easy' ? 'bg-blue-100 text-blue-700' :
                                           savedProgress.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' :
                                           'bg-red-100 text-red-700'
                                         }`}>
@@ -1904,7 +1904,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                                 </div>
                                 <div className="flex flex-col items-end space-y-2">
                                   {savedProgress?.completed && (
-                                    <div className="flex items-center text-green-600">
+                                    <div className="flex items-center text-blue-600">
                                       <CheckCircle className="h-4 w-4 mr-1" />
                                       <span className="text-xs font-medium">Completed</span>
                                     </div>
@@ -1943,7 +1943,7 @@ const ClientWorkoutView: React.FC<ClientWorkoutViewProps> = ({ initialWorkoutId 
                     {!workout.completed && (
                       <button
                         onClick={() => handleWorkoutClick(workout)}
-                        className="flex items-center justify-center px-4 py-2.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm font-medium touch-manipulation"
+                        className="flex items-center justify-center px-4 py-2.5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium touch-manipulation"
                       >
                         <Play className="h-4 w-4 mr-2" />
                         {workout.id.startsWith('placeholder-') ? 'View Program' : progress.isStarted ? 'Resume Workout' : 'Start Workout'}

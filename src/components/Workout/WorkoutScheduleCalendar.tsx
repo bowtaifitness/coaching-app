@@ -188,7 +188,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
   };
 
   const statusColors: Record<string, string> = {
-    completed: 'bg-green-500 text-white',
+    completed: 'bg-blue-500 text-white',
     scheduled: 'bg-blue-500 text-white',
     in_progress: 'bg-yellow-500 text-white',
     skipped: 'bg-gray-400 text-white',
@@ -216,7 +216,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
       <div
         key={dateStr}
         className={`min-h-[80px] sm:min-h-[100px] p-1 sm:p-2 border border-gray-100 rounded-lg transition-colors cursor-pointer ${
-          isToday ? 'bg-green-50 border-green-300' : 'hover:bg-gray-50'
+          isToday ? 'bg-blue-50 border-blue-300' : 'hover:bg-gray-50'
         } ${isDragOver ? 'bg-blue-50 border-blue-300 ring-2 ring-blue-200' : ''}`}
         onClick={() => {
           setSelectedDate(dateStr);
@@ -226,7 +226,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
         onDragLeave={handleDragLeave}
         onDrop={(e) => handleDrop(e, dateStr)}
       >
-        <div className={`text-xs sm:text-sm font-medium mb-1 ${isToday ? 'text-green-600 font-bold' : 'text-gray-900'}`}>
+        <div className={`text-xs sm:text-sm font-medium mb-1 ${isToday ? 'text-blue-600 font-bold' : 'text-gray-900'}`}>
           {date.getDate()}
         </div>
         <div className="space-y-0.5 sm:space-y-1">
@@ -311,7 +311,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
                 type="button"
                 onClick={() => setMode('template')}
                 className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
-                  mode === 'template' ? 'bg-white text-green-600 shadow-sm' : 'text-gray-600'
+                  mode === 'template' ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-600'
                 }`}
               >
                 From Template
@@ -320,7 +320,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
                 type="button"
                 onClick={() => setMode('custom')}
                 className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
-                  mode === 'custom' ? 'bg-white text-green-600 shadow-sm' : 'text-gray-600'
+                  mode === 'custom' ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-600'
                 }`}
               >
                 Custom
@@ -333,7 +333,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
                 <select
                   value={selectedTemplateId}
                   onChange={(e) => setSelectedTemplateId(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 >
                   <option value="">Select a template...</option>
@@ -349,7 +349,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
                   type="text"
                   value={customTitle}
                   onChange={(e) => setCustomTitle(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="e.g., Upper Body Strength"
                   required
                 />
@@ -362,7 +362,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
                 type="date"
                 value={schedDate}
                 onChange={(e) => setSchedDate(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
             </div>
@@ -372,7 +372,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 rows={2}
                 placeholder="Instructions for this session..."
               />
@@ -382,7 +382,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
               <button
                 type="submit"
                 disabled={saving || (mode === 'template' ? !selectedTemplateId : !customTitle.trim())}
-                className="flex-1 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {saving ? 'Scheduling...' : 'Schedule Workout'}
               </button>
@@ -476,7 +476,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
                       setShowDetailModal(false);
                       setSelectedWorkout(null);
                     }}
-                    className="flex items-center gap-1 px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 text-sm transition-colors"
+                    className="flex items-center gap-1 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-sm transition-colors"
                   >
                     <CheckCircle className="h-4 w-4" /> Complete
                   </button>
@@ -533,7 +533,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
           {isCoach && (
             <button
               onClick={() => { setSelectedDate(todayStr); setShowAddModal(true); }}
-              className="mt-3 text-green-600 hover:text-green-700 text-sm font-medium"
+              className="mt-3 text-blue-600 hover:text-blue-700 text-sm font-medium"
             >
               + Schedule a workout
             </button>
@@ -551,7 +551,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
               key={w.id}
               onClick={() => { setSelectedWorkout(w); setShowDetailModal(true); }}
               className={`flex items-center p-3 rounded-lg cursor-pointer transition-colors ${
-                isToday ? 'bg-green-50 border border-green-200' : 'bg-gray-50 hover:bg-gray-100'
+                isToday ? 'bg-blue-50 border border-blue-200' : 'bg-gray-50 hover:bg-gray-100'
               }`}
             >
               <div className={`p-2 rounded-lg mr-3 ${statusColors[w.status]}`}>
@@ -581,7 +581,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
     <div className="space-y-4 sm:space-y-6">
       {/* Toast */}
       {toast && (
-        <div className="fixed top-20 right-4 z-[60] bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm animate-slide-in-right">
+        <div className="fixed top-20 right-4 z-[60] bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm animate-slide-in-right">
           {toast}
         </div>
       )}
@@ -618,14 +618,14 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
               <div className="flex bg-gray-100 rounded-lg p-0.5">
                 <button
                   onClick={() => setViewMode('month')}
-                  className={`p-2 rounded-md transition-colors ${viewMode === 'month' ? 'bg-white text-green-600 shadow-sm' : 'text-gray-500'}`}
+                  className={`p-2 rounded-md transition-colors ${viewMode === 'month' ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-500'}`}
                   title="Month view"
                 >
                   <Grid3X3 className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-md transition-colors ${viewMode === 'list' ? 'bg-white text-green-600 shadow-sm' : 'text-gray-500'}`}
+                  className={`p-2 rounded-md transition-colors ${viewMode === 'list' ? 'bg-white text-blue-600 shadow-sm' : 'text-gray-500'}`}
                   title="List view"
                 >
                   <List className="h-4 w-4" />
@@ -635,7 +635,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
               {isCoach && (
                 <button
                   onClick={() => { setSelectedDate(todayStr); setShowAddModal(true); }}
-                  className="flex items-center gap-1 px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm touch-manipulation"
+                  className="flex items-center gap-1 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm touch-manipulation"
                 >
                   <Plus className="h-4 w-4" />
                   <span className="hidden sm:inline">Schedule</span>
@@ -647,7 +647,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
           {/* Legend */}
           <div className="flex flex-wrap gap-3 sm:gap-4 mt-3 text-xs text-gray-600">
             <div className="flex items-center gap-1"><div className="w-3 h-3 bg-blue-500 rounded" /> Scheduled</div>
-            <div className="flex items-center gap-1"><div className="w-3 h-3 bg-green-500 rounded" /> Completed</div>
+            <div className="flex items-center gap-1"><div className="w-3 h-3 bg-blue-500 rounded" /> Completed</div>
             <div className="flex items-center gap-1"><div className="w-3 h-3 bg-yellow-500 rounded" /> In Progress</div>
             <div className="flex items-center gap-1"><div className="w-3 h-3 bg-gray-400 rounded" /> Skipped</div>
             {isCoach && <span className="text-gray-400 hidden sm:inline">Drag to move · Hold Alt+drag to copy</span>}
@@ -658,7 +658,7 @@ const WorkoutScheduleCalendar: React.FC<WorkoutScheduleCalendarProps> = ({ clien
         <div className="p-3 sm:p-6">
           {loading ? (
             <div className="text-center py-12">
-              <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+              <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
               <p className="text-gray-600">Loading schedule...</p>
             </div>
           ) : viewMode === 'list' ? (

@@ -272,7 +272,7 @@ const WeekCustomizationModal: React.FC<WeekCustomizationModalProps> = ({
 
           {loading ? (
             <div className="text-center py-8">
-              <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+              <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
               <p className="text-gray-600">Loading week data...</p>
             </div>
           ) : (
@@ -329,7 +329,7 @@ const WeekCustomizationModal: React.FC<WeekCustomizationModalProps> = ({
                             const value = e.target.value ? parseInt(e.target.value) : null;
                             handleExerciseChange(index, 'sets', value);
                           }}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           min="1"
                           placeholder="3"
                         />
@@ -348,7 +348,7 @@ const WeekCustomizationModal: React.FC<WeekCustomizationModalProps> = ({
                             const value = e.target.value ? parseInt(e.target.value) : null;
                             handleExerciseChange(index, 'reps', value);
                           }}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           min="1"
                           placeholder="10"
                         />
@@ -366,7 +366,7 @@ const WeekCustomizationModal: React.FC<WeekCustomizationModalProps> = ({
                             const value = e.target.value ? parseFloat(e.target.value) : null;
                             handleExerciseChange(index, 'weight', value);
                           }}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           min="0"
                           step="0.5"
                           placeholder="Optional"
@@ -386,7 +386,7 @@ const WeekCustomizationModal: React.FC<WeekCustomizationModalProps> = ({
                             const value = e.target.value ? parseInt(e.target.value) : null;
                             handleExerciseChange(index, 'duration', value);
                           }}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           min="1"
                           placeholder="Optional"
                         />
@@ -401,7 +401,7 @@ const WeekCustomizationModal: React.FC<WeekCustomizationModalProps> = ({
                         type="text"
                         value={exercise.notes || ''}
                         onChange={(e) => handleExerciseChange(index, 'notes', e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Any specific modifications for this week..."
                       />
                     </div>
@@ -433,7 +433,7 @@ const WeekCustomizationModal: React.FC<WeekCustomizationModalProps> = ({
                 <button
                   onClick={saveCustomizations}
                   disabled={saving || !hasChanges}
-                  className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {saving ? (
                     <>

@@ -119,7 +119,7 @@ const WorkoutLogView: React.FC<WorkoutLogViewProps> = ({ workoutId, onBack }) =>
     return (
       <div className="p-6 flex items-center justify-center h-64">
         <div className="text-center">
-          <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+          <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
           <p className="text-gray-600">Loading workout...</p>
         </div>
       </div>
@@ -190,13 +190,13 @@ const WorkoutLogView: React.FC<WorkoutLogViewProps> = ({ workoutId, onBack }) =>
                 </>
               ) : lastSavedAt ? (
                 <>
-                  <Check className="h-3 w-3 text-green-500" />
+                  <Check className="h-3 w-3 text-blue-500" />
                   Saved
                 </>
               ) : null}
             </div>
             <div className="text-right">
-              <div className="text-2xl font-bold text-green-600">{pct}%</div>
+              <div className="text-2xl font-bold text-blue-600">{pct}%</div>
               <div className="text-xs text-gray-500">
                 {completedExercises}/{totalExercises} exercises
               </div>
@@ -207,7 +207,7 @@ const WorkoutLogView: React.FC<WorkoutLogViewProps> = ({ workoutId, onBack }) =>
         {/* Progress bar */}
         <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
           <div
-            className="bg-green-500 h-2.5 rounded-full transition-all duration-500"
+            className="bg-blue-500 h-2.5 rounded-full transition-all duration-500"
             style={{ width: `${pct}%` }}
           />
         </div>
@@ -224,7 +224,7 @@ const WorkoutLogView: React.FC<WorkoutLogViewProps> = ({ workoutId, onBack }) =>
               className={`p-2.5 min-h-[44px] min-w-[44px] rounded-lg transition-colors ${
                 timerRunning
                   ? 'bg-orange-500 text-white hover:bg-orange-600'
-                  : 'bg-green-500 text-white hover:bg-green-600'
+                  : 'bg-blue-500 text-white hover:bg-blue-600'
               }`}
             >
               {timerRunning ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
@@ -274,7 +274,7 @@ const WorkoutLogView: React.FC<WorkoutLogViewProps> = ({ workoutId, onBack }) =>
           value={logState.overall_notes}
           onChange={(e) => updateOverallNotes(e.target.value)}
           placeholder="How did the workout feel overall? Any observations..."
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           rows={3}
         />
       </div>
@@ -298,7 +298,7 @@ const WorkoutLogView: React.FC<WorkoutLogViewProps> = ({ workoutId, onBack }) =>
                 await markWorkoutComplete();
                 onBack();
               }}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold"
             >
               <Award className="h-5 w-5" />
               Complete Workout
@@ -307,7 +307,7 @@ const WorkoutLogView: React.FC<WorkoutLogViewProps> = ({ workoutId, onBack }) =>
             <button
               onClick={saveNow}
               disabled={saving}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-green-500 text-white rounded-lg hover:bg-green-600 font-medium disabled:opacity-50"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 min-h-[48px] bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-medium disabled:opacity-50"
             >
               {saving ? <Loader className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
               {saving ? 'Saving...' : 'Save Progress'}
@@ -370,9 +370,9 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
     <div
       className={`bg-white rounded-xl border-2 transition-all ${
         allDone
-          ? 'border-green-300 bg-green-50/50'
+          ? 'border-blue-300 bg-blue-50/50'
           : isExpanded
-          ? 'border-green-500 shadow-md'
+          ? 'border-blue-500 shadow-md'
           : 'border-gray-200'
       }`}
     >
@@ -386,7 +386,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
           <div
             className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold shrink-0 ${
               allDone
-                ? 'bg-green-500 text-white'
+                ? 'bg-blue-500 text-white'
                 : completedSets > 0
                 ? 'bg-yellow-400 text-white'
                 : 'bg-gray-200 text-gray-600'
@@ -402,7 +402,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
           </div>
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          {allDone && <CheckCircle className="h-5 w-5 text-green-500" />}
+          {allDone && <CheckCircle className="h-5 w-5 text-blue-500" />}
           {isExpanded ? (
             <ChevronUp className="h-5 w-5 text-gray-400" />
           ) : (
@@ -416,11 +416,11 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
         <div className="px-4 pb-4 space-y-4">
           {/* Previous performance + PB */}
           {(lastEntry || personalBest) && (
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-3">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-200 rounded-lg p-3">
               {lastEntry && (
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-green-600" />
+                    <TrendingUp className="h-4 w-4 text-blue-600" />
                     <span className="text-xs font-semibold text-gray-700">Last Session</span>
                   </div>
                   <span className="text-[11px] text-gray-500">
@@ -433,19 +433,19 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
               )}
               {lastEntry && (
                 <div className="grid grid-cols-3 gap-2 mb-2">
-                  <div className="bg-white rounded px-2 py-1 text-center border border-green-100">
+                  <div className="bg-white rounded px-2 py-1 text-center border border-blue-100">
                     <p className="text-[10px] text-gray-500 uppercase">Max Wt</p>
                     <p className="text-sm font-bold text-gray-900">
                       {lastEntry.max_weight ? `${lastEntry.max_weight} lb` : '—'}
                     </p>
                   </div>
-                  <div className="bg-white rounded px-2 py-1 text-center border border-green-100">
+                  <div className="bg-white rounded px-2 py-1 text-center border border-blue-100">
                     <p className="text-[10px] text-gray-500 uppercase">Volume</p>
                     <p className="text-sm font-bold text-gray-900">
                       {lastEntry.total_volume || '—'}
                     </p>
                   </div>
-                  <div className="bg-white rounded px-2 py-1 text-center border border-green-100">
+                  <div className="bg-white rounded px-2 py-1 text-center border border-blue-100">
                     <p className="text-[10px] text-gray-500 uppercase">Avg RPE</p>
                     <p className="text-sm font-bold text-gray-900">
                       {lastEntry.avg_rpe ?? '—'}
@@ -465,7 +465,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
               )}
               <button
                 onClick={onShowHistory}
-                className="mt-2 text-xs text-green-700 font-medium hover:underline flex items-center gap-1"
+                className="mt-2 text-xs text-blue-700 font-medium hover:underline flex items-center gap-1"
               >
                 <History className="h-3 w-3" />
                 View full history
@@ -491,7 +491,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
                 key={setIdx}
                 className={`rounded-lg border p-3 transition-colors ${
                   set.completed
-                    ? 'border-green-300 bg-green-50'
+                    ? 'border-blue-300 bg-blue-50'
                     : 'border-gray-200 bg-white'
                 }`}
               >
@@ -537,7 +537,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
                           ? `${set.prescribed_duration ?? ''}`
                           : `${set.prescribed_reps ?? ''}`
                       }
-                      className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
 
@@ -559,7 +559,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
                           onUpdateSet(exerciseIndex, setIdx, 'actual_weight', v);
                         }}
                         placeholder={set.prescribed_weight ? `${set.prescribed_weight}` : '—'}
-                        className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                   )}
@@ -575,7 +575,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
                         const v = e.target.value === '' ? null : parseInt(e.target.value);
                         onUpdateSet(exerciseIndex, setIdx, 'rpe', v);
                       }}
-                      className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white"
+                      className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
                     >
                       <option value="">—</option>
                       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
@@ -598,7 +598,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
                         onUpdateSet(exerciseIndex, setIdx, 'notes', e.target.value)
                       }
                       placeholder="Note..."
-                      className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-2.5 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
 
@@ -609,8 +609,8 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
                       onClick={() => onToggleSetComplete(exerciseIndex, setIdx)}
                       className={`w-12 h-12 sm:w-10 sm:h-10 rounded-lg border-2 flex items-center justify-center transition-all touch-manipulation ${
                         set.completed
-                          ? 'bg-green-500 border-green-500 text-white'
-                          : 'border-gray-300 text-gray-300 hover:border-green-400 hover:text-green-400'
+                          ? 'bg-blue-500 border-blue-500 text-white'
+                          : 'border-gray-300 text-gray-300 hover:border-blue-400 hover:text-blue-400'
                       }`}
                       aria-label={set.completed ? 'Mark incomplete' : 'Mark complete'}
                     >
@@ -632,7 +632,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
               value={exercise.notes}
               onChange={(e) => onUpdateNotes(exerciseIndex, e.target.value)}
               placeholder="How did this exercise feel?"
-              className="w-full px-3 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-3 py-2 min-h-[44px] text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>

@@ -504,7 +504,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
       <div className="p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading program details...</p>
           </div>
         </div>
@@ -541,7 +541,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
           <p className="text-gray-600 mb-4">The requested program could not be found.</p>
           <button
             onClick={onBack}
-            className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Programs
@@ -585,7 +585,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-3 sm:p-6 flex-1 basis-[calc(50%-0.25rem)] min-w-0">
             <div className="flex flex-col items-center justify-center text-center">
-              <div className="bg-green-500 rounded-lg p-1.5 sm:p-3 mb-1.5 sm:mb-2">
+              <div className="bg-blue-500 rounded-lg p-1.5 sm:p-3 mb-1.5 sm:mb-2">
                 <Target className="h-3.5 w-3.5 sm:h-6 sm:w-6 text-white" />
               </div>
               <p className="text-[10px] sm:text-xs font-medium text-gray-600 mb-0.5 sm:mb-1">Days/Wk</p>
@@ -624,7 +624,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
             <select
               value={selectedWeek}
               onChange={(e) => setSelectedWeek(parseInt(e.target.value))}
-              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               {Array.from({ length: program.duration_weeks }, (_, i) => i + 1).map(week => (
                 <option key={week} value={week}>Week {week}</option>
@@ -643,7 +643,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div 
-              className="bg-green-500 h-2 rounded-full transition-all duration-300"
+              className="bg-blue-500 h-2 rounded-full transition-all duration-300"
               style={{ width: `${(selectedWeek / program.duration_weeks) * 100}%` }}
             ></div>
           </div>
@@ -705,7 +705,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
               onClick={() => handleDayClick(day.dayId, day.dayName, selectedWeek, day.templateId)}
               className={`p-6 rounded-xl border-2 cursor-pointer transition-all hover:shadow-md ${
                 day.isCustomized
-                  ? 'border-green-500 bg-green-50 hover:border-green-600'
+                  ? 'border-blue-500 bg-blue-50 hover:border-blue-600'
                   : day.exerciseCount > 0
                   ? 'border-blue-500 bg-blue-50 hover:border-blue-600'
                   : 'border-gray-200 bg-white hover:border-gray-300'
@@ -718,9 +718,9 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
                 </div>
                 <div className={`p-2 rounded-lg ${
                   isClient
-                    ? (day.exerciseCount > 0 ? 'bg-green-500' : 'bg-gray-300')
+                    ? (day.exerciseCount > 0 ? 'bg-blue-500' : 'bg-gray-300')
                     : day.isCustomized
-                    ? 'bg-green-500'
+                    ? 'bg-blue-500'
                     : day.exerciseCount > 0
                     ? 'bg-blue-500'
                     : 'bg-gray-400'
@@ -764,7 +764,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
                       <span className="text-gray-600">Progress</span>
                       <span className={`font-medium ${
                         completionData.completed
-                          ? 'text-green-600'
+                          ? 'text-blue-600'
                           : completionData.percentage > 0
                           ? 'text-blue-600'
                           : 'text-gray-500'
@@ -775,13 +775,13 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
                     <div className="w-full bg-gray-200 rounded-full h-1.5">
                       <div
                         className={`h-1.5 rounded-full transition-all duration-300 ${
-                          completionData.completed ? 'bg-green-500' : 'bg-blue-500'
+                          completionData.completed ? 'bg-blue-500' : 'bg-blue-500'
                         }`}
                         style={{ width: `${completionData.percentage}%` }}
                       ></div>
                     </div>
                     {completionData.completed && (
-                      <div className="flex items-center text-xs text-green-600 font-medium">
+                      <div className="flex items-center text-xs text-blue-600 font-medium">
                         <CheckCircle className="h-3 w-3 mr-1" />
                         Completed
                       </div>
@@ -792,7 +792,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
                     <span className="text-gray-600">Status</span>
                     <span className={`font-medium ${
                       day.isCustomized
-                        ? 'text-green-600'
+                        ? 'text-blue-600'
                         : day.exerciseCount > 0
                         ? 'text-blue-600'
                         : 'text-gray-500'
@@ -848,7 +848,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
                     onClick={() => setSelectedWeek(week.weekNumber)}
                     className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                       selectedWeek === week.weekNumber
-                        ? 'border-green-500 bg-green-50'
+                        ? 'border-blue-500 bg-blue-50'
                         : 'border-gray-200 bg-gray-50 hover:border-gray-300'
                     }`}
                   >
@@ -862,13 +862,13 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
                       </div>
                       <div className="flex items-center space-x-2">
                         {weekStats.customizedDays > 0 && (
-                          <div className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
+                          <div className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium">
                             {weekStats.customizedDays} custom
                           </div>
                         )}
                         <div className="w-12 bg-gray-200 rounded-full h-2">
                           <div
-                            className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                            className="bg-blue-500 h-2 rounded-full transition-all duration-300"
                             style={{
                               width: `${weekStats.totalDays > 0 ? (weekStats.customizedDays / weekStats.totalDays) * 100 : 0}%`
                             }}
@@ -939,7 +939,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
                       handleDayClick(firstDay.dayId, firstDay.dayName, selectedWeek, firstDay.templateId);
                     }
                   }}
-                  className="w-full flex items-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm"
+                  className="w-full flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
                 >
                   <Plus className="h-4 w-4 mr-2" />
                   Add Workout to Empty Day
@@ -987,7 +987,7 @@ const ProgramDetailView: React.FC<ProgramDetailViewProps> = ({ programId, onBack
             </div>
             
             <div className="flex items-start space-x-3">
-              <div className="bg-green-500 rounded p-1">
+              <div className="bg-blue-500 rounded p-1">
                 <Edit3 className="h-3 w-3 text-white" />
               </div>
               <div>

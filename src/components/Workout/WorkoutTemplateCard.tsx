@@ -115,7 +115,7 @@ const WorkoutTemplateCard: React.FC<WorkoutTemplateCardProps> = ({
   const getSupersetColor = (groupNumber: number) => {
     const colors = [
       'bg-blue-100 text-blue-700 border-blue-300',
-      'bg-green-100 text-green-700 border-green-300',
+      'bg-blue-100 text-blue-700 border-blue-300',
       'bg-purple-100 text-purple-700 border-purple-300',
       'bg-orange-100 text-orange-700 border-orange-300',
       'bg-pink-100 text-pink-700 border-pink-300',
@@ -257,7 +257,7 @@ const WorkoutTemplateCard: React.FC<WorkoutTemplateCardProps> = ({
             <div className="flex items-start flex-wrap gap-1.5 mb-1.5">
               <h3 className="text-base font-semibold text-gray-900 leading-tight">{template.title}</h3>
               {template.category && (
-                <span className="flex-shrink-0 px-2 py-0.5 bg-green-100 text-green-800 rounded text-xs font-medium capitalize">
+                <span className="flex-shrink-0 px-2 py-0.5 bg-blue-100 text-blue-800 rounded text-xs font-medium capitalize">
                   {template.category.replace('-', ' ')}
                 </span>
               )}

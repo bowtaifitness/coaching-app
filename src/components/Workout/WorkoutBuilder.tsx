@@ -221,8 +221,8 @@ const WorkoutBuilder: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {templatesToCompare.map((template) => (
-            <div key={template.id} className="bg-white rounded-lg shadow-lg border-2 border-green-200 flex flex-col">
-              <div className="p-3 bg-green-50 border-b border-green-200">
+            <div key={template.id} className="bg-white rounded-lg shadow-lg border-2 border-blue-200 flex flex-col">
+              <div className="p-3 bg-blue-50 border-b border-blue-200">
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-base text-gray-900 truncate pr-2">{template.title}</h3>
                   <button
@@ -256,7 +256,7 @@ const WorkoutBuilder: React.FC = () => {
                         <div className="flex items-start">
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start space-x-1.5 mb-1">
-                              <span className="inline-flex items-center justify-center w-5 h-5 bg-green-100 text-green-700 rounded-full text-xs font-bold flex-shrink-0">
+                              <span className="inline-flex items-center justify-center w-5 h-5 bg-blue-100 text-blue-700 rounded-full text-xs font-bold flex-shrink-0">
                                 {index + 1}
                               </span>
                               <span className="font-semibold text-gray-900 text-sm leading-tight">{ex.exercise.name}</span>
@@ -288,7 +288,7 @@ const WorkoutBuilder: React.FC = () => {
                     setEditingTemplate(template);
                     setShowEditModal(true);
                   }}
-                  className="w-full flex items-center justify-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm"
+                  className="w-full flex items-center justify-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
                 >
                   <Edit3 className="h-3.5 w-3.5 mr-1.5" />
                   Edit Template
@@ -904,7 +904,7 @@ const WorkoutBuilder: React.FC = () => {
             <input
               name="title"
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="e.g., Upper Body Strength"
               required
             />
@@ -914,7 +914,7 @@ const WorkoutBuilder: React.FC = () => {
             <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
             <textarea
               name="description"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               rows={3}
               placeholder="Describe the purpose and focus of this template..."
             />
@@ -924,7 +924,7 @@ const WorkoutBuilder: React.FC = () => {
             <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
             <select
               name="category"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">Select a category (optional)</option>
               <option value="bodyweight">Bodyweight</option>
@@ -944,7 +944,7 @@ const WorkoutBuilder: React.FC = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting ? (
                 <>
@@ -993,7 +993,7 @@ const WorkoutBuilder: React.FC = () => {
               name="title"
               type="text"
              defaultValue={editingProgram?.title || ''}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="e.g., 12-Week Strength Program"
               required
             />
@@ -1004,7 +1004,7 @@ const WorkoutBuilder: React.FC = () => {
             <textarea
               name="description"
              defaultValue={editingProgram?.description || ''}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               rows={3}
               placeholder="Describe the program goals and structure..."
             />
@@ -1015,7 +1015,7 @@ const WorkoutBuilder: React.FC = () => {
             <select
               name="category"
               defaultValue={editingProgram?.category || ''}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">Select a category (optional)</option>
               <option value="bodyweight">Bodyweight</option>
@@ -1030,7 +1030,7 @@ const WorkoutBuilder: React.FC = () => {
             <select
               name="program_type"
               defaultValue={editingProgram?.program_type || 'custom'}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             >
               <option value="custom">Custom Program</option>
@@ -1047,7 +1047,7 @@ const WorkoutBuilder: React.FC = () => {
               <select
                 name="duration_weeks"
                defaultValue={editingProgram?.duration_weeks || ''}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               >
                 <option value="">Select duration</option>
@@ -1062,7 +1062,7 @@ const WorkoutBuilder: React.FC = () => {
               <select
                 name="days_per_week"
                defaultValue={editingProgram?.days_per_week || ''}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               >
                 <option value="">Select days</option>
@@ -1078,7 +1078,7 @@ const WorkoutBuilder: React.FC = () => {
             <select
               name="warmup_template_id"
               defaultValue={editingProgram?.warmup_template_id || ''}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">No warm-up</option>
               {templates.map(template => (
@@ -1112,7 +1112,7 @@ const WorkoutBuilder: React.FC = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting ? (
                 <>
@@ -1176,7 +1176,7 @@ const WorkoutBuilder: React.FC = () => {
               <select
                 value={selectedClient}
                 onChange={(e) => setSelectedClient(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               >
                 <option value="">-- Select a client --</option>
@@ -1196,7 +1196,7 @@ const WorkoutBuilder: React.FC = () => {
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 min={new Date().toISOString().split('T')[0]}
                 required
               />
@@ -1222,7 +1222,7 @@ const WorkoutBuilder: React.FC = () => {
                   }
                 }}
                 disabled={assigning || !selectedClient || !startDate}
-                className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {assigning ? (
                   <>
@@ -1285,7 +1285,7 @@ const WorkoutBuilder: React.FC = () => {
                    );
                    setShowTemplateSelector(null);
                  }}
-                 className="text-left p-4 border border-gray-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-colors"
+                 className="text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
                >
                  <h4 className="font-medium text-gray-900 mb-2">{template.title}</h4>
                  {template.description && (
@@ -1340,7 +1340,7 @@ const WorkoutBuilder: React.FC = () => {
               onClick={() => setActiveTab('templates')}
               className={`flex items-center py-3 sm:py-4 px-2 border-b-2 font-medium text-xs sm:text-sm transition-colors whitespace-nowrap touch-manipulation ${
                 activeTab === 'templates'
-                  ? 'border-green-500 text-green-600'
+                  ? 'border-blue-500 text-blue-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -1352,7 +1352,7 @@ const WorkoutBuilder: React.FC = () => {
               onClick={() => setActiveTab('custom-programs')}
               className={`flex items-center py-3 sm:py-4 px-2 border-b-2 font-medium text-xs sm:text-sm transition-colors whitespace-nowrap touch-manipulation ${
                 activeTab === 'custom-programs'
-                  ? 'border-green-500 text-green-600'
+                  ? 'border-blue-500 text-blue-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -1364,7 +1364,7 @@ const WorkoutBuilder: React.FC = () => {
               onClick={() => setActiveTab('standard-programs')}
               className={`flex items-center py-3 sm:py-4 px-2 border-b-2 font-medium text-xs sm:text-sm transition-colors whitespace-nowrap touch-manipulation ${
                 activeTab === 'standard-programs'
-                  ? 'border-green-500 text-green-600'
+                  ? 'border-blue-500 text-blue-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -1389,7 +1389,7 @@ const WorkoutBuilder: React.FC = () => {
                   placeholder="Search templates..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
               
@@ -1399,7 +1399,7 @@ const WorkoutBuilder: React.FC = () => {
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     {categories.map((category) => (
                       <option key={category.id} value={category.id}>
@@ -1413,7 +1413,7 @@ const WorkoutBuilder: React.FC = () => {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as 'created' | 'name' | 'category')}
-                    className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="created">Sort by: Date Created</option>
                     <option value="name">Sort by: Name</option>
@@ -1453,7 +1453,7 @@ const WorkoutBuilder: React.FC = () => {
                 )}
                 <button
                   onClick={() => setShowAddModal(true)}
-                  className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors touch-manipulation active:scale-95 whitespace-nowrap"
+                  className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors touch-manipulation active:scale-95 whitespace-nowrap"
                 >
                   <Plus className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                   <span className="text-sm sm:text-base">New Template</span>
@@ -1535,7 +1535,7 @@ const WorkoutBuilder: React.FC = () => {
               </p>
               <button
                 onClick={() => setShowAddModal(true)}
-                className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
               >
                 <Plus className="h-5 w-5 mr-2" />
                 Create Template
@@ -1567,7 +1567,7 @@ const WorkoutBuilder: React.FC = () => {
               </button>
               <button
                 onClick={() => setShowProgramModal(true)}
-                className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors touch-manipulation active:scale-95 whitespace-nowrap"
+                className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors touch-manipulation active:scale-95 whitespace-nowrap"
               >
                 <Plus className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                 <span className="text-sm sm:text-base">New Custom Program</span>
@@ -1593,7 +1593,7 @@ const WorkoutBuilder: React.FC = () => {
                         <div className="flex items-center gap-2 mb-2">
                           <h3 className="text-xl font-semibold text-gray-900">{program.title}</h3>
                           {program.category && (
-                            <span className="inline-flex items-center px-2 py-0.5 bg-green-100 text-green-800 rounded text-xs font-medium capitalize">
+                            <span className="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 rounded text-xs font-medium capitalize">
                               {program.category.replace('-', ' ')}
                             </span>
                           )}
@@ -1603,7 +1603,7 @@ const WorkoutBuilder: React.FC = () => {
                             <Clock className="h-3 w-3 mr-1" />
                             {program.duration_weeks} weeks
                           </span>
-                          <span className="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-700 rounded-md text-xs font-medium">
+                          <span className="inline-flex items-center px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium">
                             <Calendar className="h-3 w-3 mr-1" />
                             {program.days_per_week} days/week
                           </span>
@@ -1622,14 +1622,14 @@ const WorkoutBuilder: React.FC = () => {
                     <div className="mb-4">
                       <div className="flex items-center justify-between text-sm mb-1">
                         <span className="text-gray-600 font-medium">Workouts Assigned</span>
-                        <span className={`font-semibold ${completionPercent === 100 ? 'text-green-600' : 'text-gray-900'}`}>
+                        <span className={`font-semibold ${completionPercent === 100 ? 'text-blue-600' : 'text-gray-900'}`}>
                           {assignedWorkouts}/{totalWorkouts} ({completionPercent}%)
                         </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
                           className={`h-2 rounded-full transition-all ${
-                            completionPercent === 100 ? 'bg-green-500' : 'bg-blue-500'
+                            completionPercent === 100 ? 'bg-blue-500' : 'bg-blue-500'
                           }`}
                           style={{ width: `${completionPercent}%` }}
                         />
@@ -1640,7 +1640,7 @@ const WorkoutBuilder: React.FC = () => {
                     <div className="grid grid-cols-2 gap-2">
                       <button
                         onClick={() => setSelectedProgramId(program.id)}
-                        className="flex items-center justify-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm font-medium"
+                        className="flex items-center justify-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium"
                       >
                         <Edit3 className="h-4 w-4 mr-1.5" />
                         Edit Workouts
@@ -1675,7 +1675,7 @@ const WorkoutBuilder: React.FC = () => {
                       <div className="flex items-center space-x-1">
                         <button
                           onClick={() => handleDuplicateProgram(program.id)}
-                          className="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                          className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                           title="Duplicate Program"
                         >
                           <Copy className="h-4 w-4" />
@@ -1712,7 +1712,7 @@ const WorkoutBuilder: React.FC = () => {
                         <h4 className="font-semibold text-gray-900">Quick Preview - First 4 Weeks</h4>
                         <button
                           onClick={() => setSelectedProgramId(program.id)}
-                          className="text-sm text-green-600 hover:text-green-700 font-medium flex items-center"
+                          className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center"
                         >
                           Open Full Editor
                           <ArrowRight className="h-4 w-4 ml-1" />
@@ -1734,11 +1734,11 @@ const WorkoutBuilder: React.FC = () => {
                                     return (
                                       <div key={weekIndex} className="flex-shrink-0 w-32">
                                         {programWeek?.workout_template ? (
-                                          <div className="bg-green-50 border border-green-200 rounded-md p-2">
-                                            <div className="text-xs font-medium text-green-800 truncate">
+                                          <div className="bg-blue-50 border border-blue-200 rounded-md p-2">
+                                            <div className="text-xs font-medium text-blue-800 truncate">
                                               {programWeek.workout_template.title}
                                             </div>
-                                            <div className="text-xs text-green-600 mt-1">
+                                            <div className="text-xs text-blue-600 mt-1">
                                               {programWeek.workout_template.template_exercises?.length || 0} ex
                                             </div>
                                           </div>
@@ -1778,7 +1778,7 @@ const WorkoutBuilder: React.FC = () => {
               </p>
               <button
                 onClick={() => setShowProgramModal(true)}
-                className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
               >
                 <Plus className="h-5 w-5 mr-2" />
                 Create Custom Program
@@ -1810,7 +1810,7 @@ const WorkoutBuilder: React.FC = () => {
               </button>
               <button
                 onClick={() => setShowProgramModal(true)}
-                className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors touch-manipulation active:scale-95 whitespace-nowrap"
+                className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors touch-manipulation active:scale-95 whitespace-nowrap"
               >
                 <Plus className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
                 <span className="text-sm sm:text-base">New Standard Program</span>
@@ -1839,7 +1839,7 @@ const WorkoutBuilder: React.FC = () => {
                             Standard
                           </span>
                           {program.category && (
-                            <span className="inline-flex items-center px-2 py-0.5 bg-green-100 text-green-800 rounded text-xs font-medium capitalize">
+                            <span className="inline-flex items-center px-2 py-0.5 bg-blue-100 text-blue-800 rounded text-xs font-medium capitalize">
                               {program.category.replace('-', ' ')}
                             </span>
                           )}
@@ -1849,7 +1849,7 @@ const WorkoutBuilder: React.FC = () => {
                             <Clock className="h-3 w-3 mr-1" />
                             {program.duration_weeks} weeks
                           </span>
-                          <span className="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-700 rounded-md text-xs font-medium">
+                          <span className="inline-flex items-center px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium">
                             <Calendar className="h-3 w-3 mr-1" />
                             {program.days_per_week} days/week
                           </span>
@@ -1868,14 +1868,14 @@ const WorkoutBuilder: React.FC = () => {
                     <div className="mb-4">
                       <div className="flex items-center justify-between text-sm mb-1">
                         <span className="text-gray-600 font-medium">Workouts Assigned</span>
-                        <span className={`font-semibold ${completionPercent === 100 ? 'text-green-600' : 'text-gray-900'}`}>
+                        <span className={`font-semibold ${completionPercent === 100 ? 'text-blue-600' : 'text-gray-900'}`}>
                           {assignedWorkouts}/{totalWorkouts} ({completionPercent}%)
                         </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
                           className={`h-2 rounded-full transition-all ${
-                            completionPercent === 100 ? 'bg-green-500' : 'bg-blue-500'
+                            completionPercent === 100 ? 'bg-blue-500' : 'bg-blue-500'
                           }`}
                           style={{ width: `${completionPercent}%` }}
                         />
@@ -1886,7 +1886,7 @@ const WorkoutBuilder: React.FC = () => {
                     <div className="grid grid-cols-2 gap-2">
                       <button
                         onClick={() => setSelectedProgramId(program.id)}
-                        className="flex items-center justify-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm font-medium"
+                        className="flex items-center justify-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium"
                       >
                         <Edit3 className="h-4 w-4 mr-1.5" />
                         Edit Workouts
@@ -1921,7 +1921,7 @@ const WorkoutBuilder: React.FC = () => {
                       <div className="flex items-center space-x-1">
                         <button
                           onClick={() => handleDuplicateProgram(program.id)}
-                          className="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                          className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                           title="Duplicate Program"
                         >
                           <Copy className="h-4 w-4" />
@@ -1958,7 +1958,7 @@ const WorkoutBuilder: React.FC = () => {
                         <h4 className="font-semibold text-gray-900">Quick Preview - First 4 Weeks</h4>
                         <button
                           onClick={() => setSelectedProgramId(program.id)}
-                          className="text-sm text-green-600 hover:text-green-700 font-medium flex items-center"
+                          className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center"
                         >
                           Open Full Editor
                           <ArrowRight className="h-4 w-4 ml-1" />
@@ -1980,11 +1980,11 @@ const WorkoutBuilder: React.FC = () => {
                                     return (
                                       <div key={weekIndex} className="flex-shrink-0 w-32">
                                         {programWeek?.workout_template ? (
-                                          <div className="bg-green-50 border border-green-200 rounded-md p-2">
-                                            <div className="text-xs font-medium text-green-800 truncate">
+                                          <div className="bg-blue-50 border border-blue-200 rounded-md p-2">
+                                            <div className="text-xs font-medium text-blue-800 truncate">
                                               {programWeek.workout_template.title}
                                             </div>
-                                            <div className="text-xs text-green-600 mt-1">
+                                            <div className="text-xs text-blue-600 mt-1">
                                               {programWeek.workout_template.template_exercises?.length || 0} ex
                                             </div>
                                           </div>
@@ -2024,7 +2024,7 @@ const WorkoutBuilder: React.FC = () => {
               </p>
               <button
                 onClick={() => setShowProgramModal(true)}
-                className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
               >
                 <Plus className="h-5 w-5 mr-2" />
                 Create Standard Program

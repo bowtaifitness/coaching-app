@@ -38,9 +38,9 @@ const PHASE_THEME: Record<
   { accent: string; pill: string; ring: string; icon: React.FC<{ className?: string }> }
 > = {
   1: {
-    accent: 'from-emerald-500 to-teal-500',
-    pill: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    ring: 'ring-emerald-100',
+    accent: 'from-blue-500 to-blue-500',
+    pill: 'bg-blue-50 text-blue-700 border-blue-200',
+    ring: 'ring-blue-100',
     icon: Sparkles,
   },
   2: {
@@ -171,7 +171,7 @@ const ProgressHeader: React.FC<ProgressHeaderProps> = ({
       <div className="px-6 sm:px-8 pt-6 pb-5">
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div className="min-w-0">
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-teal-400">
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-blue-400">
               Training Program
             </p>
             <h1 className="text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight">
@@ -183,7 +183,7 @@ const ProgressHeader: React.FC<ProgressHeaderProps> = ({
             </div>
           </div>
           <div className="flex flex-col items-end gap-1">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-200 text-[11px] font-bold uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-[11px] font-bold uppercase tracking-wider">
               <Target className="h-3 w-3" />
               Block {currentBlock} of 4
             </span>
@@ -194,7 +194,7 @@ const ProgressHeader: React.FC<ProgressHeaderProps> = ({
         <div className="mt-5">
           <div className="h-2 rounded-full bg-white/10 overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-teal-400 to-emerald-400 transition-all duration-500"
+              className="h-full bg-gradient-to-r from-blue-400 to-blue-400 transition-all duration-500"
               style={{ width: `${progressPct}%` }}
             />
           </div>
@@ -210,7 +210,7 @@ const ProgressHeader: React.FC<ProgressHeaderProps> = ({
                       active
                         ? 'bg-white text-gray-900'
                         : reached
-                          ? 'text-teal-200'
+                          ? 'text-blue-200'
                           : 'text-white/40'
                     }`}
                 >
@@ -223,7 +223,7 @@ const ProgressHeader: React.FC<ProgressHeaderProps> = ({
 
         {blockMessage && (
           <div className="mt-5 flex items-start gap-2.5 rounded-xl bg-white/5 border border-white/10 px-4 py-3">
-            <Wand2 className="h-4 w-4 text-teal-300 flex-shrink-0 mt-0.5" />
+            <Wand2 className="h-4 w-4 text-blue-300 flex-shrink-0 mt-0.5" />
             <p className="text-[12px] text-white/85 leading-snug">{blockMessage}</p>
           </div>
         )}
@@ -340,8 +340,8 @@ const BlockWorkout: React.FC<BlockWorkoutProps> = ({ blockNumber, weeks, phases 
 
 const NoProgramState: React.FC<{ onNavigate?: (view: string) => void }> = ({ onNavigate }) => (
   <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-teal-50 border border-teal-100 mb-5">
-      <Sparkles className="h-7 w-7 text-teal-600" />
+    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 mb-5">
+      <Sparkles className="h-7 w-7 text-blue-600" />
     </div>
     <h2 className="text-2xl font-bold text-gray-900">Build your 12-week program</h2>
     <p className="text-sm text-gray-600 mt-2 leading-relaxed">
@@ -349,7 +349,7 @@ const NoProgramState: React.FC<{ onNavigate?: (view: string) => void }> = ({ onN
     </p>
     <button
       onClick={() => onNavigate?.('workouts')}
-      className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-teal-600 hover:bg-teal-500
+      className="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500
                  text-white text-sm font-bold shadow-sm transition-colors"
     >
       View Workouts
@@ -367,7 +367,7 @@ const ProgramCompletedView: React.FC<{ onNavigate?: (view: string) => void }> = 
 const ReassessmentView: React.FC<{ onNavigate?: (view: string) => void }> = ({ onNavigate }) => {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
-      <div className="relative bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl shadow-xl overflow-hidden">
+      <div className="relative bg-gradient-to-br from-blue-500 via-blue-500 to-cyan-500 rounded-3xl shadow-xl overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute -top-10 -left-10 h-48 w-48 rounded-full bg-white/40 blur-3xl" />
           <div className="absolute -bottom-16 -right-10 h-56 w-56 rounded-full bg-white/30 blur-3xl" />
@@ -391,8 +391,8 @@ const ReassessmentView: React.FC<{ onNavigate?: (view: string) => void }> = ({ o
           <div className="mt-7">
             <button
               onClick={() => onNavigate?.('workouts')}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-teal-700
-                         hover:bg-teal-50 active:bg-teal-100 text-sm font-bold shadow-lg
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-blue-700
+                         hover:bg-blue-50 active:bg-blue-100 text-sm font-bold shadow-lg
                          transition-colors"
             >
               View Workouts
@@ -424,8 +424,8 @@ const ReassessmentView: React.FC<{ onNavigate?: (view: string) => void }> = ({ o
             key={title}
             className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm"
           >
-            <div className="inline-flex h-9 w-9 rounded-lg bg-teal-50 border border-teal-100 items-center justify-center">
-              <Icon className="h-4 w-4 text-teal-600" />
+            <div className="inline-flex h-9 w-9 rounded-lg bg-blue-50 border border-blue-100 items-center justify-center">
+              <Icon className="h-4 w-4 text-blue-600" />
             </div>
             <h3 className="mt-3 text-sm font-bold text-gray-900">{title}</h3>
             <p className="mt-1 text-[12px] text-gray-600 leading-snug">{body}</p>

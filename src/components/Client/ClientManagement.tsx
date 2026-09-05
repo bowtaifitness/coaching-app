@@ -654,7 +654,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
               onClick={() => setViewFormat('cards')}
               className={`flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 viewFormat === 'cards'
-                  ? 'bg-white text-green-600 shadow-sm'
+                  ? 'bg-white text-blue-600 shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -670,7 +670,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
               onClick={() => setViewFormat('list')}
               className={`flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 viewFormat === 'list'
-                  ? 'bg-white text-green-600 shadow-sm'
+                  ? 'bg-white text-blue-600 shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -704,7 +704,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
               placeholder="Search clients..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div className="flex items-center space-x-6 text-sm">
@@ -718,7 +718,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
               </p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">
+              <p className="text-2xl font-bold text-blue-600">
                 {isAdmin && userType === 'trainers'
                   ? clients.filter(c => c.totalWorkouts > 0).length
                   : isAdmin && userType === 'clients'
@@ -766,7 +766,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
           <div className="flex items-center space-x-3">
             <button
               onClick={() => handleBulkAction('message')}
-              className="flex items-center space-x-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
               <span>Send Message</span>
@@ -810,7 +810,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                         <Square className="h-5 w-5 text-gray-400 hover:text-gray-600" />
                       )}
                     </button>
-                    <div className="h-12 w-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                    <div className="h-12 w-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                       <span className="text-white font-semibold">
                         {client.first_name[0]}{client.last_name[0]}
                       </span>
@@ -822,7 +822,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                             type="text"
                             value={editForm.first_name}
                             onChange={(e) => setEditForm(prev => ({ ...prev, first_name: e.target.value }))}
-                            className="w-full px-3 py-2 text-base border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+                            className="w-full px-3 py-2 text-base border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                             placeholder="First name"
                             disabled={updating}
                           />
@@ -830,7 +830,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                             type="text"
                             value={editForm.last_name}
                             onChange={(e) => setEditForm(prev => ({ ...prev, last_name: e.target.value }))}
-                            className="w-full px-3 py-2 text-base border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-green-500"
+                            className="w-full px-3 py-2 text-base border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
                             placeholder="Last name"
                             disabled={updating}
                           />
@@ -846,7 +846,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                                 ? 'bg-blue-100 text-blue-700'
                                 : client.role === 'admin'
                                 ? 'bg-purple-100 text-purple-700'
-                                : 'bg-green-100 text-green-700'
+                                : 'bg-blue-100 text-blue-700'
                             }`}>
                               {client.role === 'coach' 
                                 ? 'Trainer' 
@@ -871,7 +871,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                       <button
                         onClick={() => handleSaveEdit(client.id)}
                         disabled={updating}
-                        className="p-2 text-green-600 hover:text-green-700 hover:bg-green-50 rounded transition-colors disabled:opacity-50"
+                        className="p-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded transition-colors disabled:opacity-50"
                       >
                         {updating ? (
                           <Loader className="h-4 w-4 animate-spin" />
@@ -1021,7 +1021,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                         e.stopPropagation();
                         handleViewClient(client.id);
                       }}
-                      className="flex-1 flex items-center justify-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm"
+                      className="flex-1 flex items-center justify-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm"
                     >
                       <Eye className="h-4 w-4 mr-1" />
                       View Details
@@ -1130,7 +1130,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
-                        <div className="h-10 w-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                        <div className="h-10 w-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                           <span className="text-white font-semibold text-sm">
                             {client.first_name[0]}{client.last_name[0]}
                           </span>
@@ -1146,7 +1146,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                                   ? 'bg-blue-100 text-blue-700'
                                   : client.role === 'admin'
                                   ? 'bg-purple-100 text-purple-700'
-                                  : 'bg-green-100 text-green-700'
+                                  : 'bg-blue-100 text-blue-700'
                               }`}>
                                 {client.role === 'coach' 
                                   ? 'Trainer' 
@@ -1184,7 +1184,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                             {client.totalWorkouts > 0 && (
                               <div className="ml-2 w-16 bg-gray-200 rounded-full h-2">
                                 <div 
-                                  className="bg-green-500 h-2 rounded-full"
+                                  className="bg-blue-500 h-2 rounded-full"
                                   style={{ 
                                     width: `${(client.completedWorkouts / client.totalWorkouts) * 100}%` 
                                   }}
@@ -1217,7 +1217,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                       <div className="flex items-center justify-end space-x-2">
                         <button
                           onClick={() => handleViewClient(client.id)}
-                          className="text-green-600 hover:text-green-900 p-2 rounded hover:bg-green-50 transition-colors"
+                          className="text-blue-600 hover:text-blue-900 p-2 rounded hover:bg-blue-50 transition-colors"
                           title="View Details"
                         >
                           <Eye className="h-4 w-4" />
@@ -1317,7 +1317,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-2">
-                <Clock className="h-6 w-6 text-green-600" />
+                <Clock className="h-6 w-6 text-blue-600" />
                 <h2 className="text-xl font-bold text-gray-900">Extend Trial Period</h2>
               </div>
               <button
@@ -1345,7 +1345,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                     max="365"
                     value={extendTrialDays}
                     onChange={(e) => setExtendTrialDays(parseInt(e.target.value) || 14)}
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     disabled={extending}
                   />
                   <span className="text-sm text-gray-600">days</span>
@@ -1357,7 +1357,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                       onClick={() => setExtendTrialDays(days)}
                       className={`px-3 py-1 text-sm rounded-lg transition-colors ${
                         extendTrialDays === days
-                          ? 'bg-green-600 text-white'
+                          ? 'bg-blue-600 text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                       disabled={extending}
@@ -1380,7 +1380,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
               <button
                 onClick={handleExtendTrialSubmit}
                 disabled={extending || extendTrialDays < 1}
-                className="flex-1 flex items-center justify-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {extending ? (
                   <>
@@ -1405,7 +1405,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-2">
-                {bulkAction === 'message' && <MessageCircle className="h-6 w-6 text-green-600" />}
+                {bulkAction === 'message' && <MessageCircle className="h-6 w-6 text-blue-600" />}
                 {bulkAction === 'extend' && <Clock className="h-6 w-6 text-blue-600" />}
                 {bulkAction === 'delete' && <Trash2 className="h-6 w-6 text-red-600" />}
                 <h2 className="text-xl font-bold text-gray-900">
@@ -1441,7 +1441,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                     onChange={(e) => setBulkMessage(e.target.value)}
                     placeholder="Enter your message..."
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     disabled={performingBulkAction}
                   />
                 </div>
@@ -1511,7 +1511,7 @@ const ClientManagement: React.FC<ClientManagementProps> = ({ onNavigate, userTyp
                   (bulkAction === 'extend' && bulkExtendDays < 1)
                 }
                 className={`flex-1 flex items-center justify-center px-4 py-2 text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
-                  bulkAction === 'message' ? 'bg-green-600 hover:bg-green-700' :
+                  bulkAction === 'message' ? 'bg-blue-600 hover:bg-blue-700' :
                   bulkAction === 'extend' ? 'bg-blue-600 hover:bg-blue-700' :
                   'bg-red-600 hover:bg-red-700'
                 }`}

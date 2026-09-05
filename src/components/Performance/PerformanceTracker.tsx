@@ -258,7 +258,7 @@ const PerformanceTracker: React.FC = () => {
   const getMetricColor = (color: string) => {
     const colors = {
       blue: 'bg-blue-500',
-      green: 'bg-green-500',
+      green: 'bg-blue-500',
       purple: 'bg-purple-500',
       orange: 'bg-orange-500',
       red: 'bg-red-500',
@@ -301,7 +301,7 @@ const PerformanceTracker: React.FC = () => {
                 name="date"
                 type="date"
                 defaultValue={new Date().toISOString().split('T')[0]}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
               />
             </div>
@@ -316,7 +316,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="max_pushups"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="50"
                     />
                   </div>
@@ -325,7 +325,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="max_situps"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="60"
                     />
                   </div>
@@ -334,7 +334,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="max_pullups"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="15"
                     />
                   </div>
@@ -346,7 +346,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="max_squat"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="225"
                     />
                   </div>
@@ -355,7 +355,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="max_bench"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="185"
                     />
                   </div>
@@ -364,7 +364,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="max_deadlift"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="315"
                     />
                   </div>
@@ -376,7 +376,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="plank_time"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="90"
                     />
                   </div>
@@ -385,7 +385,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="mile_time"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="7.5"
                     />
                   </div>
@@ -403,7 +403,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="weight"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="175"
                     />
                   </div>
@@ -412,7 +412,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="body_fat_percentage"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="15.5"
                     />
                   </div>
@@ -424,7 +424,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="resting_heart_rate"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="60"
                     />
                   </div>
@@ -433,7 +433,7 @@ const PerformanceTracker: React.FC = () => {
                     <input
                       name="sleep_hours"
                       type="text"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       placeholder="7.5"
                     />
                   </div>
@@ -445,7 +445,7 @@ const PerformanceTracker: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-1">Notes (optional)</label>
               <textarea
                 name="notes"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 rows={2}
                 placeholder="Weather conditions, equipment changes, workout notes..."
               />
@@ -455,7 +455,7 @@ const PerformanceTracker: React.FC = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? (
                   <>
@@ -485,7 +485,7 @@ const PerformanceTracker: React.FC = () => {
       <div className="p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+            <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
             <p className="text-gray-600">Loading performance data...</p>
           </div>
         </div>
@@ -524,7 +524,7 @@ const PerformanceTracker: React.FC = () => {
                   {clientsPerformance.filter(c => c.total_entries > 0).length}
                 </p>
               </div>
-              <div className="bg-green-500 rounded-lg p-3">
+              <div className="bg-blue-500 rounded-lg p-3">
                 <BarChart3 className="h-6 w-6 text-white" />
               </div>
             </div>
@@ -562,7 +562,7 @@ const PerformanceTracker: React.FC = () => {
                 value={clientSearchTerm}
                 onChange={(e) => setClientSearchTerm(e.target.value)}
                 placeholder="Search clients by name..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </div>
@@ -573,7 +573,7 @@ const PerformanceTracker: React.FC = () => {
                   <div key={client.id} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-3">
-                        <div className="h-12 w-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                        <div className="h-12 w-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                           <span className="text-white font-semibold">
                             {client.first_name[0]}{client.last_name[0]}
                           </span>
@@ -589,7 +589,7 @@ const PerformanceTracker: React.FC = () => {
                       </div>
                       <button
                         onClick={() => setSelectedClient(client.id)}
-                        className="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                       >
                         <Eye className="h-5 w-5" />
                       </button>
@@ -600,7 +600,7 @@ const PerformanceTracker: React.FC = () => {
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-600">Improvement</span>
                           <span className={`font-medium ${
-                            client.improvement_trend > 0 ? 'text-green-600' : 'text-red-600'
+                            client.improvement_trend > 0 ? 'text-blue-600' : 'text-red-600'
                           }`}>
                             {client.improvement_trend > 0 ? '+' : ''}{client.improvement_trend.toFixed(1)}%
                           </span>
@@ -635,7 +635,7 @@ const PerformanceTracker: React.FC = () => {
                     <p className="text-gray-600 mb-4">Try adjusting your search terms</p>
                     <button
                       onClick={() => setClientSearchTerm('')}
-                      className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                      className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                     >
                       Clear Search
                     </button>
@@ -679,7 +679,7 @@ const PerformanceTracker: React.FC = () => {
                     }}
                     className={`px-6 py-3 font-medium transition-colors ${
                       activeTab === 'gym'
-                        ? 'text-green-600 border-b-2 border-green-600'
+                        ? 'text-blue-600 border-b-2 border-blue-600'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
@@ -692,7 +692,7 @@ const PerformanceTracker: React.FC = () => {
                     }}
                     className={`px-6 py-3 font-medium transition-colors ${
                       activeTab === 'lifestyle'
-                        ? 'text-green-600 border-b-2 border-green-600'
+                        ? 'text-blue-600 border-b-2 border-blue-600'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
@@ -774,7 +774,7 @@ const PerformanceTracker: React.FC = () => {
                   
                   <div className="bg-gray-50 rounded-xl p-6">
                     <p className="text-sm font-medium text-gray-600 mb-1">Best Performance</p>
-                    <p className="text-2xl font-bold text-green-600">
+                    <p className="text-2xl font-bold text-blue-600">
                       {stats.best > 0 ? stats.best.toFixed(1) : '0'}
                       <span className="text-sm text-gray-500 ml-1">{currentMetric?.unit}</span>
                     </p>
@@ -782,7 +782,7 @@ const PerformanceTracker: React.FC = () => {
                   
                   <div className="bg-gray-50 rounded-xl p-6">
                     <p className="text-sm font-medium text-gray-600 mb-1">Improvement</p>
-                    <p className={`text-2xl font-bold ${stats.improvement >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    <p className={`text-2xl font-bold ${stats.improvement >= 0 ? 'text-blue-600' : 'text-red-600'}`}>
                       {stats.improvement !== 0 ? (stats.improvement > 0 ? '+' : '') + stats.improvement.toFixed(1) : '0'}
                       <span className="text-sm text-gray-500 ml-1">%</span>
                     </p>
@@ -807,7 +807,7 @@ const PerformanceTracker: React.FC = () => {
         </div>
         <button
           onClick={() => setShowAddForm(true)}
-          className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+          className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
         >
           <Plus className="h-5 w-5 mr-2" />
           Add Data
@@ -823,7 +823,7 @@ const PerformanceTracker: React.FC = () => {
           }}
           className={`px-6 py-3 font-medium transition-colors ${
             activeTab === 'gym'
-              ? 'text-green-600 border-b-2 border-green-600'
+              ? 'text-blue-600 border-b-2 border-blue-600'
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >
@@ -836,7 +836,7 @@ const PerformanceTracker: React.FC = () => {
           }}
           className={`px-6 py-3 font-medium transition-colors ${
             activeTab === 'lifestyle'
-              ? 'text-green-600 border-b-2 border-green-600'
+              ? 'text-blue-600 border-b-2 border-blue-600'
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >
@@ -901,7 +901,7 @@ const PerformanceTracker: React.FC = () => {
                 <p className="text-gray-500">No entries for {currentMetric?.label}</p>
                 <button
                   onClick={() => setShowAddForm(true)}
-                  className="text-green-600 hover:text-green-700 text-sm mt-2"
+                  className="text-blue-600 hover:text-blue-700 text-sm mt-2"
                 >
                   Add your first entry
                 </button>
@@ -923,7 +923,7 @@ const PerformanceTracker: React.FC = () => {
         
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <p className="text-sm font-medium text-gray-600 mb-1">Best Performance</p>
-          <p className="text-2xl font-bold text-green-600">
+          <p className="text-2xl font-bold text-blue-600">
             {stats.best > 0 ? stats.best.toFixed(1) : '0'}
             <span className="text-sm text-gray-500 ml-1">{currentMetric?.unit}</span>
           </p>
@@ -931,7 +931,7 @@ const PerformanceTracker: React.FC = () => {
         
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <p className="text-sm font-medium text-gray-600 mb-1">Improvement</p>
-          <p className={`text-2xl font-bold ${stats.improvement >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+          <p className={`text-2xl font-bold ${stats.improvement >= 0 ? 'text-blue-600' : 'text-red-600'}`}>
             {stats.improvement !== 0 ? (stats.improvement > 0 ? '+' : '') + stats.improvement.toFixed(1) : '0'}
             <span className="text-sm text-gray-500 ml-1">%</span>
           </p>

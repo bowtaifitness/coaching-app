@@ -292,7 +292,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
     const colors = [
       'border-l-blue-500 bg-blue-50',
       'border-l-purple-500 bg-purple-50', 
-      'border-l-green-500 bg-green-50',
+      'border-l-blue-500 bg-blue-50',
       'border-l-orange-500 bg-orange-50',
       'border-l-red-500 bg-red-50',
       'border-l-indigo-500 bg-indigo-50'
@@ -430,7 +430,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
 
           {loading ? (
             <div className="text-center py-8">
-              <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+              <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
               <p className="text-gray-600">Loading template data...</p>
             </div>
           ) : (
@@ -445,7 +445,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="e.g., Upper Body Strength"
                     required
                   />
@@ -458,7 +458,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     rows={3}
                     placeholder="Describe the purpose and focus of this workout template..."
                   />
@@ -471,7 +471,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="">Select a category (optional)</option>
                     <option value="bodyweight">Bodyweight</option>
@@ -511,7 +511,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                     )}
                     <button
                       onClick={handleAddExercise}
-                      className="flex items-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                      className="flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                     >
                       <Plus className="h-4 w-4 mr-2" />
                       Add Exercise
@@ -527,7 +527,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                           type="checkbox"
                           checked={selectedExercises.size === exercises.length && exercises.length > 0}
                           onChange={handleSelectAll}
-                          className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded mr-2"
+                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-2"
                         />
                         <span className="text-sm text-gray-700">Select All</span>
                       </label>
@@ -576,7 +576,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                               type="checkbox"
                               checked={isSelected}
                               onChange={() => handleExerciseSelect(index)}
-                              className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                             />
                             <div 
                               className="cursor-move p-2 text-gray-400 hover:text-gray-600"
@@ -660,17 +660,17 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                                     setShowDropdowns(prev => ({ ...prev, [index]: false }));
                                   }, 200);
                                 }}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 placeholder="Start typing exercise name..."
                                 required={!exercise.exercise_id}
                               />
                               
                               {/* Selected exercise display */}
                               {exercise.exercise_id && exercise.exercise.name && (
-                                <div className="absolute inset-0 flex items-center px-3 py-2 bg-green-50 border border-green-300 rounded-lg">
+                                <div className="absolute inset-0 flex items-center px-3 py-2 bg-blue-50 border border-blue-300 rounded-lg">
                                   <div className="flex items-center justify-between w-full">
                                     <div className="flex items-center space-x-2">
-                                      <CheckCircle className="h-4 w-4 text-green-600" />
+                                      <CheckCircle className="h-4 w-4 text-blue-600" />
                                       <span className="text-gray-900 font-medium">{exercise.exercise.name}</span>
                                       <span className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full capitalize">
                                         {exercise.exercise.category}
@@ -710,7 +710,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                                         <span className="font-medium text-gray-900">{ex.name}</span>
                                         <span className={`text-xs px-2 py-1 rounded-full capitalize ${
                                           ex.category === 'strength' ? 'bg-blue-100 text-blue-700' :
-                                          ex.category === 'mobility' ? 'bg-green-100 text-green-700' :
+                                          ex.category === 'mobility' ? 'bg-blue-100 text-blue-700' :
                                           ex.category === 'power' ? 'bg-red-100 text-red-700' :
                                           ex.category === 'stability' ? 'bg-purple-100 text-purple-700' :
                                           'bg-orange-100 text-orange-700'
@@ -751,7 +751,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                                 const value = e.target.value ? parseInt(e.target.value) : null;
                                 handleExerciseChange(index, 'sets', value);
                               }}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                               min="1"
                               placeholder="3"
                             />
@@ -770,7 +770,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                                 const value = e.target.value ? parseInt(e.target.value) : null;
                                 handleExerciseChange(index, 'reps', value);
                               }}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                               min="1"
                               placeholder="10"
                             />
@@ -788,7 +788,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                                 const value = e.target.value ? parseFloat(e.target.value) : null;
                                 handleExerciseChange(index, 'weight', value);
                               }}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                               min="0"
                               step="0.5"
                               placeholder="Optional"
@@ -808,7 +808,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                                 const value = e.target.value ? parseInt(e.target.value) : null;
                                 handleExerciseChange(index, 'duration', value);
                               }}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                               min="1"
                               placeholder="Optional"
                             />
@@ -824,7 +824,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                       <p className="text-gray-500">No exercises added yet</p>
                       <button
                         onClick={handleAddExercise}
-                        className="mt-2 text-green-600 hover:text-green-700 text-sm"
+                        className="mt-2 text-blue-600 hover:text-blue-700 text-sm"
                       >
                         Add your first exercise
                       </button>
@@ -857,7 +857,7 @@ const EditTemplateModal: React.FC<EditTemplateModalProps> = ({
                 handleSave();
               }}
               disabled={saving || !title.trim()}
-              className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {saving ? (
                 <>

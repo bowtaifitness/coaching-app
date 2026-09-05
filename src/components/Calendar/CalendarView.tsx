@@ -464,7 +464,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
             <input
               name="title"
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="e.g., Upper Body Strength"
               required
             />
@@ -475,7 +475,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
             <input
               name="scheduled_date"
               type="date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               defaultValue={selectedDate.toISOString().split('T')[0]}
               required
             />
@@ -485,7 +485,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
             <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
             <textarea
               name="description"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               rows={3}
               placeholder="Workout objectives and focus areas..."
             />
@@ -495,7 +495,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
             <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
             <textarea
               name="notes"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               rows={2}
               placeholder="Additional notes for the client..."
             />
@@ -510,7 +510,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
           <div className="flex space-x-3">
             <button
               type="submit"
-              className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
             >
               Schedule Workout
             </button>
@@ -549,7 +549,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
             </label>
             <button
               onClick={() => handleBulkEdit({ completed: true })}
-              className="w-full px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+              className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
             >
               Mark All as Completed
             </button>
@@ -574,7 +574,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
             <input
               type="date"
               id="bulk-date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 mb-2"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-2"
             />
             <button
               onClick={() => {
@@ -596,7 +596,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
             <textarea
               id="bulk-notes"
               placeholder="Enter notes to add to all selected workouts"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 mb-2"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-2"
               rows={3}
             />
             <button
@@ -642,7 +642,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
               {!editingWorkout && (
                 <button
                   onClick={handleEditWorkout}
-                  className="flex items-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                  className="flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                 >
                   <Edit3 className="h-4 w-4 mr-2" />
                   Edit Workout
@@ -675,7 +675,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                     type="text"
                     value={selectedWorkout?.title || ''}
                     onChange={(e) => setSelectedWorkout(prev => ({ ...prev, title: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Workout title"
                   />
                 </div>
@@ -687,7 +687,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                     type="date"
                     value={selectedWorkout?.scheduled_date || ''}
                     onChange={(e) => setSelectedWorkout(prev => ({ ...prev, scheduled_date: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -699,7 +699,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                 <textarea
                   value={selectedWorkout?.description || ''}
                   onChange={(e) => setSelectedWorkout(prev => ({ ...prev, description: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   rows={3}
                   placeholder="Workout description..."
                 />
@@ -712,7 +712,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                 <textarea
                   value={selectedWorkout?.notes || ''}
                   onChange={(e) => setSelectedWorkout(prev => ({ ...prev, notes: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   rows={2}
                   placeholder="Additional notes for the client..."
                 />
@@ -724,7 +724,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                   <h4 className="text-lg font-semibold text-gray-900">Exercises</h4>
                   <button
                     onClick={handleAddExercise}
-                    className="flex items-center px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                    className="flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                   >
                     <Plus className="h-4 w-4 mr-2" />
                     Add Exercise
@@ -754,7 +754,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                           <select
                             value={exercise.exercise_id}
                             onChange={(e) => handleExerciseChange(index, 'exercise_id', e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             required
                           >
                             <option value="">Select an exercise...</option>
@@ -774,7 +774,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                             type="number"
                             value={exercise.sets || ''}
                             onChange={(e) => handleExerciseChange(index, 'sets', e.target.value ? parseInt(e.target.value) : null)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             min="1"
                             placeholder="3"
                           />
@@ -788,7 +788,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                             type="number"
                             value={exercise.reps || ''}
                             onChange={(e) => handleExerciseChange(index, 'reps', e.target.value ? parseInt(e.target.value) : null)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             min="1"
                             placeholder="10"
                           />
@@ -802,7 +802,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                             type="number"
                             value={exercise.weight || ''}
                             onChange={(e) => handleExerciseChange(index, 'weight', e.target.value ? parseFloat(e.target.value) : null)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             min="0"
                             step="0.5"
                             placeholder="Optional"
@@ -817,7 +817,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                             type="number"
                             value={exercise.duration || ''}
                             onChange={(e) => handleExerciseChange(index, 'duration', e.target.value ? parseInt(e.target.value) : null)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             min="1"
                             placeholder="Optional"
                           />
@@ -831,7 +831,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                             type="text"
                             value={exercise.notes || ''}
                             onChange={(e) => handleExerciseChange(index, 'notes', e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             placeholder="Specific instructions for this exercise..."
                           />
                         </div>
@@ -845,7 +845,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                       <p className="text-gray-500">No exercises in this workout</p>
                       <button
                         onClick={handleAddExercise}
-                        className="mt-2 text-green-600 hover:text-green-700 text-sm"
+                        className="mt-2 text-blue-600 hover:text-blue-700 text-sm"
                       >
                         Add your first exercise
                       </button>
@@ -859,7 +859,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                 <button
                   onClick={handleSaveWorkout}
                   disabled={updating}
-                  className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {updating ? (
                     <>
@@ -902,7 +902,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                   <div className="flex items-center">
                     {selectedWorkout?.completed ? (
                       <>
-                        <CheckCircle className="h-4 w-4 mr-1 text-green-500" />
+                        <CheckCircle className="h-4 w-4 mr-1 text-blue-500" />
                         Completed
                       </>
                     ) : (
@@ -1048,12 +1048,12 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                     key={index}
                     className={`min-h-24 p-2 border border-gray-100 rounded-lg ${
                       day ? 'hover:bg-gray-50' : ''
-                    } ${isToday ? 'bg-green-50 border-green-200' : ''}`}
+                    } ${isToday ? 'bg-blue-50 border-blue-200' : ''}`}
                   >
                     {day && (
                       <>
                         <div className={`text-sm font-medium mb-1 ${
-                          isToday ? 'text-green-600' : 'text-gray-900'
+                          isToday ? 'text-blue-600' : 'text-gray-900'
                         }`}>
                           {day.getDate()}
                         </div>
@@ -1063,7 +1063,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                               key={workout.id}
                               className={`text-xs p-1 rounded truncate ${
                                 workout.completed 
-                                  ? 'bg-green-500 text-white' 
+                                  ? 'bg-blue-500 text-white' 
                                   : 'bg-blue-500 text-white'
                               }`}
                               onClick={() => handleWorkoutClick(workout)}
@@ -1104,7 +1104,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
         {selectedClient && (
           <button
             onClick={() => setShowAddWorkout(true)}
-            className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           >
             <Plus className="h-5 w-5 mr-2" />
             Schedule Workout
@@ -1129,7 +1129,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
               <select
                 value={selectedClient}
                 onChange={(e) => setSelectedClient(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">Select a client...</option>
                 {clients.map((client) => (
@@ -1181,7 +1181,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                         type="checkbox"
                         checked={selectedWorkouts.size === workouts.length && workouts.length > 0}
                         onChange={handleSelectAll}
-                        className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded mr-2"
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mr-2"
                       />
                       <span className="text-sm text-gray-700">
                         Select All ({workouts.length} workouts)
@@ -1220,7 +1220,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
           <div className="p-6">
             {loading ? (
               <div className="text-center py-8">
-                <div className="animate-spin h-8 w-8 border-4 border-green-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                <div className="animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
                 <p className="text-gray-600">Loading workouts...</p>
               </div>
             ) : (
@@ -1244,15 +1244,15 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                         key={index}
                         className={`min-h-24 p-2 border border-gray-100 rounded-lg cursor-pointer transition-colors ${
                           day ? 'hover:bg-gray-50' : ''
-                        } ${isToday ? 'bg-green-50 border-green-200' : ''} ${
-                          isSelected ? 'ring-2 ring-green-500' : ''
+                        } ${isToday ? 'bg-blue-50 border-blue-200' : ''} ${
+                          isSelected ? 'ring-2 ring-blue-500' : ''
                         }`}
                         onClick={() => day && setSelectedDate(day)}
                       >
                         {day && (
                           <>
                             <div className={`text-sm font-medium mb-1 ${
-                              isToday ? 'text-green-600' : 'text-gray-900'
+                              isToday ? 'text-blue-600' : 'text-gray-900'
                             }`}>
                               {day.getDate()}
                             </div>
@@ -1262,7 +1262,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                                   key={workout.id}
                                   className={`text-xs p-1 rounded truncate relative ${
                                     workout.completed 
-                                      ? 'bg-green-500 text-white' 
+                                      ? 'bg-blue-500 text-white' 
                                       : 'bg-blue-500 text-white'
                                   } ${selectedWorkouts.has(workout.id) ? 'ring-2 ring-yellow-400' : ''}`}
                                   onClick={(e) => {
@@ -1333,7 +1333,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                 .filter(workout => workout.date === new Date().toISOString().split('T')[0])
                 .map((workout) => (
                   <div key={workout.id} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                    <div className={`${workout.completed ? 'bg-green-500' : 'bg-blue-500'} rounded-lg p-2`}>
+                    <div className={`${workout.completed ? 'bg-blue-500' : 'bg-blue-500'} rounded-lg p-2`}>
                       <Dumbbell className="h-5 w-5 text-white" />
                     </div>
                     <div className="flex-1">
@@ -1346,7 +1346,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                         <div className="flex items-center">
                           {workout.completed ? (
                             <>
-                              <CheckCircle className="h-4 w-4 mr-1 text-green-500" />
+                              <CheckCircle className="h-4 w-4 mr-1 text-blue-500" />
                               Completed
                             </>
                           ) : (
@@ -1367,7 +1367,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ clientId, clientName }) => 
                     <p className="text-gray-500">No workouts scheduled for today</p>
                     <button
                       onClick={() => setShowAddWorkout(true)}
-                      className="text-green-600 hover:text-green-700 text-sm mt-2"
+                      className="text-blue-600 hover:text-blue-700 text-sm mt-2"
                     >
                       Schedule a workout
                     </button>

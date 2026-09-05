@@ -238,7 +238,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
     return (
       <div className={`${embedded ? 'absolute' : 'fixed'} inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4`}>
         <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-8 text-center">
-          <div className="animate-spin h-8 w-8 border-4 border-green-600 border-t-transparent rounded-full mx-auto mb-4"></div>
+          <div className="animate-spin h-8 w-8 border-4 border-blue-600 border-t-transparent rounded-full mx-auto mb-4"></div>
           <p className="text-gray-600">Loading your information...</p>
         </div>
       </div>
@@ -286,7 +286,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
               <div
                 key={s}
                 className={`flex-1 h-2 rounded-full ${
-                  s <= step ? 'bg-green-600' : 'bg-gray-200'
+                  s <= step ? 'bg-blue-600' : 'bg-gray-200'
                 }`}
               />
             ))}
@@ -319,7 +319,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                   pattern="[0-9]*"
                   value={formData.age}
                   onChange={(e) => handleInputChange('age', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your age"
                   min="5"
                   max="120"
@@ -333,7 +333,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <select
                   value={formData.gender}
                   onChange={(e) => handleInputChange('gender', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select gender</option>
                   <option value="Male">Male</option>
@@ -351,7 +351,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                   type="text"
                   value={formData.height}
                   onChange={(e) => handleInputChange('height', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="e.g., 5'10&quot; or 178 cm"
                 />
               </div>
@@ -364,7 +364,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                   type="text"
                   value={formData.weight}
                   onChange={(e) => handleInputChange('weight', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="e.g., 180 lbs or 82 kg"
                 />
               </div>
@@ -385,7 +385,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                   pattern="[0-9]*"
                   value={formData.fitness_experience}
                   onChange={(e) => handleInputChange('fitness_experience', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Number of years (0 if beginner)"
                   min="0"
                   max="100"
@@ -399,7 +399,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <select
                   value={formData.primary_fitness_goal}
                   onChange={(e) => handleInputChange('primary_fitness_goal', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select your primary goal</option>
                   <option value="Build strength">Build strength</option>
@@ -421,7 +421,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <select
                   value={formData.activity_frequency}
                   onChange={(e) => handleInputChange('activity_frequency', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select frequency</option>
                   <option value="Daily">Daily</option>
@@ -440,7 +440,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <textarea
                   value={formData.biggest_strength}
                   onChange={(e) => handleInputChange('biggest_strength', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={2}
                   placeholder="What are you most confident in physically?"
                 />
@@ -453,7 +453,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <textarea
                   value={formData.biggest_weakness}
                   onChange={(e) => handleInputChange('biggest_weakness', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={2}
                   placeholder="What area needs the most work?"
                 />
@@ -466,7 +466,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <textarea
                   value={formData.fitness_notes}
                   onChange={(e) => handleInputChange('fitness_notes', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={2}
                   placeholder="Any other information about your fitness background..."
                 />
@@ -488,7 +488,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                   pattern="[0-9]*"
                   value={formData.years_strength_training}
                   onChange={(e) => handleInputChange('years_strength_training', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Number of years (0 if beginner)"
                   min="0"
                   max="100"
@@ -502,7 +502,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <textarea
                   value={formData.injury_history}
                   onChange={(e) => handleInputChange('injury_history', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={3}
                   placeholder="Optional: Let us know about any injuries or limitations..."
                 />
@@ -515,7 +515,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <select
                   value={formData.training_goal}
                   onChange={(e) => handleInputChange('training_goal', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select your training goal</option>
                   <option value="Increase strength">Increase strength</option>
@@ -536,7 +536,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <select
                   value={formData.workout_frequency}
                   onChange={(e) => handleInputChange('workout_frequency', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select frequency</option>
                   <option value="0">0</option>
@@ -553,7 +553,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
                 <textarea
                   value={formData.training_notes}
                   onChange={(e) => handleInputChange('training_notes', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   rows={2}
                   placeholder="Any other information about your training..."
                 />
@@ -579,7 +579,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
           {step < totalSteps ? (
             <button
               onClick={handleNext}
-              className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
             >
               Next
             </button>
@@ -587,7 +587,7 @@ const ClientIntakeModal: React.FC<ClientIntakeModalProps> = ({ userId, onComplet
             <button
               onClick={handleSubmit}
               disabled={loading}
-              className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Submitting...' : 'Complete'}
             </button>

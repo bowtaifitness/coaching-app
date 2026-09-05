@@ -200,7 +200,7 @@ const AssignTemplateModal: React.FC<AssignTemplateModalProps> = ({
 
           {loading ? (
             <div className="text-center py-8">
-              <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+              <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
               <p className="text-gray-600">Loading clients...</p>
             </div>
           ) : (
@@ -232,7 +232,7 @@ const AssignTemplateModal: React.FC<AssignTemplateModalProps> = ({
                   type="date"
                   value={scheduledDate}
                   onChange={(e) => setScheduledDate(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   min={new Date().toISOString().split('T')[0]}
                 />
               </div>
@@ -245,7 +245,7 @@ const AssignTemplateModal: React.FC<AssignTemplateModalProps> = ({
                 <textarea
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   rows={3}
                   placeholder="Any specific instructions or modifications for this workout..."
                 />
@@ -268,10 +268,10 @@ const AssignTemplateModal: React.FC<AssignTemplateModalProps> = ({
                           type="checkbox"
                           checked={selectedClients.includes(client.id)}
                           onChange={() => handleClientToggle(client.id)}
-                          className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                         />
                         <div className="ml-3 flex items-center space-x-3">
-                          <div className="h-8 w-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                          <div className="h-8 w-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                             <span className="text-white font-semibold text-sm">
                               {client.first_name[0]}{client.last_name[0]}
                             </span>
@@ -302,7 +302,7 @@ const AssignTemplateModal: React.FC<AssignTemplateModalProps> = ({
                 <button
                   onClick={handleAssign}
                   disabled={assigning || selectedClients.length === 0}
-                  className="flex-1 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {assigning ? (
                     <>

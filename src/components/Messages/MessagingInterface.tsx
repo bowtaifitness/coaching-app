@@ -527,7 +527,7 @@ const MessagingInterface: React.FC = () => {
                   placeholder="Search conversations..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -538,14 +538,14 @@ const MessagingInterface: React.FC = () => {
                     onClick={() => setMessageFilter('all')}
                     className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       messageFilter === 'all'
-                        ? 'bg-green-500 text-white'
+                        ? 'bg-blue-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
                     <Inbox className="h-4 w-4" />
                     All
                     <span className={`text-xs px-1.5 py-0.5 rounded-full ${
-                      messageFilter === 'all' ? 'bg-green-600' : 'bg-gray-200'
+                      messageFilter === 'all' ? 'bg-blue-600' : 'bg-gray-200'
                     }`}>
                       {conversations.length}
                     </span>
@@ -554,14 +554,14 @@ const MessagingInterface: React.FC = () => {
                     onClick={() => setMessageFilter('unread')}
                     className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       messageFilter === 'unread'
-                        ? 'bg-green-500 text-white'
+                        ? 'bg-blue-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
                     <Mail className="h-4 w-4" />
                     Unread
                     <span className={`text-xs px-1.5 py-0.5 rounded-full ${
-                      messageFilter === 'unread' ? 'bg-green-600' : 'bg-red-100 text-red-600'
+                      messageFilter === 'unread' ? 'bg-blue-600' : 'bg-red-100 text-red-600'
                     }`}>
                       {conversations.filter(c => c.unreadCount > 0).length}
                     </span>
@@ -570,14 +570,14 @@ const MessagingInterface: React.FC = () => {
                     onClick={() => setMessageFilter('read')}
                     className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       messageFilter === 'read'
-                        ? 'bg-green-500 text-white'
+                        ? 'bg-blue-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
                     <MailOpen className="h-4 w-4" />
                     Read
                     <span className={`text-xs px-1.5 py-0.5 rounded-full ${
-                      messageFilter === 'read' ? 'bg-green-600' : 'bg-gray-200'
+                      messageFilter === 'read' ? 'bg-blue-600' : 'bg-gray-200'
                     }`}>
                       {conversations.filter(c => c.unreadCount === 0).length}
                     </span>
@@ -593,12 +593,12 @@ const MessagingInterface: React.FC = () => {
                     key={conversation.id}
                     onClick={() => setSelectedConversation(conversation.id)}
                     className={`p-4 border-b border-gray-50 cursor-pointer hover:bg-gray-50 transition-colors ${
-                      selectedConversation === conversation.id ? 'bg-green-50 border-green-200' : ''
+                      selectedConversation === conversation.id ? 'bg-blue-50 border-blue-200' : ''
                     }`}
                   >
                     <div className="flex items-center space-x-3">
                       <div className="relative">
-                        <div className="h-12 w-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                        <div className="h-12 w-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
                           <span className="text-white font-semibold">
                             {conversation.first_name[0]}{conversation.last_name[0]}
                           </span>
@@ -653,7 +653,7 @@ const MessagingInterface: React.FC = () => {
                     >
                       <ArrowLeft className="h-5 w-5 text-gray-600" />
                     </button>
-                    <div className="h-8 w-8 sm:h-10 sm:w-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="h-8 w-8 sm:h-10 sm:w-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-sm sm:text-base font-semibold">
                         {selectedConv?.first_name[0]}{selectedConv?.last_name[0]}
                       </span>
@@ -745,7 +745,7 @@ const MessagingInterface: React.FC = () => {
                       <div key={message.id} className={`flex ${isOwn ? 'justify-end' : 'justify-start'}`}>
                         <div className={`max-w-[85%] sm:max-w-xs lg:max-w-md px-3 sm:px-4 py-2 rounded-lg ${
                           isOwn
-                            ? 'bg-green-500 text-white'
+                            ? 'bg-blue-500 text-white'
                             : 'bg-gray-100 text-gray-900'
                         }`}>
                           {message.content && message.content !== '📎 Attachment' && (
@@ -758,7 +758,7 @@ const MessagingInterface: React.FC = () => {
                                 const isImage = attachment.type.startsWith('image/');
 
                                 return (
-                                  <div key={idx} className={`rounded overflow-hidden ${isOwn ? 'bg-green-600' : 'bg-white'}`}>
+                                  <div key={idx} className={`rounded overflow-hidden ${isOwn ? 'bg-blue-600' : 'bg-white'}`}>
                                     {isImage ? (
                                       <a href={attachment.url} target="_blank" rel="noopener noreferrer">
                                         <img
@@ -788,7 +788,7 @@ const MessagingInterface: React.FC = () => {
                           )}
 
                           <div className={`flex items-center justify-end mt-1 space-x-1 ${
-                            isOwn ? 'text-green-100' : 'text-gray-500'
+                            isOwn ? 'text-blue-100' : 'text-gray-500'
                           }`}>
                             <span className="text-xs">
                               {new Date(message.created_at).toLocaleTimeString([], {
@@ -874,7 +874,7 @@ const MessagingInterface: React.FC = () => {
                         onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
                         placeholder={`Message ${selectedConv?.first_name}...`}
                         disabled={sending || uploading}
-                        className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
 
@@ -910,7 +910,7 @@ const MessagingInterface: React.FC = () => {
                     <button
                       onClick={sendMessage}
                       disabled={sending || uploading || (!newMessage.trim() && attachments.length === 0)}
-                      className="min-h-[44px] min-w-[44px] flex items-center justify-center bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 touch-manipulation"
+                      className="min-h-[44px] min-w-[44px] flex items-center justify-center bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 touch-manipulation"
                     >
                       {sending || uploading ? (
                         <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

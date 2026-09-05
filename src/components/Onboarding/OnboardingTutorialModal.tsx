@@ -235,7 +235,7 @@ const OnboardingTutorialModal: React.FC<OnboardingTutorialModalProps> = ({ onClo
                 aria-label={`Go to slide ${i + 1}`}
                 className={`rounded-full transition-all duration-300 ${
                   i === currentIndex
-                    ? 'w-5 h-2 bg-green-600'
+                    ? 'w-5 h-2 bg-blue-600'
                     : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
                 }`}
               />
@@ -245,7 +245,7 @@ const OnboardingTutorialModal: React.FC<OnboardingTutorialModalProps> = ({ onClo
           {/* Next / Let's Go button */}
           <button
             onClick={handleNext}
-            className="w-full py-3 rounded-xl bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold text-base transition-colors flex items-center justify-center gap-2"
+            className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-base transition-colors flex items-center justify-center gap-2"
           >
             {isLastSlide ? (
               "Let's Go!"

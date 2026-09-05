@@ -105,7 +105,7 @@ const ClientStreaksPanel: React.FC<ClientStreaksPanelProps> = ({ clientId, clien
         />
         <StatCard
           icon={<CalendarDays className="h-5 w-5" />}
-          iconClass="text-teal-600 bg-teal-50 ring-teal-200"
+          iconClass="text-blue-600 bg-blue-50 ring-blue-200"
           label="This week"
           value={`${summary.thisWeekCount}`}
           unit="moves"
@@ -144,10 +144,10 @@ const ClientStreaksPanel: React.FC<ClientStreaksPanelProps> = ({ clientId, clien
               d.count === 0
                 ? 'bg-gray-100 border-gray-200'
                 : d.count < 3
-                ? 'bg-teal-200 border-teal-300'
+                ? 'bg-blue-200 border-blue-300'
                 : d.count < 6
-                ? 'bg-teal-400 border-teal-500'
-                : 'bg-emerald-600 border-emerald-700';
+                ? 'bg-blue-400 border-blue-500'
+                : 'bg-blue-600 border-blue-700';
             return (
               <div
                 key={d.key}
@@ -160,9 +160,9 @@ const ClientStreaksPanel: React.FC<ClientStreaksPanelProps> = ({ clientId, clien
         <div className="mt-3 flex items-center justify-end gap-2 text-[10px] text-gray-500">
           <span>Less</span>
           <div className="w-3 h-3 rounded-sm bg-gray-100 border border-gray-200" />
-          <div className="w-3 h-3 rounded-sm bg-teal-200 border border-teal-300" />
-          <div className="w-3 h-3 rounded-sm bg-teal-400 border border-teal-500" />
-          <div className="w-3 h-3 rounded-sm bg-emerald-600 border border-emerald-700" />
+          <div className="w-3 h-3 rounded-sm bg-blue-200 border border-blue-300" />
+          <div className="w-3 h-3 rounded-sm bg-blue-400 border border-blue-500" />
+          <div className="w-3 h-3 rounded-sm bg-blue-600 border border-blue-700" />
           <span>More</span>
         </div>
       </div>

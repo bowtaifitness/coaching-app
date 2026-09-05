@@ -273,7 +273,7 @@ const ExerciseHistoryModal: React.FC<ExerciseHistoryModalProps> = ({
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4 modal-overlay">
       <div className="modal-panel bg-white rounded-t-2xl sm:rounded-xl shadow-2xl max-w-4xl w-full max-h-[95dvh] sm:max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="bg-gradient-to-r from-green-500 to-blue-500 p-6 text-white">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-500 p-6 text-white">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-2xl font-bold">Exercise History</h2>
             <button
@@ -283,13 +283,13 @@ const ExerciseHistoryModal: React.FC<ExerciseHistoryModalProps> = ({
               <X className="h-6 w-6" />
             </button>
           </div>
-          <p className="text-green-50 font-medium">{exerciseName}</p>
+          <p className="text-blue-50 font-medium">{exerciseName}</p>
         </div>
 
         {loading ? (
           <div className="flex-1 flex items-center justify-center p-12">
             <div className="text-center">
-              <Loader className="h-8 w-8 text-green-500 animate-spin mx-auto mb-2" />
+              <Loader className="h-8 w-8 text-blue-500 animate-spin mx-auto mb-2" />
               <p className="text-gray-600">Loading history...</p>
             </div>
           </div>
@@ -310,7 +310,7 @@ const ExerciseHistoryModal: React.FC<ExerciseHistoryModalProps> = ({
               <div className="p-6 bg-gray-50 border-b border-gray-200">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-green-600">{stats.maxWeight}</p>
+                    <p className="text-2xl font-bold text-blue-600">{stats.maxWeight}</p>
                     <p className="text-sm text-gray-600">Max Weight (lbs)</p>
                   </div>
                   <div className="text-center">
@@ -336,7 +336,7 @@ const ExerciseHistoryModal: React.FC<ExerciseHistoryModalProps> = ({
                   onClick={() => setViewMode('chart')}
                   className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     viewMode === 'chart'
-                      ? 'bg-white text-green-600 shadow-sm'
+                      ? 'bg-white text-blue-600 shadow-sm'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -347,7 +347,7 @@ const ExerciseHistoryModal: React.FC<ExerciseHistoryModalProps> = ({
                   onClick={() => setViewMode('list')}
                   className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     viewMode === 'list'
-                      ? 'bg-white text-green-600 shadow-sm'
+                      ? 'bg-white text-blue-600 shadow-sm'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -382,7 +382,7 @@ const ExerciseHistoryModal: React.FC<ExerciseHistoryModalProps> = ({
                   {history.map((entry, index) => (
                     <div
                       key={index}
-                      className="bg-white rounded-lg border border-gray-200 p-4 hover:border-green-500 transition-colors"
+                      className="bg-white rounded-lg border border-gray-200 p-4 hover:border-blue-500 transition-colors"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <div>
@@ -396,7 +396,7 @@ const ExerciseHistoryModal: React.FC<ExerciseHistoryModalProps> = ({
                             })}
                           </p>
                         </div>
-                        <span className="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">
+                        <span className="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded">
                           #{history.length - index}
                         </span>
                       </div>

@@ -22,12 +22,12 @@ const SetupComplete: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-full w-full bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
+    <div className="h-full w-full bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-y-auto">
       <div className="max-w-md w-full space-y-6">
         <div className="text-center">
           <div className="mx-auto h-24 w-24 sm:h-32 sm:w-32 flex items-center justify-center mb-4 rounded-full overflow-hidden">
             <img
-              src="/logo.png"
+              src="/logo.jpg"
               alt="Bowtai Fitness"
               className="h-full w-full object-cover"
             />
@@ -36,8 +36,8 @@ const SetupComplete: React.FC = () => {
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mx-auto">
-            <CheckCircle className="w-8 h-8 text-green-600" />
+          <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mx-auto">
+            <CheckCircle className="w-8 h-8 text-blue-600" />
           </div>
 
           <div className="text-center space-y-2">
@@ -46,7 +46,7 @@ const SetupComplete: React.FC = () => {
               Your payment method has been securely saved. You can now access your free trial.
             </p>
             {user?.email && (
-              <p className="text-sm font-medium text-green-600">{user.email}</p>
+              <p className="text-sm font-medium text-blue-600">{user.email}</p>
             )}
           </div>
 
